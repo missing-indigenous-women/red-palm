@@ -5,8 +5,11 @@
     <title>Conceptual Model</title>
 </head>
 <body>
+
 <h1>Conceptual Model</h1>
+
 <h2>Tables</h2>
+
 <h3>user</h3>
 <p>userId</p>
 <p>userActivationToken</p>
@@ -16,6 +19,7 @@
 <p>userHash</p>
 <p>userLastName</p>
 <br/>
+
 <h3>missingPerson</h3>
 <p>missingPersonId</p>
 <p>missingPersonAliases</p>
@@ -50,11 +54,17 @@
 <p>missingPersonWearingLastSeen</p>
 <p>missingPersonWeight</p>
 <br/>
+
 <h3>post</h3>
 <p>postId</p>
+<p>postMissingPersonId</p>
 <p>postUserId</p>
 <p>postDate</p>
 <p>postText</p>
+<br/>
+<h2>Relationships</h2>
+<p>one user can have many posts</p>
+<p>one missingPerson can have many posts</p>
 
 <hr/>
 <h1>Entity Relationship Diagram</h1>
