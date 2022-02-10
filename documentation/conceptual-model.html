@@ -19,55 +19,57 @@
 <p>userHash</p>
 <p>userLastName</p>
 <br/>
-
-<h3>missingPerson</h3>
-<p>missingPersonId</p>
-<p>missingPersonAliases</p>
-<p>missingPersonDateOfDisappearance</p>
-<p>missingPersonDateOfBirth</p>
-<p>missingPersonEyeColor</p>
-<p>missingPersonFacebookHandle</p>
-<p>missingPersonFavoriteHangoutPlaces</p>
-<p>missingPersonFirstName</p>
-<p>missingPersonGlasses</p>
-<p>missingPersonHairColor</p>
-<p>missingPersonHeight</p>
-<p>missingPersonHobbiesAndInterests</p>
-<p>missingPersonIdentifyingMarks</p>
-<p>missingPersonInstagramHandle</p>
-<p>missingPersonLastName</p>
-<p>missingPersonLastSeen</p>
-<p>missingPersonLastSeenLocation</p>
-<p>missingPersonPhoto1</p>
-<p>missingPersonPhoto2</p>
-<p>missingPersonRace</p>
-<p>missingPersonSex</p>
-<p>missingPersonSiblings</p>
-<p>missingPersonTickTockHandle</p>
-<p>missingPersonTribe</p>
-<p>missingPersonTwitterHandle</p>
-<p>missingPersonVehicleDistinguishingMarks</p>
-<p>missingPersonVehicleLicensePlate</p>
-<p>missingPersonVehicleMake</p>
-<p>missingPersonVehicleModel</p>
-<p>missingPersonVehicleYear</p>
-<p>missingPersonWearingLastSeen</p>
-<p>missingPersonWeight</p>
+<h3>woman</h3>
+<p>womanId</p>
+<p>womanAliases</p>
+<p>womanDateOfDisappearance</p>
+<p>womanDateOfBirth</p>
+<p>womanEyeColor</p>
+<p>womanFavoriteHangoutPlaces</p>
+<p>womanFirstName</p>
+<p>womanHairColor</p>
+<p>womanHeight</p>
+<p>womanHobbiesAndInterests</p>
+<p>womanIdentifyingMarks</p>
+<p>womanLastName</p>
+<p>womanLastSeen</p>
+<p>womanPhoto1</p>
+<p>womanTribe</p>
+<p>womanWeight</p>
 <br/>
-
+<h3>socialMedia</h3>
+<p>socialMediaId</p>
+<p>socialMediaWomanId</p>
+<p>socialMediaFacebook</p>
+<p>socialMediaInstagram</p>
+<p>socialMediaTicktock</p>
+<p>socialMediaTwitter</p>
+<br/>
+<h3>vehicle</h3>
+<p>vehicleId</p>
+<p>vehicleWomanId</p>
+<p>vehicleColor</p>
+<p>vehicleDescription</p>
+<p>vehicleMake</p>
+<p>vehicleModel</p>
+<p>vehiclePlateNumber</p>
+<p>vehicleYear</p>
+<br/>
 <h3>post</h3>
 <p>postId</p>
-<p>postMissingPersonId</p>
+<p>postWomanId</p>
 <p>postUserId</p>
 <p>postDate</p>
 <p>postText</p>
 <br/>
 <h2>Relationships</h2>
 <p>one user can have many posts</p>
-<p>one missingPerson can have many posts</p>
+<p>one woman can have one vehicle</p>
+<p>one woman can have one set of social media account</p>
+<p>many posts belong to one woman</p>
 
 <hr/>
 <h1>Entity Relationship Diagram</h1>
-<img src="RedPalm.jpg" alt="Red Palm ERD"/>
+<img src="redpalm.jpg" alt="Red Palm ERD"/>
 </body>
 </html>
