@@ -41,30 +41,27 @@ CREATE TABLE woman (
                        womanHobbiesAndInterests VARCHAR (150),
                        womanIdentifyingMarks VARCHAR (150),
                        womanLastName VARCHAR (40),
-                       womanLastLocation VARCHAR (150),
-                       womanLatitude VARCHAR (40),
-                       womanLongitude VARCHAR (40),
-                       womanPhoto1 VARCHAR (40),
+                       womanLastLocation VARCHAR (60),
+                       womanLatitude DECIMAL(9,7),
+                       womanLongitude DECIMAL (9,7),
+                       womanPhoto1 VARCHAR (160),
                        womanTribe VARCHAR (150),
-                       womanWeight VARCHAR (3),
-
-    -- this creates an index before making a foreign key
-                       INDEX(tweetProfileId),
-    -- this creates the actual foreign key relation
-                       FOREIGN KEY(tweetProfileId) REFERENCES profile(profileId),
-    -- and finally create the primary key
-                       PRIMARY KEY(tweetId)
+                       womanWeight VARCHAR (4),
+                       PRIMARY KEY(womanId),
 );
 -- create the tweetImage entity
 CREATE TABLE socialMedia (
-                       imageId BINARY(16) NOT NULL,
-                       imageTweetId BINARY(16) NOT NULL,
-                       imageCloudinaryToken VARCHAR(255) NOT NULL,
-                       imageUrl VARCHAR(128) NOT NULL ,
-                       INDEX(imageId),
-                       INDEX(imageTweetId),
-                       FOREIGN KEY(imageTweetId) REFERENCES tweet(tweetId),
-                       PRIMARY KEY (imageId)
+                       socialMediaId BINARY(16) NOT NULL,
+                       socialMediaWomanId BINARY(16) NOT NULL,
+                       socialMediaFacebook VARCHAR(160),
+                       socialMediaInstagram VARCHAR (160),
+                       socialMediaTicktock VARCHAR (160),
+                       socialMediaTwitter VARCHAR (160,)
+                       INDEX(socialMediaWomanId),
+
+
+                       FOREIGN KEY(socialMediaWomanId) REFERENCES woman (womanId),
+                       PRIMARY KEY (socialMediaId)
 );
 -- create the like entity (a weak entity from an m-to-n for profile --> tweet)
 CREATE TABLE vehicle (
