@@ -29,7 +29,7 @@ CREATE TABLE woman (
                        womanId BINARY(16) NOT NULL,
     -- this is for a foreign key; auto_incremented is omitted by design
                        womanAliases VARCHAR(40),
-                       womanDateOfDisappearance dATETIME(140) NOT NULL,
+                       womanDateOfDisappearance DATETIME(6) NOT NULL,
     -- notice dates don't need a size parameter
                        womanDateOfBirth DATETIME(6) NOT NULL,
                        womanEyeColor VARCHAR (30),
