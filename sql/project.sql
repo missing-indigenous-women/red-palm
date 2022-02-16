@@ -61,12 +61,11 @@ CREATE TABLE socialMedia (
                        FOREIGN KEY(socialMediaWomanId) REFERENCES woman (womanId),
                        PRIMARY KEY (socialMediaId)
 );
--- create the like entity (a weak entity from an m-to-n for profile --> tweet)
+
 CREATE TABLE vehicle (
-    -- these are not auto_increment because they're still foreign keys
                         vehicleId BINARY(16) NOT NULL,
                         vehicleWomanId BINARY(16) NOT NULL,
-                        vehicleColor VARCHAR(60),	-- index the foreign keys
+                        vehicleColor VARCHAR(60),
                         vehicleDescription VARCHAR (60),
                         vehicleMake VARCHAR (60),
                         vehicleModel VARCHAR (60),
