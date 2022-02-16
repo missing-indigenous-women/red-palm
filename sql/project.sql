@@ -56,26 +56,24 @@ CREATE TABLE socialMedia (
                        socialMediaFacebook VARCHAR(160),
                        socialMediaInstagram VARCHAR (160),
                        socialMediaTicktock VARCHAR (160),
-                       socialMediaTwitter VARCHAR (160,)
+                       socialMediaTwitter VARCHAR (160),
                        INDEX(socialMediaWomanId),
-
-
                        FOREIGN KEY(socialMediaWomanId) REFERENCES woman (womanId),
                        PRIMARY KEY (socialMediaId)
 );
 -- create the like entity (a weak entity from an m-to-n for profile --> tweet)
 CREATE TABLE vehicle (
     -- these are not auto_increment because they're still foreign keys
-                        likeTweetId BINARY(16) NOT NULL,
-                        likeProfileId BINARY(16) NOT NULL,
-                        likeDate DATETIME(6) NOT NULL,	-- index the foreign keys
-                        INDEX(likeProfileId),
-                        INDEX(likeTweetId),
-    -- create the foreign key relations
-                        FOREIGN KEY(likeTweetId) REFERENCES tweet(tweetId),
-                        FOREIGN KEY(likeProfileId) REFERENCES profile(profileId),
-    -- finally, create a composite foreign key with the two foreign keys
-                        PRIMARY KEY(likeProfileId, likeTweetId)
+                        vehicleId BINARY(16) NOT NULL,
+                        vehicleWomanId BINARY(16) NOT NULL,
+                        vehicleColor VARCHAR(60),	-- index the foreign keys
+                        vehicleDescription VARCHAR (60),
+                        vehicleMake VARCHAR (60),
+                        vehicleModel VARCHAR (60),
+                        vehiclePlateNumber VARCHAR (60),
+                        vehicleYear VARCHAR (60),
+                        FOREIGN KEY(vehicleWomanId) REFERENCES woman(womanId),
+                        PRIMARY KEY(vehicleId)
 );
 
 CREATE TABLE post (
