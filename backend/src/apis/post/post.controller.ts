@@ -1,20 +1,25 @@
 import {Request, Response} from 'express';
 
-// Interfaces (represent the DB model and types of the columns associated with a specific DB table)
-import {Post} from '../../utils/interfaces/Post';
-import {Status} from '../../utils/interfaces/Status';
-import {insertPost} from "../../utils/post/insertPost"
-import {selectPostByPostId} from "../../utils/post/selectPostByPostId";
+
+
+import {Status} from '../../../utils/interfaces/Status';
+import {Post} from
+
+
+
+import {insertPosr} from "../../../utils/post/insertPost"
+import {selectStatusByStatusId} from "../../../utils/status/selectStatusByStatusId"
+
 export async function postPost(request: Request, response: Response) : Promise<Response<Status>> {
     try {
 
-        const {postAppUserId, postWomanId, postDate, postText} = request.body;
-
-        const post: Post = {
-            postId: null,
-            postAppUserId,
-            postWomanId,
-            postDate,
+        const {postAppuserId,postWomanId,postDate, postText} = request.body;
+        console.log(request.body)
+        const post: post = {
+            postId:  null,
+            postAppUserId ,
+            postWomanId ,
+            postDate ,
             postText
         }
         const result = await insertPost (post)
@@ -34,7 +39,8 @@ export async function postPost(request: Request, response: Response) : Promise<R
         });
     }
 }
-export async function getPostByPostId(request : Request, response: Response): Promise<Response<Status>>{
+
+export async function getPostByPostId(request : Request, response: Response): Promise<Response<HttpStatus>>{
     try {
         const     {postId} = request.params
         const data  = await selectpostByPostId(postId)
@@ -47,3 +53,4 @@ export async function getPostByPostId(request : Request, response: Response): Pr
         })
     }
 }
+
