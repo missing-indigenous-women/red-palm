@@ -1,7 +1,9 @@
-*/src/dist
-*/node_modules
+**/src/dist
+**/node_modules
 .idea
 */.DS_Store
+**/.env
+
 
 /project.env
 */.pnp
