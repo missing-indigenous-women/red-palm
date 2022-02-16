@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS post;
 DROP TABLE IF EXISTS vehicle;
 DROP TABLE IF EXISTS socialMedia;
@@ -9,20 +8,20 @@ CREATE TABLE appUser (
     -- this creates the attribute for the primary key
     -- auto_increment tells mySQL to number them {1, 2, 3, ...}
     -- not null means the attribute is required!
-                         userId BINARY(16) NOT NULL,
-                         userActivationToken CHAR(32) NOT NULL,
-                         userDisplayName VARCHAR(32) NOT NULL,
-                         userEmail  VARCHAR(255) NOT NULL,
+                         appUserId BINARY(16) NOT NULL,
+                         appUserActivationToken CHAR(32) NOT NULL,
+                         appUserDisplayName VARCHAR(32) NOT NULL,
+                         appUserEmail  VARCHAR(255) NOT NULL,
     -- to make sure duplicate data cannot exist, create a unique index
-                         userFirstName VARCHAR(40) NOT NULL,
+                         appUserFirstName VARCHAR(40) NOT NULL,
     -- to make something optional, exclude the not null
-                         userHash CHAR(97) NOT NULL,
-                         userLastName VARCHAR(40) NOT NULL,
-                         UNIQUE(userEmail),
-                         UNIQUE(userDisplayName),
-                         INDEX(userEmail),
+                         appUserHash CHAR(97) NOT NULL,
+                         appUserLastName VARCHAR(40) NOT NULL,
+                         UNIQUE(appUserEmail),
+                         UNIQUE(appUserDisplayName),
+                         INDEX(appUserEmail),
     -- this officiates the primary key for the entity
-                         PRIMARY KEY(userId)
+                         PRIMARY KEY(appUserId)
 );
 -- create the tweet entity
 CREATE TABLE woman (
@@ -47,7 +46,7 @@ CREATE TABLE woman (
                        womanPhoto1 VARCHAR (160),
                        womanTribe VARCHAR (150),
                        womanWeight VARCHAR (4),
-                       PRIMARY KEY(womanId),
+                       PRIMARY KEY(womanId)
 );
 -- create the tweetImage entity
 CREATE TABLE socialMedia (
@@ -77,14 +76,12 @@ CREATE TABLE vehicle (
 
 CREATE TABLE post (
     -- these are not auto_increment because they're still foreign keys
-                         likeTweetId BINARY(16) NOT NULL,
-                         likeProfileId BINARY(16) NOT NULL,
-                         likeDate DATETIME(6) NOT NULL,	-- index the foreign keys
-                         INDEX(likeProfileId),
-                         INDEX(likeTweetId),
-    -- create the foreign key relations
-                         FOREIGN KEY(likeTweetId) REFERENCES tweet(tweetId),
-                         FOREIGN KEY(likeProfileId) REFERENCES profile(profileId),
-    -- finally, create a composite foreign key with the two foreign keys
-                         PRIMARY KEY(likeProfileId, likeTweetId)
+                         postId BINARY(16) NOT NULL,
+                         postAppUserId BINARY(16),
+                         postWomanId BINARY(16) NOT NULL,
+                         postDate DATETIME(6) NOT NULL,
+                         postText VARCHAR(1000) NOT NULL,
+                        FOREIGN KEY(postWomanId) REFERENCES woman(womanId),
+                         FOREIGN KEY(postAppUserId) REFERENCES appUser (appUserId),
+                        PRIMARY KEY(postId)
 );
