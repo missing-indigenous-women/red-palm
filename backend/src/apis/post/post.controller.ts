@@ -16,6 +16,8 @@ export async function postPost(request: Request, response: Response) : Promise<R
             postWomanId,
             postDate,
             postText
+
+
         }
         const result = await insertPost (post)
         const status: Status = {
