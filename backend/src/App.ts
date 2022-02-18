@@ -3,11 +3,10 @@ import morgan from 'morgan'
 // Routes
 import { indexRoute } from './apis/index.route'
 import { postRoute } from './apis/post/post.route'
-<<<<<<< HEAD
 import { vehicleRoute } from './apis/vehicle/vehicle.route'
-=======
+
 import {womanRoute} from './apis/woman/woman.route'
->>>>>>> womandependency
+
 
 // The following class creates the app and instantiates the server
 export class App {
@@ -38,11 +37,11 @@ export class App {
     // TODO add "/apis"
     this.app.use('/apis', indexRoute)
     this.app.use('/apis/post',postRoute)
-<<<<<<< HEAD
+
     this.app.use('/apis/vehicle',vehicleRoute)
-=======
+
     this.app.use('/apis/woman',womanRoute)
->>>>>>> womandependency
+
   }
 
   // starts the server and tells the terminal to post a message that the server is running and on what port
