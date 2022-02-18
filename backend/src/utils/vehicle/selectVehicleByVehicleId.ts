@@ -1,5 +1,5 @@
 import {Status} from "../../utils/interfaces/Status";
-import {connect} from "../../src/database";
+import {connect} from "../database.utils";
 import {RowDataPacket} from 'mysql2';
 
 export async function selectVehicleByVehicleId(statusId: string) : Promise<Status[]> {

@@ -2,7 +2,7 @@ import {Status} from "../../utils/interfaces/Status";
 import {connect} from "../../utils/database.utils";
 import {RowDataPacket} from 'mysql2';
 
-export async function deleteVehicleByVehicleId(statusId: string) : Promise<Status[]> {
+export async function deleteVehicle(statusId: string) : Promise<Status[]> {
     try {
         console.log("statusId: ",statusId)
         const mySqlConnection = await connect();

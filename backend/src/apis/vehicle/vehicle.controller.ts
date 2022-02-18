@@ -5,8 +5,8 @@ import {Vehicle} from "../../utils/interfaces/Vehicle";
 
 import {insertVehicle} from "../../utils/vehicle/insertVehicle"
 import {selectVehicleByVehicleId} from "../../utils/vehicle/selectVehicleByVehicleId";
-import {updateVehicleByVehicleId} from "../../utils/vehicle/updateVehicleByVehicleId";
-import {deleteVehicleByVehicleId} from "../../utils/vehicle/deleteVehicleByVehicleId";
+import {updateVehicle} from "../../utils/vehicle/updateVehicleByVehicleId";
+import {deleteVehicle} from "../../utils/vehicle/deleteVehicleByVehicleId";
 
 export async function postVehicle(request: Request, response: Response) : Promise<Response<Status>> {
   try {
@@ -63,7 +63,7 @@ export async function getVehicleByVehicleId(request : Request, response: Respons
 export async function updateVehicleByVehicleId(request : Request, response: Response): Promise<Response<Status>>{
   try {
     const     {vehicleId} = request.params
-    const data  = await updateVehicleByVehicleId(vehicleId)
+    const data  = await updateVehicle(vehicleId)
     return response.json({status:200, message: null, data});
   } catch(error) {
     return response.json({
@@ -78,7 +78,7 @@ export async function updateVehicleByVehicleId(request : Request, response: Resp
 export async function deleteVehicleByVehicleId(request : Request, response: Response): Promise<Response<Status>>{
   try {
     const     {vehicleId} = request.params
-    const data  = await selectVehicleByVehicleId(vehicleId)
+    const data  = await deleteVehicle(vehicleId)
     return response.json({status:200, message: null, data});
   } catch(error) {
     return response.json({
