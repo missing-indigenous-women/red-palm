@@ -2,41 +2,41 @@ import {NextFunction, Request, Response} from 'express';
 import "express-session";
 import uuid from "uuid";
 import {generateJwt, validatePassword} from "../../utils/auth.utils";
-import {Profile} from "../../utils/interfaces/Profile";
-import {selectProfileByProfileEmail} from "../../utils/profile/selectProfileByProfileEmail";
+import {AppUser} from "../../utils/interfaces/AppUser";
+import {selectappUserByappUserEmail} from "../../utils/appUser/selectappUserByappUserEmail";
 
 
 export async function signInController(request: Request, response: Response): Promise<Response | undefined> {
 
-    const {profileEmail} = request.body
-    const mySqlResult: Profile | null = await selectProfileByProfileEmail(profileEmail);
+    const {appUserEmail} = request.body
+    const mySqlResult: AppUser | null = await selectappUserByappUserEmail(appUserEmail);
     const isEmailValid: boolean = mySqlResult ? true : false
 
     try {
         const authenticate = async () => {
 
-            const {profilePassword} = request.body;
+            const {appUserPassword} = request.body;
 
             // @ts-ignore isEmailValid determines mySqlResult will not be null
-            const {profileId, profileAtHandle, profileAvatarUrl, profilePhone, profileHash, profileActivationToken} = mySqlResult
+            const {appUserId, appUserAtHandle, appUserAvatarUrl, appUserPhone, appUserHash, appUserActivationToken} = mySqlResult
 
-            const profile: Profile = {
-                profileId,
-                profileAtHandle,
-                profileAvatarUrl,
-                profileEmail,
-                profilePhone,
-                profileHash,
-                profileActivationToken
+            const appUser: appUser = {
+                appUserId,
+                appUserAtHandle,
+                appUserAvatarUrl,
+                appUserEmail,
+                appUserPhone,
+                appUserHash,
+                appUserActivationToken
             }
 
             const signature: string = uuid();
             const authorization: string = generateJwt({
-                profileId,
-                profileAtHandle,
-                profileAvatarUrl,
-                profileEmail,
-                profilePhone
+                appUserId,
+                appUserAtHandle,
+                appUserAvatarUrl,
+                appUserEmail,
+                appUserPhone
             }, signature);
 
             const signInFailed = (message: string) => response.json({
@@ -48,12 +48,12 @@ export async function signInController(request: Request, response: Response): Pr
             const signInSuccessful = () => {
 
                 // commented out for testing purposes
-                // if(profile.profileActivationToken !== null) {
+                // if(appUser.appUserActivationToken !== null) {
                 // 	signInFailed("please activate your account")
                 // }
 
                 if (request.session) {
-                    request.session.profile = profile;
+                    request.session.appUser = appUser;
                     request.session.jwt = authorization;
                     request.session.signature = signature;
                 }
@@ -65,7 +65,7 @@ export async function signInController(request: Request, response: Response): Pr
                 return response.json({status: 200, data: null, message: "sign in successful"})
             };
 
-            const isPasswordValid: boolean = profile && await validatePassword(profile.profileHash, profilePassword);
+            const isPasswordValid: boolean = appUser && await validatePassword(appUser.appUserHash, appUserPassword);
 
             return isPasswordValid ? signInSuccessful() : signInFailed("Invalid email or password");
         }
