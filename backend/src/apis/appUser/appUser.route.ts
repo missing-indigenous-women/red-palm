@@ -1,21 +1,14 @@
 import {Router} from "express"
-
-import {
-    getAppUserByAppUserId,
-    postAppUser
-} from './appUser.controller';
-import { asyncValidatorController } from '../../utils/controllers/asyncValidator.controller';
-import {appUserValidator} from './appUser.validator';
-import {checkSchema} from 'express-validator';
-import {check} from 'express-validator';
-
-export const appUserRoutes = Router()
+import {getAppUserByAppUserId,} from './appUser.controller'
+import {postAppUser} from './appUser.controller'
+import {updateAppUserByAppUserId} from './appUser.controller'
+import {deleteAppUserByAppUserId} from './appUser.controller'
+export const appUserRoute = Router()
 
 
-appUserRoutes.route("/:appUserId")
-    .get( asyncValidatorController([
-        check("appUserId","please provide a valid appUserId").isUUID()
-    ]), getAppUserByAppUserId)
-
-appUserRoutes.route("/")
-    .post(asyncValidatorController(checkSchema(appUserValidator)), postAppUser);
+appUserRoute.route("/:appUserId")
+    .get(getAppUserByAppUserId)
+    .put(updateAppUserByAppUserId)
+    .delete(deleteAppUserByAppUserId)
+appUserRoute.route("/")
+    .post( postAppUser);
