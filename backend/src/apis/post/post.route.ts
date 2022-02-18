@@ -9,13 +9,13 @@ import { postValidator } from './post.validator';
 import {checkSchema} from 'express-validator';
 import {check} from 'express-validator';
 
-export const postRoutes = Router()
+export const postRoute = Router()
 
 
-postRoutes.route("/:postId")
+postRoute.route("/:postId")
     .get( asyncValidatorController([
         check("postId","please provide a valid postId").isUUID()
     ]), getPostByPostId)
 
-postRoutes.route("/")
+postRoute.route("/")
     .post(asyncValidatorController(checkSchema(postValidator)), postPost);
