@@ -9,13 +9,13 @@ import { womanValidator } from './woman.validator';
 import {checkSchema} from 'express-validator';
 import {check} from 'express-validator';
 
-export const womanRoutes = Router()
+export const womanRoute = Router()
 
 
-womanRoutes.route("/:womanId")
+womanRoute.route("/:womanId")
     .get( asyncValidatorController([
         check("womanId","please provide a valid womanId").isUUID()
     ]), getWomanByWomanId)
 
-womanRoutes.route("/")
+womanRoute.route("/")
     .post(asyncValidatorController(checkSchema(womanValidator)), womanWoman);
