@@ -39,7 +39,7 @@ export async function postPost(request: Request, response: Response) : Promise<R
 export async function getPostByPostId(request : Request, response: Response): Promise<Response<Status>>{
     try {
         const     {postId} = request.params
-        const data  = await selectpostByPostId(postId)
+        const data  = await selectPostByPostId(postId)
         return response.json({status:200, message: null, data});
     } catch(error) {
         return response.json({
