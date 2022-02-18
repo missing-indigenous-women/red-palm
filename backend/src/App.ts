@@ -1,9 +1,9 @@
 import express, { Application } from 'express'
 import morgan from 'morgan'
 // Routes
-import { indexRoute } from './apis/index.route'
-import { postRoute } from './apis/post.route'
-import { appUserRoute } from './apis/appUser.route'
+import { indexRoutes } from './apis/index.route'
+import { postRoutes } from './apis/post/post.route'
+import { appUserRoute } from './apis/appUser/appUser.route'
 import { vehicleRoute } from './apis/vehicle/vehicle.route'
 
 
@@ -34,8 +34,8 @@ export class App {
   // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
   private routes () :void {
     // TODO add "/apis"
-    this.app.use('/apis', indexRoute)
-    this.app.use('/apis/post',postRoute)
+    this.app.use('/apis', indexRoutes)
+    this.app.use('/apis/post',postRoutes)
     this.app.use('/apis/appUser',appUserRoute)
     this.app.use('/apis/vehicle',vehicleRoute)
   }
