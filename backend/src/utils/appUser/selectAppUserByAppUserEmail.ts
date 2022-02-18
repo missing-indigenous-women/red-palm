@@ -2,7 +2,7 @@ import {connect} from "../database.utils";
 import {Profile} from "../interfaces/Profile";
 import {RowDataPacket} from 'mysql2';
 
-export async function selectProfileByProfileEmail(profileEmail: string): Promise<Profile|null>  {
+export async function selectAppUserByAppUserEmail(profileEmail: string): Promise<Profile|null>  {
 	try {
 		const mysqlConnection = await connect();
 		const sqlQuery: string = "SELECT BIN_TO_UUID(profileId) as profileId, profileActivationToken, profileAtHandle, profileAvatarUrl, profileEmail, profileHash, profilePhone FROM profile WHERE profileEmail = :profileEmail"

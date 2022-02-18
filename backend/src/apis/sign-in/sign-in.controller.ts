@@ -3,13 +3,13 @@ import "express-session";
 import uuid from "uuid";
 import {generateJwt, validatePassword} from "../../utils/auth.utils";
 import {AppUser} from "../../utils/interfaces/AppUser";
-import {selectappUserByappUserEmail} from "../../utils/appUser/selectappUserByappUserEmail";
+import {selectAppUserByAppUserEmail} from "../../utils/appUser/selectAppUserByAppUserEmail";
 
 
 export async function signInController(request: Request, response: Response): Promise<Response | undefined> {
 
     const {appUserEmail} = request.body
-    const mySqlResult: AppUser | null = await selectappUserByappUserEmail(appUserEmail);
+    const mySqlResult: AppUser | null = await selectAppUserByAppUserEmail(appUserEmail);
     const isEmailValid: boolean = mySqlResult ? true : false
 
     try {
@@ -18,25 +18,27 @@ export async function signInController(request: Request, response: Response): Pr
             const {appUserPassword} = request.body;
 
             // @ts-ignore isEmailValid determines mySqlResult will not be null
-            const {appUserId, appUserAtHandle, appUserAvatarUrl, appUserPhone, appUserHash, appUserActivationToken} = mySqlResult
+            const {appUserId,appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName , appUserHash , appUserLastName } = mySqlResult
 
-            const appUser: appUser = {
+            const appUser: AppUser = {
                 appUserId,
-                appUserAtHandle,
-                appUserAvatarUrl,
+                appUserActivationToken,
+                appUserDisplayName,
                 appUserEmail,
-                appUserPhone,
+                appUserFirstName ,
                 appUserHash,
-                appUserActivationToken
+                appUserLastName
             }
 
             const signature: string = uuid();
             const authorization: string = generateJwt({
                 appUserId,
-                appUserAtHandle,
-                appUserAvatarUrl,
+                appUserActivationToken,
+                appUserDisplayName,
                 appUserEmail,
-                appUserPhone
+                appUserFirstName ,
+                appUserHash,
+                appUserLastName
             }, signature);
 
             const signInFailed = (message: string) => response.json({
