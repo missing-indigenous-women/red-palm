@@ -11,7 +11,7 @@ services:
      environment:
         - MYSQL_HOST=sql
      ports:
-        - 8090:4200
+        - 8080:4200
      volumes:
         - ./backend/src:/home/node/app/src
         - ./backend/tsconfig.json:/home/node/app/tsconfig.json

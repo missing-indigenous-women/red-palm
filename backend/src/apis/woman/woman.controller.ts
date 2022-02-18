@@ -6,7 +6,7 @@ import {Status} from '../../utils/interfaces/Status';
 import {insertWoman} from "../../utils/woman/insertWoman"
 import {selectWomanByWomanId} from "../../utils/woman/selectWomanByWomanId";
 import {Woman} from "../../utils/interfaces/Woman";
-export async function womanWoman(request: Request, response: Response) : Promise<Response<Status>> {
+export async function postWoman(request: Request, response: Response) : Promise<Response<Status>> {
     try {
 
         const { womanAliases,womanDateOfDisappearance , womanDateOfBirth, womanEyeColor, womanFavoriteHangoutPlaces, womanFirstName, womanHairColor, womanHeight,womanHobbiesAndInterests,womanIdentifyingMarks,womanLastName,womanLastLocation, womanLatitude, womanLongitude,  womanPhoto1, womanTribe, womanWeight   } = request.body;

@@ -2,7 +2,7 @@ import {Router} from "express"
 
 import {
     getWomanByWomanId,
-    womanWoman
+    postWoman
 } from './woman.controller';
 import { asyncValidatorController } from '../../utils/controllers/asyncValidator.controller';
 import { womanValidator } from './woman.validator';
@@ -18,4 +18,4 @@ womanRoute.route("/:womanId")
     ]), getWomanByWomanId)
 
 womanRoute.route("/")
-    .post(asyncValidatorController(checkSchema(womanValidator)), womanWoman);
+    .post(asyncValidatorController(checkSchema(womanValidator)), postWoman);
