@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 import morgan from 'morgan'
 import { indexRoutes } from './apis/index.route'
-import { postRoutes } from './apis/post/post.route'
+import { postRoute } from './apis/post/post.route'
 import { appUserRoute } from './apis/appUser/appUser.route'
 import { vehicleRoute } from './apis/vehicle/vehicle.route'
 import {womanRoute} from './apis/woman/woman.route'
@@ -34,7 +34,7 @@ export class App {
   private routes () :void {
     // TODO add "/apis"
     this.app.use('/apis', indexRoutes)
-    this.app.use('/apis/post',postRoutes)
+    this.app.use('/apis/post',postRoute)
     this.app.use('/apis/appUser',appUserRoute)
     this.app.use('/apis/vehicle',vehicleRoute)
     this.app.use('/apis/woman',womanRoute)
