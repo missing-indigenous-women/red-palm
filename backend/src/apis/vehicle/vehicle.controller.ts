@@ -55,15 +55,21 @@ export async function getVehicleByVehicleId(request : Request, response: Respons
   }
 }
 
-
-
-
-
-//TODO: come back to this
 export async function updateVehicleByVehicleId(request : Request, response: Response): Promise<Response<Status>>{
   try {
-    const     {vehicleId} = request.params
-    const data  = await updateVehicle(vehicleId)
+    const { vehicleWomanId, vehicleColor, vehicleDescription, vehicleMake, vehicleModel, vehiclePlateNumber, vehicleYear } = request.body;
+    //console.log(request.body)
+    const vehicle: Vehicle = {
+      vehicleId: null,
+      vehicleWomanId,
+      vehicleColor,
+      vehicleDescription,
+      vehicleMake,
+      vehicleModel,
+      vehiclePlateNumber,
+      vehicleYear
+    }
+    const data  = await updateVehicle(vehicle)
     return response.json({status:200, message: null, data});
   } catch(error) {
     return response.json({
@@ -74,7 +80,6 @@ export async function updateVehicleByVehicleId(request : Request, response: Resp
   }
 }
 
-//TODO: come back to this
 export async function deleteVehicleByVehicleId(request : Request, response: Response): Promise<Response<Status>>{
   try {
     const     {vehicleId} = request.params
@@ -83,7 +88,8 @@ export async function deleteVehicleByVehicleId(request : Request, response: Resp
   } catch(error) {
     return response.json({
       status: 500,
-      message: "Error getting vehicle try again later.",
+      // @ts-ignore
+      message: `Error getting vehicle try again later. ${error.toString()}`,
       data: []
     })
   }
