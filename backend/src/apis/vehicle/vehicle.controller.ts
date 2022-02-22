@@ -10,7 +10,6 @@ import {deleteVehicle} from "../../utils/vehicle/deleteVehicleByVehicleId";
 
 export async function postVehicle(request: Request, response: Response) : Promise<Response<Status>> {
   try {
-
     const { vehicleWomanId, vehicleColor, vehicleDescription, vehicleMake, vehicleModel, vehiclePlateNumber, vehicleYear } = request.body;
     //console.log(request.body)
     const vehicle: Vehicle = {
