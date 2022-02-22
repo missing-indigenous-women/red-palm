@@ -54,9 +54,11 @@ export async function getWomanByWomanId(request : Request, response: Response): 
         const data  = await selectWomanByWomanId(womanId)
         return response.json({status:200, message: null, data});
     } catch(error) {
+
         return response.json({
             status: 500,
-            message: "Error getting status try again later.",
+            // @ts-ignore
+            message: error.toString(),
             data: []
         })
     }
