@@ -15,18 +15,18 @@ export const womanValidator : Schema = {
         escape: true
     },
     womanDateOfDisappearance: {
-        isLength: {
+        isDate: {
             errorMessage: 'please provide valid date format',
-            options: {max: 50}
+
         },
         trim: true,
         escape: true
     },
 
     womanDateOfBirth: {
-        isString: {
+        isDate: {
             errorMessage: 'please provide valid date format',
-            options: []
+
         },
         trim: true,
         escape: true
