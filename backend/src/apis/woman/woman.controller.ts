@@ -43,7 +43,8 @@ export async function postWoman(request: Request, response: Response) : Promise<
         console.error(error.message)
         return  response.json({
             status: 500,
-            message: "Error Creating status try again later.",
+            // @ts-ignore
+            message: `Error Creating status. ${error.toString()}`,
             data: null
         });
     }
