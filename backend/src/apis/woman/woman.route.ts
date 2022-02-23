@@ -22,7 +22,7 @@ womanRoute.route("/:womanId")
     ]), getWomanByWomanId)
     .put(asyncValidatorController(checkSchema(womanValidator)),updateWomanByWomanId)
     .delete(asyncValidatorController([
-        check("woman","please provide a valid womanId").isUUID()
+        check("womanId","please provide a valid womanId").isUUID()
     ]),deleteWomanByWomanId)
 
 
