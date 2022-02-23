@@ -2,12 +2,16 @@ import {Router} from "express"
 
 import {
     getWomanByWomanId,
-    postWoman
+    postWoman,
+    updateWomanByWomanId, deleteWomanByWomanId
 } from './woman.controller';
 import { asyncValidatorController } from '../../utils/controllers/asyncValidator.controller';
 import { womanValidator } from './woman.validator';
 import {checkSchema} from 'express-validator';
 import {check} from 'express-validator';
+import {vehicleValidator} from "../vehicle/vehicle.validator";
+import {deleteVehicleByVehicleId, updateVehicleByVehicleId} from "../vehicle/vehicle.controller";
+
 
 export const womanRoute = Router()
 
@@ -18,4 +22,8 @@ womanRoute.route("/:womanId")
     ]), getWomanByWomanId)
 
 womanRoute.route("/")
-    .post(asyncValidatorController(checkSchema(womanValidator)), postWoman);
+    .post(asyncValidatorController(checkSchema(womanValidator)), postWoman)
+    .put(asyncValidatorController(checkSchema(womanValidator)),updateWomanByWomanId)
+    .delete(asyncValidatorController([
+        check("woman","please provide a valid womanId").isUUID()
+    ]),deleteWomanByWomanId)
