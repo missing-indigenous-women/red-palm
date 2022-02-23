@@ -5,6 +5,7 @@ import { postRoute } from './apis/post/post.route'
 import { appUserRoute } from './apis/appUser/appUser.route'
 import { vehicleRoute } from './apis/vehicle/vehicle.route'
 import {womanRoute} from './apis/woman/woman.route'
+import {socialMediaRoute} from './apis/social-media/social-media.route'
 
 // The following class creates the app and instantiates the server
 export class App {
@@ -32,13 +33,12 @@ export class App {
 
   // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
   private routes () :void {
-    // TODO add "/apis"
     this.app.use('/apis', indexRoutes)
     this.app.use('/apis/post',postRoute)
     this.app.use('/apis/appUser',appUserRoute)
     this.app.use('/apis/vehicle',vehicleRoute)
     this.app.use('/apis/woman',womanRoute)
-
+    this.app.use('/apis/socialMedia', socialMediaRoute)
   }
 
   // starts the server and tells the terminal to post a message that the server is running and on what port
