@@ -1,23 +1,44 @@
 import {Schema} from 'express-validator';
 
 export const socialMediaValidator : Schema = {
-    statusId: {
+    socialMediaId: {
         isUUID: {
-            errorMessage: 'please provide a valid statusId'
+            errorMessage: 'please provide a valid socialMediaId'
         }
     },
-    statusColor: {
+    socialMediaWomanId: {
+        isUUID: {
+            errorMessage: 'please provide a valid socialMediaWomanId'
+        }
+    },
+    socialMediaFacebook: {
         isLength: {
-            errorMessage: 'a statusColor cannot be longer than 50 characters',
-            options: { max: 50 }
+            errorMessage: 'a socialMediaFacebook cannot be longer than 160 characters',
+            options: { max: 160 }
         },
         trim: true,
         escape: true
     },
-    statusValue: {
+    socialMediaInstagram: {
         isLength: {
-            errorMessage: 'a statusValue cannot be longer than 50 characters',
-            options: { max: 50 }
+            errorMessage: 'a socialMediaInstagram cannot be longer than 160 characters',
+            options: { max: 160 }
+        },
+        trim: true,
+        escape: true
+    },
+    socialMediaTicktock: {
+        isLength: {
+            errorMessage: 'a socialMediaTicktock cannot be longer than 160 characters',
+            options: { max: 160 }
+        },
+        trim: true,
+        escape: true
+    },
+    socialMediaTwitter: {
+        isLength: {
+            errorMessage: 'a socialMediaTwitter cannot be longer than 160 characters',
+            options: { max: 160 }
         },
         trim: true,
         escape: true
