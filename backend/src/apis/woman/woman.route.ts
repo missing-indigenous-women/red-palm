@@ -20,10 +20,11 @@ womanRoute.route("/:womanId")
     .get( asyncValidatorController([
         check("womanId","please provide a valid womanId").isUUID()
     ]), getWomanByWomanId)
-
-womanRoute.route("/")
-    .post(asyncValidatorController(checkSchema(womanValidator)), postWoman)
     .put(asyncValidatorController(checkSchema(womanValidator)),updateWomanByWomanId)
     .delete(asyncValidatorController([
         check("woman","please provide a valid womanId").isUUID()
     ]),deleteWomanByWomanId)
+
+
+womanRoute.route("/")
+    .post(asyncValidatorController(checkSchema(womanValidator)), postWoman)

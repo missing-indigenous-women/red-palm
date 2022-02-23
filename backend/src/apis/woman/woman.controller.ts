@@ -74,7 +74,7 @@ export async function updateWomanByWomanId(request : Request, response: Response
     try {
         const { womanAliases , womanDateOfDisappearance,  womanDateOfBirth, womanEyeColor,womanFavoriteHangoutPlaces,womanFirstName,womanHairColor,womanHeight,womanHobbiesAndInterests,womanIdentifyingMarks,womanLastName, womanLastLocation,  womanLatitude,womanLongitude,womanPhoto1, womanTribe,womanWeight } = request.body;
         const     {womanId} = request.params
-        //console.log(request.body)
+        console.log(request.body)
         const woman: Woman = {
             womanId ,
             womanAliases ,
@@ -102,7 +102,7 @@ export async function updateWomanByWomanId(request : Request, response: Response
         return response.json({
             status: 500,
             // @ts-ignore
-            message: `Error updating vehicle. ${error.toString()}`,
+            message: `Error updating woman. ${error.toString()}`,
             data: []
         })
     }
