@@ -11,7 +11,7 @@ import {deleteVehicle} from "../../utils/vehicle/deleteVehicleByVehicleId";
 export async function postVehicle(request: Request, response: Response) : Promise<Response<Status>> {
   try {
     const { vehicleWomanId, vehicleColor, vehicleDescription, vehicleMake, vehicleModel, vehiclePlateNumber, vehicleYear } = request.body;
-    //console.log(request.body)
+    console.log(request.body)
     const vehicle: Vehicle = {
       vehicleId: null,
       vehicleWomanId,
@@ -34,7 +34,8 @@ export async function postVehicle(request: Request, response: Response) : Promis
     console.error(error.message)
     return  response.json({
       status: 500,
-      message: "Error Creating vehicle try again later.",
+      // @ts-ignore
+      message: `Error Creating vehicle. ${error.toString()}`,
       data: null
     });
   }
@@ -48,7 +49,8 @@ export async function getVehicleByVehicleId(request : Request, response: Respons
   } catch(error) {
     return response.json({
       status: 500,
-      message: "Error getting vehicle try again later.",
+      // @ts-ignore
+      message: `Error getting vehicle. ${error.toString()}`,
       data: []
     })
   }
@@ -73,7 +75,8 @@ export async function updateVehicleByVehicleId(request : Request, response: Resp
   } catch(error) {
     return response.json({
       status: 500,
-      message: "Error getting vehicle try again later.",
+      // @ts-ignore
+      message: `Error updating vehicle. ${error.toString()}`,
       data: []
     })
   }
@@ -88,7 +91,7 @@ export async function deleteVehicleByVehicleId(request : Request, response: Resp
     return response.json({
       status: 500,
       // @ts-ignore
-      message: `Error getting vehicle try again later. ${error.toString()}`,
+      message: `Error getting vehicle. ${error.toString()}`,
       data: []
     })
   }

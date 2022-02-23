@@ -6,7 +6,7 @@ export async function selectVehicleByVehicleId(vehicleId: string) : Promise<Stat
     try {
         console.log("vehicleId: ",vehicleId)
         const mySqlConnection = await connect();
-        const mySqlQuery:string = 'SELECT BIN_TO_UUID(vehicleId) as vehicleId, cd   FROM vehicle WHERE vehicleId = UUID_TO_BIN(:vehicleId)'
+        const mySqlQuery:string = 'SELECT BIN_TO_UUID(vehicleId) as vehicleId FROM vehicle WHERE vehicleId = UUID_TO_BIN(:vehicleId)'
         console.log(mySqlQuery)
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {vehicleId})
         console.log("result0: ", result[0])
