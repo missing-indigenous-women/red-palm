@@ -59,9 +59,10 @@ export async function getVehicleByVehicleId(request : Request, response: Respons
 export async function updateVehicleByVehicleId(request : Request, response: Response): Promise<Response<Status>>{
   try {
     const { vehicleWomanId, vehicleColor, vehicleDescription, vehicleMake, vehicleModel, vehiclePlateNumber, vehicleYear } = request.body;
+    const     {vehicleId} = request.params
     //console.log(request.body)
     const vehicle: Vehicle = {
-      vehicleId: null,
+      vehicleId,
       vehicleWomanId,
       vehicleColor,
       vehicleDescription,
