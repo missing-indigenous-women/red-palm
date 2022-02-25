@@ -1,16 +1,16 @@
-import {Post} from "../interfaces/Post";
+import {AppUser} from "../interfaces/AppUser";
 import {Status} from "../interfaces/Status";
 import {connect} from "../database.utils";
 import {RowDataPacket} from 'mysql2';
 
-export async function selectAppUserByAppUserId(postId: string) : Promise<Post|null> {
+export async function selectAppUserByAppUserId(appUserId: string) : Promise<AppUser|null> {
     try {
-        console.log("postId", postId)
+        console.log("appUserId", appUserId)
         const mySqlConnection = await connect();
-        const mySqlQuery = 'SELECT BIN_TO_UUID(postId) AS postId,BIN_TO_UUID(postAppUserId) AS postAppUserId, BIN_TO_UUID(postWomanId) AS postWomanId, postDate, postText FROM post WHERE postId = UUID_TO_BIN (:postId)'
-        const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {postId})
-        const posts : Array<Post> = result[0] as Array<Post>
-        return posts.length === 1 ? {...posts[0]} : null;
+        const mySqlQuery = 'SELECT BIN_TO_UUID(appUserId) AS appUserId,appUserActivationToken, appUserDisplayName,appUserEmail,appUserFirstName, appUserHash, appUserLastName FROM appUser WHERE appUserId = UUID_TO_BIN (:appUserId)'
+        const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {appUserId})
+        const appUsers : Array<AppUser> = result[0] as Array<AppUser>
+        return appUsers.length === 1 ? {...appUsers[0]} : null;
 
     } catch (error) {
         throw error

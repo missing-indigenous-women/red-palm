@@ -1,7 +1,7 @@
 import {NextFunction, Request, Response} from "express";
 import {selectProfileByProfileActivationToken} from "../../utils/profile/selectProfileByProfileActivationToken";
 import {Profile} from "../../utils/interfaces/Profile";
-import {updateProfile} from "../../utils/profile/updateProfile";
+import {updateProfile} from "../../utils/profile/updateAppUser";
 import {Status} from '../../utils/interfaces/Status';
 
 

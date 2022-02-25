@@ -1,6 +1,6 @@
 import { createPool, PoolConnection } from 'mysql2/promise'
 
-// Database connection. Can use config from .env file (based on example.env) or the defaults
+// Database connection. Can use config from project.env file (based on example.env) or the defaults
 
 export async function connect (): Promise<PoolConnection> {
   const connection = await createPool({
