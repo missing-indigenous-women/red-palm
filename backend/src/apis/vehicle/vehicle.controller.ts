@@ -7,6 +7,7 @@ import {insertVehicle} from "../../utils/vehicle/insertVehicle"
 import {selectVehicleByVehicleId} from "../../utils/vehicle/selectVehicleByVehicleId";
 import {updateVehicle} from "../../utils/vehicle/updateVehicleByVehicleId";
 import {deleteVehicle} from "../../utils/vehicle/deleteVehicleByVehicleId";
+import {selectAllVehicle} from "../../utils/vehicle/selectAllVehicle";
 
 export async function postVehicle(request: Request, response: Response) : Promise<Response<Status>> {
   try {
@@ -51,6 +52,20 @@ export async function getVehicleByVehicleId(request : Request, response: Respons
       status: 500,
       // @ts-ignore
       message: `Error getting vehicle. ${error.toString()}`,
+      data: []
+    })
+  }
+}
+
+export async function getAllVehicle(request : Request, response: Response): Promise<Response<Status>>{
+  try {
+    const data  = await selectAllVehicle()
+    return response.json({status:200, message: null, data});
+  } catch(error) {
+    return response.json({
+      status: 500,
+      // @ts-ignore
+      message: `Error getting all vehicles. ${error.toString()}`,
       data: []
     })
   }
