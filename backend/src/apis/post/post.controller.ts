@@ -5,6 +5,7 @@ import {Post} from '../../utils/interfaces/Post';
 import {Status} from '../../utils/interfaces/Status';
 import {insertPost} from "../../utils/post/insertPost"
 import {selectPostByPostId} from "../../utils/post/selectPostByPostId";
+import {selectAllPost} from "../../utils/post/selectAllPost";
 export async function postPost(request: Request, response: Response) : Promise<Response<Status>> {
     try {
 
@@ -45,6 +46,19 @@ export async function getPostByPostId(request : Request, response: Response): Pr
         return response.json({
             status: 500,
             message: "Error getting status try again later.",
+            data: []
+        })
+    }
+}
+
+export async function getAllPost(request : Request, response: Response): Promise<Response<Status>>{
+    try {
+        const data  = await selectAllPost()
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        return response.json({
+            status: 500,
+            message: "Error getting post try again later.",
             data: []
         })
     }

@@ -1,15 +1,14 @@
-import {Status} from "../../utils/interfaces/Status";
 import {connect} from "../../utils/database.utils";
 import {RowDataPacket} from 'mysql2';
 
-export async function deleteVehicle(vehicleId: string) : Promise<string> {
+export async function deletePost(postId: string) : Promise<string> {
     try {
-        console.log("vehicleId: ",vehicleId)
+        console.log("postId: ",postId)
         const mySqlConnection = await connect();
-        const mySqlQuery:string = 'DELETE FROM vehicle WHERE vehicleId = UUID_TO_BIN(:vehicleId)'
+        const mySqlQuery:string = 'DELETE FROM post WHERE postId = UUID_TO_BIN(:postId)'
         console.log(mySqlQuery)
-        const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {vehicleId})
-        return "Vehicle deleted successfully"
+        const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {postId})
+        return "Post deleted successfully"
     } catch (error) {
         throw error
     }
