@@ -9,7 +9,7 @@ CREATE TABLE appUser (
     -- auto_increment tells mySQL to number them {1, 2, 3, ...}
     -- not null means the attribute is required!
                          appUserId BINARY(16) NOT NULL,
-                         appUserActivationToken CHAR(32) NOT NULL,
+                         appUserActivationToken CHAR(32) ,
                          appUserDisplayName VARCHAR(32) NOT NULL,
                          appUserEmail  VARCHAR(255) NOT NULL,
     -- to make sure duplicate data cannot exist, create a unique index

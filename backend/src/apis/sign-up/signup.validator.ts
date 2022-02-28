@@ -1,21 +1,9 @@
 import {Schema} from 'express-validator';
 
 export const signupValidator: Schema= {
-  profileAtHandle: {
-    escape: true,
-    trim: true,
-    isLength: {
-      errorMessage: 'profileAtHandle must be between seven and thirty two characters',
-      options: {min:1, max: 32 }
-    }
-  },
-  profileAvatarUrl: {
-    optional: true,
-    isURL: {
-      errorMessage: "profile avatar is malformed please upload a new image"
-    }
-  },
-  profileEmail: {
+
+
+  appUserEmail: {
     isEmail: {
       errorMessage: 'Please provide a valid email'
     },
@@ -23,30 +11,20 @@ export const signupValidator: Schema= {
     // normalizeEmail: true,
     trim: true
   },
-  profilePassword: {
+  appUserPassword: {
     isLength: {
       errorMessage: 'Password must be at least eight characters',
-      options: { min: 8 }
+      options: {min: 8}
     },
     trim: true,
     escape: true
   },
-  profilePasswordConfirm: {
+  appUserPasswordConfirm: {
     isLength: {
       errorMessage: 'confirm password must be at least eight characters',
-      options: { min: 8 }
+      options: {min: 8}
     },
     trim: true,
     escape: true
-  },
-  profilePhone: {
-    isMobilePhone: {
-      errorMessage: "please provide a valid mobile phone number"
-    },
-    optional: {
-      options: {
-        nullable: true
-      }
-    }
   }
-};
+}

@@ -1,6 +1,6 @@
-import {NextFunction, Request, Response} from 'express';
+import { Request, Response} from 'express';
 import "express-session";
-import uuid from "uuid";
+import { v4 as uuid } from 'uuid';
 import {generateJwt, validatePassword} from "../../utils/auth.utils";
 import {AppUser} from "../../utils/interfaces/AppUser";
 import {selectAppUserByAppUserEmail} from "../../utils/appUser/selectAppUserByAppUserEmail";
@@ -30,6 +30,8 @@ export async function signInController(request: Request, response: Response): Pr
                 appUserLastName
             }
 
+
+
             const signature: string = uuid();
             const authorization: string = generateJwt({
                 appUserId,
@@ -55,8 +57,11 @@ export async function signInController(request: Request, response: Response): Pr
                 // }
 
                 if (request.session) {
-                    request.session.appUser = appUser;
+                    //@ts-ignore
+                    request.session.profile = appUser;
+                    //@ts-ignore
                     request.session.jwt = authorization;
+                    //@ts-ignore
                     request.session.signature = signature;
                 }
 
