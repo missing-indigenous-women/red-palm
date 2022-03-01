@@ -8,13 +8,15 @@ import {
     deleteSocialMediaBySocialMediaId,
     getSocialMediaBySocialMediaId,
     postSocialMedia,
-    updateSocialMediaBySocialMediaId
+    updateSocialMediaBySocialMediaId,
+    getAllSocialMedia
 } from "./social-media.controller";
 
 export const socialMediaRoute = Router()
 
 
 socialMediaRoute.route("/")
+    .get(getAllSocialMedia)
     .post(asyncValidatorController(checkSchema(socialMediaValidator)),postSocialMedia)
 
 socialMediaRoute.route("/:socialMediaId")

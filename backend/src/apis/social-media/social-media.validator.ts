@@ -1,11 +1,7 @@
 import {Schema} from 'express-validator';
 
 export const socialMediaValidator : Schema = {
-    socialMediaId: {
-        isUUID: {
-            errorMessage: 'please provide a valid socialMediaId'
-        }
-    },
+
     socialMediaWomanId: {
         isUUID: {
             errorMessage: 'please provide a valid socialMediaWomanId'
