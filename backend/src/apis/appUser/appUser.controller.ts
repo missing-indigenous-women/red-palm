@@ -57,7 +57,6 @@ export async function getAppUserByAppUserId(request : Request, response: Respons
     }
 }
 
-//TODO: come back to this
 export async function updateAppUserByAppUserId(request : Request, response: Response): Promise<Response<Status>>{
     try {
         const { appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserHash, appUserLastName } = request.body;
