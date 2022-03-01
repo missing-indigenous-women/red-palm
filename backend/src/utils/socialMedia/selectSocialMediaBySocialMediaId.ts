@@ -7,7 +7,7 @@ export async function selectSocialMediaBySocialMediaId(socialMediaId: string) : 
     try {
         console.log("socialMediaId: ",socialMediaId)
         const mySqlConnection = await connect();
-        const mySqlQuery:string = 'SELECT BIN_TO_UUID(socialMediaId) as socialMediaId, BIN_TO_UUID(socialMediaWomanId) as socialMediaWomanId, socialMediaFacebook, socialMediaInstagram, socialMediaTicktock, socialMediaTwitter) FROM socialMedia WHERE socialMediaId = UUID_TO_BIN(:socialMediaId)'
+        const mySqlQuery:string = 'SELECT BIN_TO_UUID(socialMediaId) as socialMediaId, BIN_TO_UUID(socialMediaWomanId) as socialMediaWomanId, socialMediaFacebook, socialMediaInstagram, socialMediaTicktock, socialMediaTwitter FROM socialMedia WHERE socialMediaId = UUID_TO_BIN(:socialMediaId)'
         console.log(mySqlQuery)
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {socialMediaId})
         const socialMedia : Array<SocialMedia> = result[0] as Array<SocialMedia>

@@ -9,6 +9,7 @@ import {selectSocialMediaBySocialMediaId} from "../../utils/socialMedia/selectSo
 import {updateSocialMedia} from "../../utils/socialMedia/updateSocialMediaBySocialMediaId";
 import {deleteSocialMedia} from "../../utils/socialMedia/deleteSocialMediaBySocialMediaId";
 import {insertSocialMedia} from "../../utils/socialMedia/insertSocialMedia";
+import {selectAllSocialMedia} from "../../utils/socialMedia/selectAllSocialMedia";
 export async function postSocialMedia(request: Request, response: Response) : Promise<Response<Status>> {
     try {
 
@@ -34,7 +35,8 @@ export async function postSocialMedia(request: Request, response: Response) : Pr
         console.error(error.message)
         return  response.json({
             status: 500,
-            message: "Error Creating Social Media try again later.",
+            // @ts-ignore
+            message: `Error Creating Social Media ${error.toString()}`,
             data: null
         });
     }
@@ -47,7 +49,21 @@ export async function getSocialMediaBySocialMediaId(request : Request, response:
     } catch(error) {
         return response.json({
             status: 500,
-            message: "Error getting Social Media try again later.",
+            // @ts-ignore
+            message: `Error getting Social Media ${error.toString()}`,
+            data: []
+        })
+    }
+}
+export async function getAllSocialMedia(request : Request, response: Response): Promise<Response<Status>>{
+    try {
+        const data  = await selectAllSocialMedia()
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        return response.json({
+            status: 500,
+            // @ts-ignore
+            message: `Error getting All Social Media ${error.toString()}`,
             data: []
         })
     }
