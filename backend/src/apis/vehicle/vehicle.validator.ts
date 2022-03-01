@@ -3,7 +3,7 @@ import {Schema} from 'express-validator';
 export const vehicleValidator : Schema = {
     vehicleWomanId: {
         isUUID: {
-            errorMessage: 'please provide a valid vehicleId'
+            errorMessage: 'please provide a valid vehicleWomanId'
         }
     },
     vehicleColor: {

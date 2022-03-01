@@ -1,16 +1,16 @@
 import {Status} from "../../utils/interfaces/Status";
 import {connect} from "../../utils/database.utils";
-import {Vehicle} from "../interfaces/Vehicle";
+import {Post} from "../interfaces/Post";
 import {ResultSetHeader, RowDataPacket} from 'mysql2';
 
-export async function updateVehicle(vehicle: Vehicle) : Promise<string> {
+export async function updatePost(post: Post) : Promise<string> {
     try {
-        console.log("vehicleId: ",vehicle)
+        console.log("postId: ",post)
         const mySqlConnection = await connect();
-        const mySqlQuery:string = 'UPDATE vehicle SET vehicleWomanId = UUID_TO_BIN(:vehicleWomanId), vehicleColor = :vehicleColor, vehicleDescription = :vehicleDescription, vehicleMake = :vehicleMake, vehicleModel = :vehicleModel, vehiclePlateNumber = :vehiclePlateNumber, vehicleYear = :vehicleYear WHERE vehicleId = UUID_TO_BIN(:vehicleId)'
+        const mySqlQuery:string = 'UPDATE post SET postWomanId = UUID_TO_BIN(:postWomanId), postDate = :postDate, postText = :postText WHERE postId = UUID_TO_BIN(:postId)'
         console.log(mySqlQuery)
-        const [result]= await mySqlConnection.execute(mySqlQuery, vehicle) as [ResultSetHeader, RowDataPacket]
-        return "Vehicle updated successfully"
+        const [result]= await mySqlConnection.execute(mySqlQuery, post) as [ResultSetHeader, RowDataPacket]
+        return "Post updated successfully"
     } catch (error) {
         throw error
     }
