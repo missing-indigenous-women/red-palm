@@ -6,6 +6,7 @@ import {FourOhFour} from './FourOhFour'
 import React from 'react'
 import {NavBar} from "./shared/NavBar";
 import {Footer} from "./shared/Footer";
+import {InfoForm} from "./shared/InfoForm";
 
 export const App = () => (
     <>
@@ -13,6 +14,7 @@ export const App = () => (
             <NavBar/>
             <Switch>
                 <Route exact path='/' component={Home}/>
+                <Route exact path='/infoform' component={InfoForm}/>
                 <Route exact path='/map' component={Map}/>
                 <Route component={FourOhFour}/>
             </Switch>
