@@ -1,9 +1,11 @@
 import React from 'react'
 import {Container, Nav, Navbar } from "react-bootstrap";
 
+
+
 export function NavBar() {
     return (
-        <Navbar bg="light" expand="lg" className="ps-3">
+        <Navbar bg="dark" expand="lg" className="ps-3">
             <Container fluid>
                 <Navbar.Brand href="#home">Title</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
