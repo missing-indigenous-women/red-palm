@@ -1,5 +1,6 @@
 import React from "react"
 import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
+import {ReactComponent as Mel} from '../images/MelanieMarieJames.jpg';
 import {Container, Card, Row, Button, Col, Image,} from "react-bootstrap";
 
 import style from "./Home.module.css"
@@ -15,15 +16,15 @@ export const Home = () => {
             <Container fluid>
                 <Row>
                     <Col className={"p-0"}><Redpalm style={{background: "black"}}/></Col>
-                    <Col  className={"text-center"} style={{background: "black"}}><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1></Col>
+                    <Col  className={"text-center col-8"} style={{background: "black"}}><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1></Col>
                 </Row>
             </Container>
             <Container fluid>
-                <Row className="justify-content-md-between col-lg  p-5">
+                <Row className="justify-content-center mt-5">
 
-                    <Col lg={4}>
-                        <Card  style={{width: '18rem'}}>
-                            <Redpalm style={{background: "black"}}/>
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
                                 <Card.Text>
@@ -33,8 +34,8 @@ export const Home = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col lg={4}>
-                        <Card  style={{width: '18rem'}}>
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mb-5"  style={{width: '18rem'}}>
                             <Redpalm style={{background: "black"}}/>
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
@@ -45,8 +46,8 @@ export const Home = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col lg={4}>
-                        <Card  style={{width: '18rem'}}>
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mb-5 "  style={{width: '18rem'}}>
                             <Redpalm style={{background: "black"}}/>
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
