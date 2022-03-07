@@ -6,11 +6,9 @@ import {Status} from '../../utils/interfaces/Status';
 import {insertWoman} from "../../utils/woman/insertWoman"
 import {selectWomanByWomanId} from "../../utils/woman/selectWomanByWomanId";
 import {Woman} from "../../utils/interfaces/Woman";
-import {Vehicle} from "../../utils/interfaces/Vehicle";
-import {updateVehicle} from "../../utils/vehicle/updateVehicleByVehicleId";
-import {deleteVehicle} from "../../utils/vehicle/deleteVehicleByVehicleId";
 import {updateWoman} from "../../utils/woman/updateWomanByWomanId";
 import {deleteWoman} from "../../utils/woman/deleteWomanByWomanId";
+import {selectAllWoman} from "../../utils/woman/selectAllWoman";
 
 export async function postWoman(request: Request, response: Response) : Promise<Response<Status>> {
     try {
@@ -118,6 +116,20 @@ export async function deleteWomanByWomanId(request : Request, response: Response
             status: 500,
             // @ts-ignore
             message: `Error getting vehicle. ${error.toString()}`,
+            data: []
+        })
+    }
+}
+
+export async function getAllWoman(request : Request, response: Response): Promise<Response<Status>>{
+    try {
+        const data  = await selectAllWoman()
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        return response.json({
+            status: 500,
+            // @ts-ignore
+            message: `Error getting all women. ${error.toString()}`,
             data: []
         })
     }
