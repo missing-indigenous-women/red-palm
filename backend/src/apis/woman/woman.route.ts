@@ -3,15 +3,14 @@ import {Router} from "express"
 import {
     getWomanByWomanId,
     postWoman,
-    updateWomanByWomanId, deleteWomanByWomanId
+    updateWomanByWomanId,
+    deleteWomanByWomanId,
+    getAllWoman
 } from './woman.controller';
 import { asyncValidatorController } from '../../utils/controllers/asyncValidator.controller';
 import { womanValidator } from './woman.validator';
 import {checkSchema} from 'express-validator';
 import {check} from 'express-validator';
-import {vehicleValidator} from "../vehicle/vehicle.validator";
-import {deleteVehicleByVehicleId, updateVehicleByVehicleId} from "../vehicle/vehicle.controller";
-
 
 export const womanRoute = Router()
 
@@ -27,4 +26,5 @@ womanRoute.route("/:womanId")
 
 
 womanRoute.route("/")
+    .get(getAllWoman)
     .post(asyncValidatorController(checkSchema(womanValidator)), postWoman)
