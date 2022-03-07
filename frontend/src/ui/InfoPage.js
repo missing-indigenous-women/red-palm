@@ -61,7 +61,7 @@ export const InfoPage = () => {
     <Button>SUBMIT NEW POST</Button>
 </Card>
                 <div className="mt-3" >
-                <Button className={'m-2'}>Submit new info</Button><Button>Close</Button>
+                <Button className={'m-2'}>Submit new missing person</Button><Button>Close</Button>
                 </div>
         </Col>
     </Row>
