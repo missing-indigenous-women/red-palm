@@ -18,10 +18,10 @@ export const Home = () => {
                 </Row>
             </Container>
             <Container fluid className={style.Background} >
-                <Row className="justify-content-md-between col-lg">
+                <Row className="justify-content-md-between col-lg g-3">
 
                     <Col lg={4}>
-                        <Card   style={{width: '18rem'}}>
+                        <Card className={style.Card1} style={{width: '18rem'}}>
                             <Redpalm style={{background: "black"}}/>
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
@@ -33,7 +33,7 @@ export const Home = () => {
                         </Card>
                     </Col>
                     <Col lg={4}>
-                        <Card  style={{width: '18rem'}}>
+                        <Card className={style.Card2} style={{width: '18rem'}}>
                             <Redpalm style={{background: "black"}}/>
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
@@ -45,7 +45,7 @@ export const Home = () => {
                         </Card>
                     </Col>
                     <Col lg={4}>
-                        <Card  style={{width: '18rem'}}>
+                        <Card className={style.Card3} style={{width: '18rem'}}>
                             <Redpalm style={{background: "black"}}/>
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
