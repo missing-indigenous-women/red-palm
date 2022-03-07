@@ -8,6 +8,7 @@ import style from "./Home.module.css"
 export const Home = () => {
     return (
         <>
+            <Container fluid className={style.Background}>
             <Container>
                 <Image src="native.jpg" className={style.MagnifyingGLass}/>
             </Container>
@@ -17,11 +18,11 @@ export const Home = () => {
                     <Col  className={"text-center"} style={{background: "black"}}><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1></Col>
                 </Row>
             </Container>
-            <Container fluid className={style.Background} >
-                <Row className="justify-content-md-between col-lg g-3">
+            <Container fluid>
+                <Row className="justify-content-md-between col-lg  p-5">
 
                     <Col lg={4}>
-                        <Card className={style.Card1} style={{width: '18rem'}}>
+                        <Card  style={{width: '18rem'}}>
                             <Redpalm style={{background: "black"}}/>
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
@@ -33,7 +34,7 @@ export const Home = () => {
                         </Card>
                     </Col>
                     <Col lg={4}>
-                        <Card className={style.Card2} style={{width: '18rem'}}>
+                        <Card  style={{width: '18rem'}}>
                             <Redpalm style={{background: "black"}}/>
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
@@ -45,7 +46,7 @@ export const Home = () => {
                         </Card>
                     </Col>
                     <Col lg={4}>
-                        <Card className={style.Card3} style={{width: '18rem'}}>
+                        <Card  style={{width: '18rem'}}>
                             <Redpalm style={{background: "black"}}/>
                             <Card.Body style={{background: "red"}}>
                                 <Card.Title>Card Title</Card.Title>
@@ -58,6 +59,7 @@ export const Home = () => {
                     </Col>
 
                 </Row>
+            </Container>
             </Container>
         </>
     )

@@ -6,6 +6,7 @@
         background-position: center;
         background-attachment: fixed;
         background-position-y: center;
+        background-position-x: center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
