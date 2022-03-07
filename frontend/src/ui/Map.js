@@ -37,7 +37,7 @@ export const Map = () => {
                 </Form>
             </Container>
             <Container className="text-center pb-5">
-    `   `        <Image fluid src={"https://via.placeholder.com/1000x800"} alt={"map of missing women"}/>
+               <Image fluid src={"https://via.placeholder.com/1000x800"} alt={"map of missing women"}/>
             </Container>
             <Container className={'pb-5'}>
                 {/*{women.map(woman => <MissingWoman woman={woman} />)}*/}
