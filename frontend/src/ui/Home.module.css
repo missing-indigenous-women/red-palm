@@ -7,16 +7,16 @@
         background-attachment: fixed;
         background-position-y: center;
         background-position-x: center;
+        background-size: cover;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-        background-size: cover;
-
     }
 
 
 .Redpalm {
     background-color: black;
+    image-resolution: normal;
 }
 
 .Welcome {
@@ -39,8 +39,3 @@
     right: 10em;
 }
 
-.MagnifyingGLass {
-    width: 20em;
-    height: 15em;
-
-}
