@@ -1,10 +1,13 @@
-.Background {
-    background-image: url( "../images/native.jpg");
-    background-repeat: no-repeat;
-    width: 1280px;
-    height: 1280px;
 
-}
+
+    .Background {
+        background-image: url("../images/native2.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+
+    }
+
 
 .Redpalm {
     background-color: black;
@@ -26,4 +29,10 @@
 .Card3 {
     top: 20em;
     right: 10em;
+}
+
+.MagnifyingGLass {
+    width: 20em;
+    height: 15em;
+
 }
