@@ -7,18 +7,20 @@ import React from 'react'
 import {NavBar} from "./shared/NavBar";
 import {Footer} from "./shared/Footer";
 import {InfoForm} from "./shared/InfoForm";
+import {Provider} from "react-redux";
 
-export const App = () => (
+export const App = (store) => (
     <>
-        <BrowserRouter>
-            <NavBar/>
-            <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route exact path='/infoform' component={InfoForm}/>
-                <Route exact path='/map' component={Map}/>
-                <Route component={FourOhFour}/>
-            </Switch>
-            <Footer/>
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <NavBar/>
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route exact path='/map' component={Map}/>
+                    <Route component={FourOhFour}/>
+                </Switch>
+                <Footer/>
+            </BrowserRouter>
+        </Provider>
     </>
 )

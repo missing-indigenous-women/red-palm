@@ -2,7 +2,7 @@ import React from "react"
 import {Col, Container, FormControl, InputGroup, Row, Image, Button} from "react-bootstrap";
 import flower from "../images/flower.jpg"
 
-
+//<input type="file" id="myFile" 
 export const InfoForm = () => {
     return (
         <>
