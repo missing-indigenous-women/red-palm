@@ -61,7 +61,7 @@ export const Home = () => {
 
                 </Row>
                 <Row>
-                    <Col className="d-flex justify-content-center">
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
                         <Carousel style={{width: '18rem'}}>
                             <Carousel.Item interval={5000} >
 
@@ -72,8 +72,8 @@ export const Home = () => {
 
                                 />
                                 <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <h3 className="text-danger">MelanieMarieJames</h3>
+                                    <p className="text-danger">Missing since 1599.</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item interval={5000}>
@@ -100,7 +100,7 @@ export const Home = () => {
                             </Carousel.Item>
                         </Carousel>
                     </Col>
-                    <Col className="d-flex justify-content-center">
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
                         <Carousel style={{width: '18rem'}}>
                             <Carousel.Item interval={5000} >
 
@@ -141,7 +141,7 @@ export const Home = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col className="d-flex justify-content-center">
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
                         <Carousel style={{width: '18rem'}}>
                             <Carousel.Item interval={5000} >
 
@@ -180,7 +180,7 @@ export const Home = () => {
                             </Carousel.Item>
                         </Carousel>
                     </Col>
-                    <Col className="d-flex justify-content-center">
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
                         <Carousel style={{width: '18rem'}}>
                             <Carousel.Item interval={5000} >
 
