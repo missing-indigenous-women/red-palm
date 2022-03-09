@@ -24,7 +24,7 @@ export const Map = () => {
      * E.g when a network request to an api has completed and there is new data to display on the dom.
      */
     useEffect(sideEffects, [dispatch])
-    console.log(women)
+    //console.log(women)
     return (
         <>
             <Container className={'py-4'}>
