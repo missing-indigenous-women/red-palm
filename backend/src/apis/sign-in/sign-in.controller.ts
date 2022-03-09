@@ -58,7 +58,7 @@ export async function signInController(request: Request, response: Response): Pr
 
                 if (request.session) {
                     //@ts-ignore
-                    request.session.profile = appUser;
+                    request.session.appUser = appUser;
                     //@ts-ignore
                     request.session.jwt = authorization;
                     //@ts-ignore
