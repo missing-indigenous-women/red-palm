@@ -29,7 +29,7 @@ function redPalmDataDownloader() : Promise<any> {
 
 	async function downloadUsers() {
 		try {
-			let buffer = fs.readFileSync('../MissingPersonsDataNewMexico.json')
+			let buffer = fs.readFileSync('./MissingPersonsDataNewMexico.json')
 			const data = buffer.toJSON()
 			const results = JSON.parse(buffer.toString())
 			console.log("results", results)
