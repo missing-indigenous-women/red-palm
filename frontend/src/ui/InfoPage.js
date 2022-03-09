@@ -1,20 +1,36 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Container, Card, Button, Image, Row, Col} from "react-bootstrap";
 import "./InfosPage.css"
+import style from "./Home.module.css";
+// import {useDispatch, useSelector} from "react-redux";
+// import {fetchAllWomen} from "../store/women";
+import {Link} from "react-router-dom";
+
+
 
 
 
 
 
 export const InfoPage = () => {
-   // width: ${(Dimensions.get('window').width)}px;
-    return (
-        <>
-            <Container style={{width: 400}} >
-                <Row>
-                    <Col>
 
-                <Image className={" mx-auto"} fluid roundedCircle src="https://via.placeholder.com/150"></Image>
+
+
+
+
+
+    return (
+
+
+
+        <>
+<Container fluid className={style.Background}>
+            <Container   >
+                <Row>
+                    <Col >
+
+
+                <Image className={" mx-auto"} fluid roundedCircle src="https://via.placeholder.com/150"/>
                 <Card className={'border border-dark m-2'}>
 
                     <Card.Title > name:</Card.Title>
@@ -41,10 +57,10 @@ export const InfoPage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container className={'border border-dark mt-3'} style={{width: 400, height: 200}}>
+            <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
                 <Row>
                     <Col>
-                        <div className={" border-dark border-bottom container-fluid"  } >
+                        <div className={" border-dark border-bottom "  } >
                         <h1>POSTS</h1>
                         </div>
 
@@ -52,7 +68,7 @@ export const InfoPage = () => {
                 </Row>
             </Container>
 
-<Container style={{width: 400}} >
+<Container style={{width: 300}} >
     <Row>
         <Col>
             <Card className={'border border-dark mt-3'}>
@@ -60,13 +76,18 @@ export const InfoPage = () => {
     <textarea> </textarea>
     <Button>SUBMIT NEW POST</Button>
 </Card>
-                <div className="mt-3" >
-                <Button className={'m-2'}>Submit new missing person</Button><Button>Close</Button>
-                </div>
-        </Col>
-    </Row>
-</Container>
 
+        </Col>
+
+    </Row>
+
+</Container>
+    <div className="mt-3  justify-content-center" >
+        <Button className={'m-2'}>Submit new missing person</Button><Link to="/Map" className="btn btn-primary">Close</Link>
+
+    </div>
+
+</Container>
         </>
     )
 }
