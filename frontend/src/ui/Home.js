@@ -4,6 +4,7 @@ import Mel from '../images/MelanieMarieJames.jpg';
 import {Container, Card, Row, Button, Col, Image, Carousel, } from "react-bootstrap";
 import Graph from '../images/graph.png';
 import Gabby from '../images/gabbyPetito.png';
+import Tribes from '../images/tribeMap.png'
 import style from "./Home.module.css"
 
 /*import {useDispatch, useSelector} from "react-redux";
@@ -44,7 +45,7 @@ export const Home = () => {
                                     This is the Justice Department's unsettling graph of untold stories.
                                     A graph that doesn't get the attention it deserves and lacking data from state,
                                     county, and tribal governments. Due to these facts the reality of the trend is
-                                    higher than what you see here. Those that know about this data has start a movement
+                                    higher than what you see here. Those that know about this data have started a movement
                                     called #MMIW which stands for Missing Murdered Indigenous Women.
                                 </Card.Text>
                             </Card.Body>
@@ -61,7 +62,7 @@ export const Home = () => {
                                     national interest and an unofficial campaign to find Gabby. How was she found so
                                     quick? Maybe, it was partly due to the power of the Interwebs and People with a
                                     thirst for real life crime and drama, with skills to become what is known as an
-                                    Internet Slueth.
+                                    Internet Sleuth.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -75,47 +76,8 @@ export const Home = () => {
                 </Row>
             </Container>
             <Container>
-                <Row className="justify-content-center mt-5">
 
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Card.Img variant="top" src={Graph}/>
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Map with missing person's last known location
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mb-5"  style={{width: '18rem'}}>
-                            <Redpalm style={{background: "black"}}/>
-                            <Card.Body style={{background: "red"}}>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Missing person's case info
-                                </Card.Text>
-                                <Button variant="primary">Info</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mb-5 "  style={{width: '18rem'}}>
-                            <Redpalm style={{background: "black"}}/>
-                            <Card.Body style={{background: "red"}}>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    New information that you or anyone looking into the case might have
-                                </Card.Text>
-                                <Button variant="primary">Post info</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-
-                </Row>
-                <Rowgti >
+                <Row>
                     gti <Col className="d-flex justify-content-center mt-5 mb-5">
                         <Carousel style={{width: '18rem'}}>
                             <Carousel.Item interval={5000} >
@@ -194,7 +156,7 @@ export const Home = () => {
                             </Carousel.Item>
                         </Carousel>
                     </Col>
-                </Rowgti>
+                </Row>
                 <Row>
                     <Col className="d-flex justify-content-center mt-5 mb-5">
                         <Carousel style={{width: '18rem'}}>
@@ -273,6 +235,56 @@ export const Home = () => {
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col  className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                            <Card.Img variant="top" src={Graph}/>
+                            <Card.Body>
+                                <Card.Title>Card Title</Card.Title>
+                                <Card.Text>
+                                    Map with missing person's last known location
+                                </Card.Text>
+                                <Button variant="primary">Map</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col  className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                            <Card.Img variant="top" src={Graph}/>
+                            <Card.Body>
+                                <Card.Title>Card Title</Card.Title>
+                                <Card.Text>
+                                    Map with missing person's last known location
+                                </Card.Text>
+                                <Button variant="primary">Map</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col  className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                            <Card.Img variant="top" src={Graph}/>
+                            <Card.Body>
+                                <Card.Title>Card Title</Card.Title>
+                                <Card.Text>
+                                    Map with missing person's last known location
+                                </Card.Text>
+                                <Button variant="primary">Map</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col  className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                            <Card.Img variant="top" src={Graph}/>
+                            <Card.Body>
+                                <Card.Title>Card Title</Card.Title>
+                                <Card.Text>
+                                    Map with missing person's last known location
+                                </Card.Text>
+                                <Button variant="primary">Map</Button>
+                            </Card.Body>
+                        </Card>
                     </Col>
                 </Row>
             </Container>
