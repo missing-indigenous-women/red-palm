@@ -1,17 +1,72 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
 import Mel from '../images/MelanieMarieJames.jpg';
 import {Container, Card, Row, Button, Col, Image, Carousel, } from "react-bootstrap";
-
+import Graph from '../images/graph.png';
+import Gabby from '../images/gabbyPetito.png';
 import style from "./Home.module.css"
+
+/*import {useDispatch, useSelector} from "react-redux";
+import {fetchAllWomen} from "../store/women"; */
 
 
 export const Home = () => {
+  /*  // returns the users store from Redux and assigns it to the users variable
+    const women = useSelector(state => state.women ? state.women : []);
+
+    // assigns useDispatch reference to the dispatch variable for later use.
+    const dispatch = useDispatch();
+
+    // Define the side effects that will occur in the application.
+    // E.G code that handles dispatches to redux, API requests, or timers.
+    function sideEffects() {
+        // The dispatch function takes actions as arguments to make changes to the store/redux.
+        dispatch(fetchAllWomen())
+    }
+
+    /**
+     * Pass both sideEffects and sideEffectInputs to useEffect.
+     * useEffect is what handles rerendering of components when sideEffects resolve.
+     * E.g when a network request to an api has completed and there is new data to display on the dom.
+
+    useEffect(sideEffects, [dispatch])*/
     return (
         <>
             <Container fluid className={style.Background}>
             <Container>
-                <img src={require("../images/magnifyingGlass.png")}/>
+                <Row>
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mt-5"  style={{width: '36rem'}}>
+                            <Card.Img variant="top" src={Graph}/>
+                            <Card.Body>
+                                <Card.Title> Missing? Murdered? lost? Alive? </Card.Title>
+                                <Card.Text>
+                                    This is the Justice Department's unsettling graph of untold stories.
+                                    A graph that doesn't get the attention it deserves and lacking data from state,
+                                    county, and tribal governments. Due to these facts the reality of the trend is
+                                    higher than what you see here. Those that know about this data has start a movement
+                                    called #MMIW which stands for Missing Murdered Indigenous Women.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col className="d-flex justify-content-center mt-5 mb-5">
+                        <Card className="mt-5 mt-5"  style={{width: '36rem'}}>
+                            <Card.Img variant="top" src={Gabby}/>
+                            <Card.Body>
+                                <Card.Title>Gabby Petito</Card.Title>
+                                <Card.Text>
+                                    In August of 2021 Gabby went missing. September 19, 2021 is the date human remains
+                                    consistent with her description was found. The disappearance of Gabby sparked a
+                                    national interest and an unofficial campaign to find Gabby. How was she found so
+                                    quick? Maybe, it was partly due to the power of the Interwebs and People with a
+                                    thirst for real life crime and drama, with skills to become what is known as an
+                                    Internet Slueth.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
             </Container>
             <Container fluid>
                 <Row>
@@ -19,13 +74,13 @@ export const Home = () => {
                     <Col  className={"text-center col-8"} style={{background: "black"}}><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1></Col>
                 </Row>
             </Container>
-            <Container fluid>
+            <Container>
                 <Row className="justify-content-center mt-5">
 
                     <Col className="d-flex justify-content-center mt-5 mb-5">
                         <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-
-                            <Card.Body style={{background: "red"}}>
+                            <Card.Img variant="top" src={Graph}/>
+                            <Card.Body>
                                 <Card.Title>Card Title</Card.Title>
                                 <Card.Text>
                                     Map with missing person's last known location
@@ -67,7 +122,7 @@ export const Home = () => {
 
                                 <img
                                     className="d-block w-100 "
-                                    src={Mel}
+                                    src=""
                                     alt="First slide"
 
                                 />
