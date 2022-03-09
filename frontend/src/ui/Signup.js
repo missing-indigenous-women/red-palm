@@ -1,7 +1,8 @@
 import React from "react";
-import {Container, FormControl, Image, InputGroup} from "react-bootstrap";
-import flower from "./images/flower.jpg";
+import {Button, Col, Container, FormControl, Image, InputGroup, Row} from "react-bootstrap";
 
+ import style from "./InfosPage.module.css"
+import {Link} from "react-router-dom";
 
 
 
@@ -12,9 +13,13 @@ import flower from "./images/flower.jpg";
 export const Signup = () => {
     return(
         <>
-<Container className={'mx-auto'}>
+            <Container fluid >
+<Container  >
+    <Row>
+        <Col className='mb-xl-5'>
 
     <h1>Please Create A User Profile</h1>
+            <p> Already A User? Log-in  <Link to="/Signin"> here </Link> </p>
 
             <InputGroup className="mb-3">
                 <InputGroup.Text>Password:</InputGroup.Text>
@@ -43,8 +48,12 @@ export const Signup = () => {
                 <InputGroup.Text>Password Confirm:</InputGroup.Text>
                 <FormControl aria-label="Nick-Name"/>
             </InputGroup>
-</Container>
 
+            <Button>Submit</Button>  <Link to="/Map" className="btn btn-primary">Cancel </Link>
+        </Col>
+    </Row>
+</Container>
+            </Container>
         </>
     )
 }

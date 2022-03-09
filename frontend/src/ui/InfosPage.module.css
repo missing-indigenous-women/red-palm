@@ -1,11 +1,7 @@
-p {
-    text-decoration: underline;
-    text-underline: black;
-    color: black;
-}
 
-.Background{
-    background-image: url((../images/Rio_Grande_in_Big_Bend.jpg));
+.Background111 {
+
+    background-image: url('../images/Rio_Grande_in_Big_Bend.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -16,3 +12,11 @@ p {
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+
+
+p {
+     text-decoration: underline;
+     text-underline: black;
+     color: black;
+    font-weight: bold;
+ }

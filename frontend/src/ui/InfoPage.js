@@ -1,15 +1,10 @@
 import React, {useEffect} from "react";
 import {Container, Card, Button, Image, Row, Col} from "react-bootstrap";
-import "./InfosPage.css"
-import style from "./Home.module.css";
+// import style from "./InfosPage.module.css";
 // import {useDispatch, useSelector} from "react-redux";
 // import {fetchAllWomen} from "../store/women";
 import {Link} from "react-router-dom";
-
-
-
-
-
+import style from "./Home.module.css"
 
 
 export const InfoPage = () => {
@@ -25,9 +20,10 @@ export const InfoPage = () => {
 
         <>
 <Container fluid className={style.Background}>
-            <Container   >
-                <Row>
-                    <Col >
+            <Container>
+
+               <Row>
+                    <Col>
 
 
                 <Image className={" mx-auto"} fluid roundedCircle src="https://via.placeholder.com/150"/>
@@ -55,8 +51,9 @@ export const InfoPage = () => {
                     </div>
                 </Card>
                     </Col>
-                </Row>
+               </Row>
             </Container>
+
             <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
                 <Row>
                     <Col>

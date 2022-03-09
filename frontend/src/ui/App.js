@@ -10,6 +10,7 @@ import {InfoForm} from "./shared/InfoForm";
 import {Provider} from "react-redux";
 import {InfoPage} from "./InfoPage";
 import {Signup} from "./Signup";
+import {Signin} from "./Signin";
 
 export const App = (store) => (
     <>
@@ -22,6 +23,7 @@ export const App = (store) => (
                     <Route exact path='/InfoPage' component={InfoPage}/>
                     <Route exact path='/InfoForm' component={InfoForm}/>
                     <Route exact path='/Signup' component={Signup}/>
+                    <Route exact path='/Signin' component={Signin} />
                     <Route component={FourOhFour}/>
                 </Switch>
                 <Footer/>
