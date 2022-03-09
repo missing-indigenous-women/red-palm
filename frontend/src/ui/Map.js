@@ -24,6 +24,7 @@ export const Map = () => {
      * E.g when a network request to an api has completed and there is new data to display on the dom.
      */
     useEffect(sideEffects, [dispatch])
+
     console.log(women)
     return (
         <>
@@ -37,7 +38,7 @@ export const Map = () => {
                 </Form>
             </Container>
             <Container className="text-center pb-5">
-               <Image fluid src={"https://via.placeholder.com/1000x800"} alt={"map of missing women"}/>
+    `   `        <Image fluid src={"https://via.placeholder.com/1000x800"} alt={"map of missing women"}/>
             </Container>
             <Container className={'pb-5'}>
                 {/*{women.map(woman => <MissingWoman woman={woman} />)}*/}
