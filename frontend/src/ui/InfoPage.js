@@ -25,7 +25,7 @@ export const InfoPage = ({match}) => {
 
     const woman = useSelector(state => (
         state.women
-            ? state.women
+            ? state.women.find( woman => woman.womanId === match.params.womanId)
             : null
     ));
 
@@ -34,31 +34,34 @@ export const InfoPage = ({match}) => {
             <Container fluid className={style.Background}>
                 <Container>
                     <Row>
-                        <Col>
-                            <Image className={" mx-auto"} fluid roundedCircle src={woman.womanPhoto1}/>
-                            <Card className={'border border-dark m-2'}>
+                        {woman && <>
+                            <Col>
+                                <Image className={" mx-auto"} fluid roundedCircle src={woman.womanPhoto1}/>
+                                <Card className={'border border-dark m-2'}>
 
-                                <Card.Title></Card.Title>
-                                <div className={style.Info}>
-                                    <p>Aliases: {woman.womanAliases}</p>
-                                    <p>DateOfDisappearance: {woman.womanDateOfDisappearance}</p>
-                                    <p>DateOfBirth: {woman.womanDateOfBirth}</p>
-                                    <p>EyeColor:m {woman.womanEyeColor}</p>
-                                    <p>FavoriteHangoutPlaces: {woman.womanFavoriteHangoutPlaces}</p>
-                                    <p>FirstName: {woman.womanFirstName}</p>
-                                    <p>HairColor: {woman.womanHairColor}</p>
-                                    <p>Height: {woman.womanHeight}</p>
-                                    <p>HobbiesAndInterests: {woman.womanHobbiesAndInterests}</p>
-                                    <p>IdentifyingMarks: {woman.womanIdentifyingMarks}</p>
-                                    <p>LastName: {woman.womanLastName}</p>
-                                    <p>LastLocation: {woman.womanLastLocation}</p>
-                                    <p>Latitude: {woman.womanLatitude}</p>
-                                    <p> Longitude: {woman.womanLongitude}</p>
-                                    <p>Tribe: {woman.womanTribe}</p>
-                                    <p>Weight: {woman.womanWeight}</p>
-                                </div>
-                            </Card>
-                        </Col>
+                                    <Card.Title></Card.Title>
+                                    <div className={style.Info}>
+                                        <p>Aliases: {woman.womanAliases}</p>
+                                        <p>DateOfDisappearance: {woman.womanDateOfDisappearance}</p>
+                                        <p>DateOfBirth: {woman.womanDateOfBirth}</p>
+                                        <p>EyeColor:m {woman.womanEyeColor}</p>
+                                        <p>FavoriteHangoutPlaces: {woman.womanFavoriteHangoutPlaces}</p>
+                                        <p>FirstName: {woman.womanFirstName}</p>
+                                        <p>HairColor: {woman.womanHairColor}</p>
+                                        <p>Height: {woman.womanHeight}</p>
+                                        <p>HobbiesAndInterests: {woman.womanHobbiesAndInterests}</p>
+                                        <p>IdentifyingMarks: {woman.womanIdentifyingMarks}</p>
+                                        <p>LastName: {woman.womanLastName}</p>
+                                        <p>LastLocation: {woman.womanLastLocation}</p>
+                                        <p>Latitude: {woman.womanLatitude}</p>
+                                        <p> Longitude: {woman.womanLongitude}</p>
+                                        <p>Tribe: {woman.womanTribe}</p>
+                                        <p>Weight: {woman.womanWeight}</p>
+                                    </div>
+                                </Card>
+                            </Col>
+
+                        </>}
                     </Row>
                 </Container>
 
@@ -85,7 +88,7 @@ export const InfoPage = ({match}) => {
                 </Container>
 
                 <div className="mt-3 justify-content-center">
-                    <Button className={'m-2'}>Submit new missing person</Button><Link to="/map"
+                    <Button className={'m-2'}>Submit new missing person</Button>{' '} <Link to="/map"
                                                                                       className="btn btn-primary">Close</Link>
                 </div>
             </Container>

@@ -11,7 +11,7 @@ const slice = createSlice({
       return action.payload
     },
     getWomanByWomanId: (woman, action) => {
-       return action.payload
+      woman.push(action.payload)
     }
   }
 })
@@ -23,11 +23,17 @@ export const fetchAllWomen = () => async dispatch => {
   dispatch(getAllWomen(data))
 }
 
-export const fetchWomanByWomanId = (id) => async dispatch => {
+export const fetchWomanByWomanId = (id) => async (dispatch, getState) => {
   //backend route
-  const {data} = await httpConfig(`/apis/woman/${id}`);
-  dispatch(getWomanByWomanId(data))
-}
+  const woman = getState().women.find(element => element.womanId === id  )
+  if (woman === undefined){
+    const {data} = await httpConfig(`/apis/woman/${id}`);
+    dispatch(getWomanByWomanId(data))
+  }
+
+
+  }
+
 
 // export const fetchAllWomenAndAppUsers = () => async (dispatch, getState) => {
 //   await dispatch(fetchAllWomen())
