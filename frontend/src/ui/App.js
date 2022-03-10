@@ -23,9 +23,8 @@ export const App = (store) => (
                     <Route exact path='/map' component={Map}/>
                     <Route exact path='/InfoPage' component={InfoPage}/>
                     <Route exact path='/InfoForm' component={InfoForm}/>
-                    <Route exact path='/Signup' component={Signup}/>
-                    <Route exact path='/Signin' component={Signin} />
-                    <Route exact path='/SignUpFormContent' component={SignUpFormContent}/>
+                    <Route exact path='/sign-up' component={Signup}/>
+                    <Route exact path='/sign-in' component={Signin} />
                     <Route component={FourOhFour}/>
                 </Switch>
                 <Footer/>

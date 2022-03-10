@@ -2,7 +2,28 @@ import {Schema} from 'express-validator';
 
 export const signupValidator: Schema= {
 
+  appUserLastName: {
+    isLength: {
+      errorMessage: 'please enter last name',
+    },
+    trim: true,
+    escape: true
+  },
 
+  appUserFirstName: {
+    isLength: {
+      errorMessage: 'please enter first name',
+    },
+    trim: true,
+    escape: true
+  },
+  appUserDisplayName: {
+    isLength: {
+      errorMessage: 'please enter display name ',
+    },
+    trim: true,
+    escape: true
+  },
   appUserEmail: {
     isEmail: {
       errorMessage: 'Please provide a valid email'
