@@ -38,8 +38,8 @@ export const InfoPage = ({match}) => {
                             <Image className={" mx-auto"} fluid roundedCircle src={woman.womanPhoto1}/>
                             <Card className={'border border-dark m-2'}>
 
-                                <Card.Title>name:</Card.Title>
-                                <div className={'m-2'}>
+                                <Card.Title></Card.Title>
+                                <div className={style.Info}>
                                     <p>Aliases: {woman.womanAliases}</p>
                                     <p>DateOfDisappearance: {woman.womanDateOfDisappearance}</p>
                                     <p>DateOfBirth: {woman.womanDateOfBirth}</p>
