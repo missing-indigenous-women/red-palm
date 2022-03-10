@@ -8,7 +8,7 @@ export function NavBar() {
     return (
         <Navbar bg="dark" expand="lg" className="ps-3">
             <Container fluid>
-                <Navbar.Brand href="#home"><Col className='mt-3'><Redpalm  style={{height:70, width:70, background: "black"}}/> </Col></Navbar.Brand>
+                <Navbar.Brand href="/"><Col className='mt-3'><Redpalm  style={{height:70, width:70, background: "black"}}/> </Col></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
