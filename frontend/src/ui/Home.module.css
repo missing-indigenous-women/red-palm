@@ -1,6 +1,4 @@
-@import "react-slideshow-image/dist/styles.css";
-
-    .Background {
+.Background {
         background-image: url(../images/native2.jpg);
         background-repeat: no-repeat;
         background-position: center;

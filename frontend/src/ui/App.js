@@ -21,7 +21,7 @@ export const App = (store) => (
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/map' component={Map}/>
-                    <Route exact path='/InfoPage' component={InfoPage}/>
+                    <Route exact path='/InfoPage/:womanId' component={InfoPage} womanId=":womanId"/>
                     <Route exact path='/InfoForm' component={InfoForm}/>
                     <Route exact path='/sign-up' component={Signup}/>
                     <Route exact path='/sign-in' component={Signin} />

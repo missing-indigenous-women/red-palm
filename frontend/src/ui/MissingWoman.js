@@ -1,10 +1,11 @@
 import React from 'react'
 import {Card, Col, Image, Row} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 export const MissingWoman = ({woman}) => {
 
     const {
-        // womanId,
+        womanId,
         womanAliases ,
         womanDateOfDisappearance,
         // womanDateOfBirth,
@@ -19,7 +20,7 @@ export const MissingWoman = ({woman}) => {
         womanLastLocation ,
         // womanLatitude,
         // womanLongitude ,
-        // womanPhoto1,
+        womanPhoto1,
         womanTribe ,
         // womanWeight
     } = woman
@@ -32,7 +33,7 @@ export const MissingWoman = ({woman}) => {
                     <Card.Title>{womanFirstName} {womanLastName}</Card.Title>
                     <Row>
                         <Col md={2}>
-                            <Image fluid roundedCircle src={"https://via.placeholder.com/100"} alt={"missing person"}/>
+                            <Image fluid roundedCircle src={womanPhoto1} alt={"missing person"}/>
                         </Col>
                         <Col md={10}>
                             <Card.Text>
@@ -54,6 +55,9 @@ export const MissingWoman = ({woman}) => {
                                         <p>{womanTribe}</p>
                                     </Col>
                                 </Row>
+                                <Link to={`/InfoPage/${womanId}`} state={{ woman: woman }}>
+                                    Details
+                                </Link>
                             </Card.Text>
                         </Col>
                     </Row>
