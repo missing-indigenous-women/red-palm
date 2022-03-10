@@ -169,7 +169,7 @@ function SignUpFormContent(props) {
                                 />
                             </InputGroup>
 
-                            <Button type={"submit"}>Submit</Button> <Link to="/Map" className="btn btn-primary">Cancel </Link>
+                            <Button type={"submit"}>Submit</Button> <Link to="/MapPage" className="btn btn-primary">Cancel </Link>
                         </Col>
                     </Row>
                 </Container>

@@ -1,7 +1,7 @@
 import {BrowserRouter} from 'react-router-dom'
 import {Route, Switch} from 'react-router'
 import {Home} from './Home'
-import {Map} from './Map'
+import {MapPage} from './MapPage'
 import {FourOhFour} from './FourOhFour'
 import React from 'react'
 import {NavBar} from "./shared/NavBar";
@@ -11,7 +11,7 @@ import {Provider} from "react-redux";
 import {InfoPage} from "./InfoPage";
 import {Signup} from "./Signup";
 import {Signin} from "./Signin";
-
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 export const App = (store) => (
     <>
@@ -20,7 +20,7 @@ export const App = (store) => (
                 <NavBar/>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route exact path='/map' component={Map}/>
+                    <Route exact path='/map' component={MapPage}/>
                     <Route exact path='/InfoPage/:womanId' component={InfoPage} womanId=":womanId"/>
                     <Route exact path='/InfoForm' component={InfoForm}/>
                     <Route exact path='/sign-up' component={Signup}/>
