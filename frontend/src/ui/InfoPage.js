@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Container, Card, Button, Image, Row, Col} from "react-bootstrap";
+import {Container, Card, Button, Image, Row, Col, InputGroup} from "react-bootstrap";
 // import style from "./InfosPage.module.css";
 import {Link} from "react-router-dom";
 import style from "./Home.module.css"
@@ -68,21 +68,28 @@ export const InfoPage = ({match}) => {
                 <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
                     <Row>
                         <Col>
+
                             <div className={" border-dark border-bottom "}>
                                 <h1>POSTS</h1>
                             </div>
+
                         </Col>
                     </Row>
                 </Container>
 
                 <Container style={{width: 300}}>
+
+
+
                     <Row>
                         <Col>
-                            <Card className={'border border-dark mt-3'}>
+                            <form >
+                            <Card className={'border border-dark mt-3'} >
                                 <Card.Title>NEW POST</Card.Title>
-                                <textarea> </textarea>
-                                <Button>SUBMIT NEW POST</Button>
+                                <textarea>  </textarea>
+                                <Button type={"submit"}>SUBMIT NEW POST</Button>
                             </Card>
+                            </form>
                         </Col>
                     </Row>
                 </Container>
