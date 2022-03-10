@@ -38,3 +38,12 @@
     right: 10em;
 }
 
+
+.Info{
+    text-decoration: underline;
+    text-underline: black;
+    color: black;
+    font-weight: bold;
+    margin: 4px;
+    padding: 4px;
+}

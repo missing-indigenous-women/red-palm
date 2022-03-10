@@ -91,7 +91,7 @@ function SignUpFormContent(props) {
                         <Col className='mb-xl-5'>
 
                             <h1>Please Create A User Profile</h1>
-                            <p> Already A User? Log-in <Link to="/Signin"> here </Link></p>
+                            <p> Already A User? Log-in <Link to="/sign-in"> here </Link></p>
 
                             <InputGroup className="mb-3">
 

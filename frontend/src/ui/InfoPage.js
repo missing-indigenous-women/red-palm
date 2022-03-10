@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {Container, Card, Button, Image, Row, Col} from "react-bootstrap";
-// import style from "./InfosPage.module.css";
+ //import style from "./InfosPage.module.css";
 // import {useDispatch, useSelector} from "react-redux";
 // import {fetchAllWomen} from "../store/women";
 import {Link} from "react-router-dom";
@@ -23,14 +23,14 @@ export const InfoPage = () => {
             <Container>
 
                <Row>
-                    <Col>
+                    <Col className={'mt-2'}>
 
 
-                <Image className={" mx-auto"} fluid roundedCircle src="https://via.placeholder.com/150"/>
+                <Image className={" mx-auto "} fluid roundedCircle src="https://via.placeholder.com/150"/>
                 <Card className={'border border-dark m-2'}>
 
-                    <Card.Title > name:</Card.Title>
-                    <div className={'m-2'}>
+                    <h3 > Name:</h3>
+                    <div  className={style.Info}>
                     <p>Aliases:</p>
                     <p>DateOfDisappearance:</p>
                     <p>DateOfBirth:</p>
