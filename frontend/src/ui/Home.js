@@ -1,10 +1,13 @@
 import React, {useEffect} from "react"
 import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
+import {ReactComponent as Bear} from '../images/bear5.svg';
+import {ReactComponent as Wolf} from '../images/wolf.svg';
+import {ReactComponent as Eagle} from "../images/eagle.svg";
 import Mel from '../images/MelanieMarieJames.jpg';
 import {Container, Card, Row, Button, Col, Image, Carousel, } from "react-bootstrap";
 import Graph from '../images/graph.png';
 import Gabby from '../images/gabbyPetito.png';
-import Tribes from '../images/tribeMap.png'
+import Tribes from '../images/tribeMap.png';
 import style from "./Home.module.css"
 
 /*import {useDispatch, useSelector} from "react-redux";
@@ -72,13 +75,17 @@ export const Home = () => {
             <Container fluid>
                 <Row>
                     <Col className={"p-0"}><Redpalm style={{background: "black"}}/></Col>
-                    <Col  className={"text-center col-8"} style={{background: "black"}}><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1></Col>
+                    <Col  className={"text-center col-8"} style={{background: "black"}}><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1><br/>
+                     A community where family, friends, and curious web sleuths can come together to share their stories.
+                        Most importantly its a place where new clues can be shared, theories can examined, and
+                        an interactive website were where
+                    </Col>
                 </Row>
             </Container>
             <Container>
 
                 <Row>
-                    gti <Col className="d-flex justify-content-center mt-5 mb-5">
+                     <Col className="d-flex justify-content-center mt-5 mb-5">
                         <Carousel style={{width: '18rem'}}>
                             <Carousel.Item interval={5000} >
 
@@ -252,7 +259,7 @@ export const Home = () => {
                     </Col>
                     <Col  className="d-flex justify-content-center mt-5 mb-5">
                         <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Card.Img variant="top" src={Graph}/>
+                            <Eagle/>
                             <Card.Body>
                                 <Card.Title>Card Title</Card.Title>
                                 <Card.Text>
@@ -264,9 +271,9 @@ export const Home = () => {
                     </Col>
                     <Col  className="d-flex justify-content-center mt-5 mb-5">
                         <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Card.Img variant="top" src={Graph}/>
+                            <Bear/>
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
+                                <Card.Title>The bear</Card.Title>
                                 <Card.Text>
                                     Map with missing person's last known location
                                 </Card.Text>
@@ -276,11 +283,11 @@ export const Home = () => {
                     </Col>
                     <Col  className="d-flex justify-content-center mt-5 mb-5">
                         <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Card.Img variant="top" src={Graph}/>
+                            <Wolf/>
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
+                                <Card.Title>Wolf</Card.Title>
                                 <Card.Text>
-                                    Map with missing person's last known location
+                                    alone he is usually nothing but with a pack...
                                 </Card.Text>
                                 <Button variant="primary">Map</Button>
                             </Card.Body>
