@@ -11,7 +11,7 @@ import {Provider} from "react-redux";
 import {InfoPage} from "./InfoPage";
 import {Signup} from "./Signup";
 import {Signin} from "./Signin";
-import {SignUpFormContent} from "./shared/Components/Main-nav/Sign-up/SignUpFormContent";
+
 
 export const App = (store) => (
     <>
