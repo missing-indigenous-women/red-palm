@@ -9,26 +9,26 @@ const slice = createSlice({
   reducers: {
     getAllWomen: (women, action) => {
       return action.payload
-    }//,
-    // getWomenByAppUserId: (vehicles, action) => {
-    //   return action.payload
-    // }
+    },
+    getWomanByWomanId: (woman, action) => {
+       return action.payload
+    }
   }
 })
 
-export const {getAllWomen, getWomenByAppUserId} = slice.actions
+export const {getAllWomen, getWomanByWomanId} = slice.actions
 
 export const fetchAllWomen = () => async dispatch => {
   const {data} = await httpConfig(`/apis/woman`);
   dispatch(getAllWomen(data))
 }
 
-// export const fetchWomenByAppUserId = (id) => async dispatch => {
-//   //backend route
-//   const {data} = await httpConfig(`/apis/vehicle/${id}`);
-//   dispatch(getWomenByVehicleUserId(data))
-// }
-//
+export const fetchWomanByWomanId = (id) => async dispatch => {
+  //backend route
+  const {data} = await httpConfig(`/apis/woman/${id}`);
+  dispatch(getWomanByWomanId(data))
+}
+
 // export const fetchAllWomenAndAppUsers = () => async (dispatch, getState) => {
 //   await dispatch(fetchAllWomen())
 //   const userIds = _.uniq(_.map(getState().vehicles, "postAppUserId"));
