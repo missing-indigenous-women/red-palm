@@ -84,55 +84,22 @@ export const Home = () => {
                         The goal of this app is to combine data from the Justice's Department NAMUS missing person data base
                         and the New Mexico Department of Public Safety data base into one easy to use resource. Our hope is that the
                         information passed here keeps the stories of our lost girls and women in the spot light and eventually solve these
-                        messages.
+                        mysteries.
+
+                        If you wanna help please sign in and choose a profile avatar and take a look at our case of the week. After
+                        reviewing the case ONLY post a question, observation, or theory if you so choose and remember that this is real
+                        life so be respectful
+
                     </p>
                     </Col>
                 </Row>
             </Container>
-            <Container>
+            <Container fluid className="bg-black mt-5">
 
                 <Row>
-                     <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '18rem'}}>
-                            <Carousel.Item interval={5000} >
 
-                                <img
-                                    className="d-block w-100 "
-                                    src=""
-                                    alt="First slide"
-
-                                />
-                                <Carousel.Caption>
-                                    <h3 className="text-danger">MelanieMarieJames</h3>
-                                    <p className="text-danger">Missing since 1599.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item interval={5000}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77999/Thumbnail"
-                                    alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
-                                    alt="Third slide of missing person"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        </Carousel>
-                    </Col>
                     <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '18rem'}}>
+                        <Carousel style={{width: '30rem'}}>
                             <Carousel.Item interval={5000} >
 
                                 <img
@@ -142,8 +109,8 @@ export const Home = () => {
 
                                 />
                                 <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <h3>Case of the Week!</h3>
+                                    <p></p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item interval={5000}>
@@ -171,87 +138,12 @@ export const Home = () => {
                         </Carousel>
                     </Col>
                 </Row>
-                <Row>
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '18rem'}}>
-                            <Carousel.Item interval={5000} >
 
-                                <img
-                                    className="d-block w-100 "
-                                    src={Mel}
-                                    alt="First slide"
 
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item interval={5000}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77999/Thumbnail"
-                                    alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
-                                    alt="Third slide of missing person"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        </Carousel>
-                    </Col>
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '18rem'}}>
-                            <Carousel.Item interval={5000} >
-
-                                <img
-                                    className="d-block w-100 "
-                                    src={Mel}
-                                    alt="First slide"
-
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item interval={5000}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77999/Thumbnail"
-                                    alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
-                                    alt="Third slide of missing person"
-                                />
-                            </Carousel.Item>
-                        </Carousel>
-                    </Col>
-                </Row>
-                <Container className="bg-black">
-                    <p className=" text-center" style={{color: "white"}} >Choose one pls</p>
+                    <p className=" text-center mt-5" style={{color: "indianred"}} >Choose Your Avatar</p>
                     <Row>
                         <Col  className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                            <Card className="mt-5"  style={{width: '18rem'}}>
                                 <Eagle/>
                                 <Card.Body>
                                     <Card.Title>Eagle</Card.Title>
@@ -263,7 +155,7 @@ export const Home = () => {
                             </Card>
                         </Col>
                         <Col  className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                            <Card className="mt-5"  style={{width: '18rem'}}>
                                 <Bear/>
                                 <Card.Body>
                                     <Card.Title>The bear</Card.Title>
@@ -275,7 +167,7 @@ export const Home = () => {
                             </Card>
                         </Col>
                         <Col  className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                            <Card className="mt-5"  style={{width: '18rem'}}>
                                 <Wolf/>
                                 <Card.Body>
                                     <Card.Title>Wolf</Card.Title>
@@ -287,7 +179,7 @@ export const Home = () => {
                             </Card>
                         </Col>
                     </Row>
-                </Container>
+
             </Container>
             </Container>
 
