@@ -76,9 +76,16 @@ export const Home = () => {
                 <Row>
                     <Col className={"p-0"}><Redpalm style={{background: "black"}}/></Col>
                     <Col  className={"text-center col-8"} style={{background: "black"}}><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1><br/>
-                     A community where family, friends, and curious web sleuths can come together to share their stories.
+                    <p className={"text-center text-white"} style={{width: '60rem'}}>
+                        A community where family, friends, and curious web sleuths can come together to share their stories.
                         Most importantly its a place where new clues can be shared, theories can examined, and
-                        an interactive website were where
+                        families can update the users of the app to collectively examine new data.
+
+                        The goal of this app is to combine data from the Justice's Department NAMUS missing person data base
+                        and the New Mexico Department of Public Safety data base into one easy to use resource. Our hope is that the
+                        information passed here keeps the stories of our lost girls and women in the spot light and eventually solve these
+                        messages.
+                    </p>
                     </Col>
                 </Row>
             </Container>
@@ -236,64 +243,51 @@ export const Home = () => {
                                     src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
                                     alt="Third slide of missing person"
                                 />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>
                     </Col>
                 </Row>
-                <Row>
-                    <Col  className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Card.Img variant="top" src={Graph}/>
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Map with missing person's last known location
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col  className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Eagle/>
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Map with missing person's last known location
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col  className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Bear/>
-                            <Card.Body>
-                                <Card.Title>The bear</Card.Title>
-                                <Card.Text>
-                                    Map with missing person's last known location
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col  className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Wolf/>
-                            <Card.Body>
-                                <Card.Title>Wolf</Card.Title>
-                                <Card.Text>
-                                    alone he is usually nothing but with a pack...
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
+                <Container className="bg-black">
+                    <p className=" text-center" style={{color: "white"}} >Choose one pls</p>
+                    <Row>
+                        <Col  className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                                <Eagle/>
+                                <Card.Body>
+                                    <Card.Title>Eagle</Card.Title>
+                                    <Card.Text>
+                                        Bird's eye view
+                                    </Card.Text>
+                                    <Button variant="primary">choose</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col  className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                                <Bear/>
+                                <Card.Body>
+                                    <Card.Title>The bear</Card.Title>
+                                    <Card.Text>
+                                        Prepares for hardships to come.
+                                    </Card.Text>
+                                    <Button variant="primary">choose</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col  className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
+                                <Wolf/>
+                                <Card.Body>
+                                    <Card.Title>Wolf</Card.Title>
+                                    <Card.Text>
+                                        alone he is usually nothing but with a pack...
+                                    </Card.Text>
+                                    <Button variant="primary">Choose</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
             </Container>
             </Container>
 
