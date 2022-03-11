@@ -91,7 +91,7 @@ export const Home = () => {
                         life so be respectful. All data shown is publicly accessible information, for instance you can do what is known as
                         a FOIA request (Freedom of Information Act) for police reports on cases that have gone cold at your local police station.
                         That police report contains a wealth of data that can be used to a web sleuth's (you) advantage. So tear that data apart,
-                        examine it, and you just might find something someone missed. Good luck and thank you for you interest.
+                        examine it, and you just might find something someone missed. Good luck and thank you for your interest.
 
 
 
