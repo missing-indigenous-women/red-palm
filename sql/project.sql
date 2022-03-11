@@ -17,6 +17,7 @@ CREATE TABLE appUser (
     -- to make something optional, exclude the not null
                          appUserHash CHAR(97) NOT NULL,
                          appUserLastName VARCHAR(40) NOT NULL,
+                         appUserAvatarUrl VARCHAR(255),
                          UNIQUE(appUserEmail),
                          UNIQUE(appUserDisplayName),
                          INDEX(appUserEmail),
