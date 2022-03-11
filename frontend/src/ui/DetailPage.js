@@ -6,7 +6,7 @@ import style from "./Home.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchWomanByWomanId} from "../store/women";
 
-export const InfoPage = ({match}) => {
+export const DetailPage = ({match}) => {
 
     // Returns the the userPosts store from redux and assigns it to the userPosts variable.
     const dispatch = useDispatch();

@@ -8,7 +8,7 @@ import {NavBar} from "./shared/NavBar";
 import {Footer} from "./shared/Footer";
 import {InfoForm} from "./shared/InfoForm";
 import {Provider} from "react-redux";
-import {InfoPage} from "./InfoPage";
+import {DetailPage} from "./DetailPage";
 import {Signup} from "./Signup";
 import {Signin} from "./Signin";
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -21,7 +21,7 @@ export const App = (store) => (
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/map' component={MapPage}/>
-                    <Route exact path='/InfoPage/:womanId' component={InfoPage} womanId=":womanId"/>
+                    <Route exact path='/DetailPage/:womanId' component={DetailPage} womanId=":womanId"/>
                     <Route exact path='/InfoForm' component={InfoForm}/>
                     <Route exact path='/sign-up' component={Signup}/>
                     <Route exact path='/sign-in' component={Signin} />
