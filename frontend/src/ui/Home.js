@@ -88,62 +88,38 @@ export const Home = () => {
 
                         If you wanna help please sign in and choose a profile avatar and take a look at our case of the week. After
                         reviewing the case ONLY post a question, observation, or theory if you so choose and remember that this is real
-                        life so be respectful
+                        life so be respectful. All data show is publicly accessible information for instance you can do what is known as
+                        a FOIA request (Freedom of Information Act) for police reports on cases that have gone cold at your local police station.
+                        That police report contains a wealth of data that can be used to a web sleuth's (you) advantage. So tear that data apart,
+                        examine it, and you just might find something someone missed. Good luck and thank you for you interest.
+
+
 
                     </p>
                     </Col>
                 </Row>
             </Container>
+                <Container>
+                    <Row>
+                        <Col className="d-flex justify-content-center mt-5">
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={Mel} />
+                                <Card.Body className="bg-danger">
+                                    <Card.Title>Case of the Week</Card.Title>
+                                    <Card.Text>
+                                     tip   check profile info
+                                    </Card.Text>
+                                    <Button variant="primary">Profile</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
             <Container fluid className="bg-black mt-5">
-
-                <Row>
-
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '30rem'}}>
-                            <Carousel.Item interval={5000} >
-
-                                <img
-                                    className="d-block w-100 "
-                                    src={Mel}
-                                    alt="First slide"
-
-                                />
-                                <Carousel.Caption>
-                                    <h3>Case of the Week!</h3>
-                                    <p></p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item interval={5000}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77999/Thumbnail"
-                                    alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
-                                    alt="Third slide of missing person"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        </Carousel>
-                    </Col>
-                </Row>
-
-
                     <p className=" text-center mt-5" style={{color: "indianred"}} >Choose Your Avatar</p>
                     <Row>
                         <Col  className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5"  style={{width: '18rem'}}>
+                            <Card className="mt-5 bg-danger"  style={{width: '18rem'}}>
                                 <Eagle/>
                                 <Card.Body>
                                     <Card.Title>Eagle</Card.Title>
@@ -155,10 +131,10 @@ export const Home = () => {
                             </Card>
                         </Col>
                         <Col  className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5"  style={{width: '18rem'}}>
+                            <Card className="mt-5 bg-danger"  style={{width: '18rem'}}>
                                 <Bear/>
                                 <Card.Body>
-                                    <Card.Title>The bear</Card.Title>
+                                    <Card.Title>Bear</Card.Title>
                                     <Card.Text>
                                         Prepares for hardships to come.
                                     </Card.Text>
@@ -167,7 +143,7 @@ export const Home = () => {
                             </Card>
                         </Col>
                         <Col  className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5"  style={{width: '18rem'}}>
+                            <Card className="mt-5 bg-danger"  style={{width: '18rem'}}>
                                 <Wolf/>
                                 <Card.Body>
                                     <Card.Title>Wolf</Card.Title>
