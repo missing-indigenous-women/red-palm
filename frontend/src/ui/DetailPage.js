@@ -1,12 +1,15 @@
 import React, {useEffect} from "react";
-import {Container, Card, Button, Image, Row, Col} from "react-bootstrap";
+import {Container, Card, Button, Image, Row, Col, InputGroup, FormControl} from "react-bootstrap";
 // import style from "./InfosPage.module.css";
 import {Link} from "react-router-dom";
 import style from "./Home.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchWomanByWomanId} from "../store/women";
+import {PostLogic} from "./Posts";
 
 export const DetailPage = ({match}) => {
+
+
 
     // Returns the the userPosts store from redux and assigns it to the userPosts variable.
     const dispatch = useDispatch();
@@ -68,24 +71,16 @@ export const DetailPage = ({match}) => {
                 <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
                     <Row>
                         <Col>
+
                             <div className={" border-dark border-bottom "}>
                                 <h1>POSTS</h1>
                             </div>
+
                         </Col>
                     </Row>
                 </Container>
 
-                <Container style={{width: 300}}>
-                    <Row>
-                        <Col>
-                            <Card className={'border border-dark mt-3'}>
-                                <Card.Title>NEW POST</Card.Title>
-                                <textarea> </textarea>
-                                <Button>SUBMIT NEW POST</Button>
-                            </Card>
-                        </Col>
-                    </Row>
-                </Container>
+                <PostLogic/>
 
                 <div className="mt-3 justify-content-center">
                     <Button className={'m-2'}>Submit new missing person</Button>{' '} <Link to="/map"
@@ -95,3 +90,8 @@ export const DetailPage = ({match}) => {
         </>
     )
 }
+
+
+
+
+

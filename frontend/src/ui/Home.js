@@ -49,7 +49,7 @@ export const Home = () => {
                                     A graph that doesn't get the attention it deserves and lacking data from state,
                                     county, and tribal governments. Due to these facts the reality of the trend is
                                     higher than what you see here. Those that know about this data have started a movement
-                                    called #MMIW which stands for Missing Murdered Indigenous Women.
+                                    called <a href={"https://www.youtube.com/watch?v=ib0GDAPeymo"}>#MMIW</a> #MMIW which stands for Missing Murdered Indigenous Women.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -73,227 +73,88 @@ export const Home = () => {
                 </Row>
             </Container>
             <Container fluid>
-                <Row>
-                    <Col className={"p-0"}><Redpalm style={{background: "black"}}/></Col>
-                    <Col  className={"text-center col-8"} style={{background: "black"}}><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1><br/>
-                     A community where family, friends, and curious web sleuths can come together to share their stories.
+                <Row className="d-flex justify-content-center">
+
+                    <Col  className={"text-center col-8"} style={{background: "black"}}><Redpalm></Redpalm><h1 className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1><br/>
+                    <p className={"text-center text-white"}>
+                        A community where family, friends, and curious web sleuths can come together to share their stories.
                         Most importantly its a place where new clues can be shared, theories can examined, and
-                        an interactive website were where
+                        families can update the users of the app to collectively examine new data.
+
+                        The goal of this app is to combine data from the Justice's Department NAMUS missing person data base
+                        and the New Mexico Department of Public Safety data base into one easy to use resource. Our hope is that the
+                        information passed here keeps the stories of our lost girls and women in the spot light and eventually solve these
+                        mysteries.
+
+                        If you wanna help please sign in and choose a profile avatar and take a look at our case of the week. After
+                        reviewing the case ONLY post a question, observation, or theory if you so choose and remember that this is real
+                        life so be respectful. All data shown is publicly accessible information, for instance you can do what is known as
+                        a FOIA request (Freedom of Information Act) for police reports on cases that have gone cold at your local police station.
+                        That police report contains a wealth of data that can be used to a web sleuth's (you) advantage. So tear that data apart,
+                        examine it, and you just might find something someone missed. Good luck and thank you for your interest.
+
+
+
+                    </p>
                     </Col>
                 </Row>
             </Container>
-            <Container>
+                <Container>
+                    <Row>
+                        <Col className="d-flex justify-content-center mt-5">
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={Mel} />
+                                <Card.Body className="bg-danger">
+                                    <Card.Title>Case of the Week</Card.Title>
+                                    <Card.Text>
+                                     tip   check profile info
+                                    </Card.Text>
+                                    <Button variant="primary">Profile</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
+            <Container fluid className="mt-5">
+                    <Row>
+                        <Col  className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 bg-black"  style={{width: '18rem'}}>
+                                <Eagle/>
+                                <Card.Body className="bg-danger">
+                                    <Card.Title>Eagle</Card.Title>
+                                    <Card.Text>
+                                        Bird's eye view
+                                    </Card.Text>
+                                    <Button variant="primary">choose</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col  className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 bg-black"  style={{width: '18rem'}}>
+                                <Bear/>
+                                <Card.Body className="bg-danger">
+                                    <Card.Title>Bear</Card.Title>
+                                    <Card.Text>
+                                        Prepares for hardships to come.
+                                    </Card.Text>
+                                    <Button variant="primary">choose</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col  className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 bg-black"  style={{width: '18rem'}}>
+                                <Wolf/>
+                                <Card.Body className="bg-danger">
+                                    <Card.Title>Wolf</Card.Title>
+                                    <Card.Text>
+                                        alone he is usually nothing but with a pack...
+                                    </Card.Text>
+                                    <Button variant="primary">Choose</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
 
-                <Row>
-                     <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '18rem'}}>
-                            <Carousel.Item interval={5000} >
-
-                                <img
-                                    className="d-block w-100 "
-                                    src=""
-                                    alt="First slide"
-
-                                />
-                                <Carousel.Caption>
-                                    <h3 className="text-danger">MelanieMarieJames</h3>
-                                    <p className="text-danger">Missing since 1599.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item interval={5000}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77999/Thumbnail"
-                                    alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
-                                    alt="Third slide of missing person"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        </Carousel>
-                    </Col>
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '18rem'}}>
-                            <Carousel.Item interval={5000} >
-
-                                <img
-                                    className="d-block w-100 "
-                                    src={Mel}
-                                    alt="First slide"
-
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item interval={5000}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77999/Thumbnail"
-                                    alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
-                                    alt="Third slide of missing person"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        </Carousel>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '18rem'}}>
-                            <Carousel.Item interval={5000} >
-
-                                <img
-                                    className="d-block w-100 "
-                                    src={Mel}
-                                    alt="First slide"
-
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item interval={5000}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77999/Thumbnail"
-                                    alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
-                                    alt="Third slide of missing person"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        </Carousel>
-                    </Col>
-                    <Col className="d-flex justify-content-center mt-5 mb-5">
-                        <Carousel style={{width: '18rem'}}>
-                            <Carousel.Item interval={5000} >
-
-                                <img
-                                    className="d-block w-100 "
-                                    src={Mel}
-                                    alt="First slide"
-
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item interval={5000}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77999/Thumbnail"
-                                    alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.namus.gov/api/CaseSets/NamUs/MissingPersons/Cases/39942/Images/77997/Original"
-                                    alt="Third slide of missing person"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        </Carousel>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col  className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Card.Img variant="top" src={Graph}/>
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Map with missing person's last known location
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col  className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Eagle/>
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Map with missing person's last known location
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col  className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Bear/>
-                            <Card.Body>
-                                <Card.Title>The bear</Card.Title>
-                                <Card.Text>
-                                    Map with missing person's last known location
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col  className="d-flex justify-content-center mt-5 mb-5">
-                        <Card className="mt-5 mt-5"  style={{width: '18rem'}}>
-                            <Wolf/>
-                            <Card.Body>
-                                <Card.Title>Wolf</Card.Title>
-                                <Card.Text>
-                                    alone he is usually nothing but with a pack...
-                                </Card.Text>
-                                <Button variant="primary">Map</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
             </Container>
             </Container>
 
