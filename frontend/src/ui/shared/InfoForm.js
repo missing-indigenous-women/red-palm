@@ -71,13 +71,10 @@ const validator = Yup.object().shape({
         .max(),
     womanTribe: Yup.string()
         .required("Tribe Name")
-        .max(150,"trive name cannot be over 150 characters"),
+        .max(150,"Tribe name cannot be over 150 characters"),
     womanWeight: Yup.number()
         .required("Weight")
-        .max(4, "max number is 4")
-
-
-
+        .max(4, "Max number is 4")
 
 })
 

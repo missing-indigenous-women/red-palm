@@ -11,26 +11,31 @@ export const MissingWoman = ({woman}) => {
         // womanDateOfBirth,
         // womanEyeColor,
         // womanFavoriteHangoutPlaces,
-        womanFirstName ,
-        // womanHairColor ,
+        womanFirstName,
+        // womanHairColor,
         // womanHeight,
         // womanHobbiesAndInterests,
         // womanIdentifyingMarks,
-        womanLastName ,
-        womanLastLocation ,
+        womanLastName,
+        womanLastLocation,
         // womanLatitude,
-        // womanLongitude ,
+        // womanLongitude,
         womanPhoto1,
-        womanTribe ,
+        womanTribe
         // womanWeight
     } = woman
+
+    const datefunction = (dateparameter) => {
+        let myDate = new Date(dateparameter);
+        return (myDate.getMonth() + 1) + '/' + myDate.getDate() + '/' + myDate.getFullYear();
+    }
 
     return (
         <>
             <Card>
                 {/*<Card.Header>Featured</Card.Header>*/}
                 <Card.Body>
-                    <Card.Title>{womanFirstName} {womanLastName}</Card.Title>
+                    <Card.Title>{womanFirstName}{' '}{womanLastName}</Card.Title>
                     <Row>
                         <Col md={2}>
                             <Image fluid roundedCircle src={womanPhoto1} alt={"missing person"}/>
@@ -40,7 +45,7 @@ export const MissingWoman = ({woman}) => {
                                 <Row>
                                     <Col md={6} lg={3}>
                                         <h6><u>Date of Disappearance</u></h6>
-                                        <p>{womanDateOfDisappearance.toLocaleString('en-US',{year: 'numeric', month: 'numeric', day: 'numeric'})}</p>
+                                        <p>{datefunction(womanDateOfDisappearance)}</p>
                                     </Col>
                                     <Col md={6} lg={3}>
                                         <h6><u>Aliases</u></h6>
@@ -55,7 +60,7 @@ export const MissingWoman = ({woman}) => {
                                         <p>{womanTribe}</p>
                                     </Col>
                                 </Row>
-                                <Link to={`/InfoPage/${womanId}`} state={{ woman: woman }}>
+                                <Link to={`/DetailPage/${womanId}`} state={{ woman: woman }}>
                                     Details
                                 </Link>
                             </Card.Text>

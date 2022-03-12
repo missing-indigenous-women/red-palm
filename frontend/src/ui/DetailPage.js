@@ -6,8 +6,12 @@ import style from "./Home.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchWomanByWomanId} from "../store/women";
 import {PostLogic} from "./Posts";
+import {PostOutput} from "./Output";
+import {fetchPostsByWomanId} from "../store/posts";
+import {MissingWoman} from "./MissingWoman";
 
 export const DetailPage = ({match}) => {
+    console.log(match)
 
 
 
@@ -16,6 +20,7 @@ export const DetailPage = ({match}) => {
 
     const sideEffects = () => {
         // The dispatch function takes actions as arguments to make changes to the store/redux.
+        dispatch(fetchPostsByWomanId(match.params.womanId))
         dispatch(fetchWomanByWomanId(match.params.womanId));
     };
 
@@ -25,12 +30,19 @@ export const DetailPage = ({match}) => {
      * E.g when a network request to an api has completed and there is new data to display on the dom.
      **/
     useEffect(sideEffects, [match.params.womanId, dispatch]);
+    const posts = useSelector(state => state.posts ? state.posts : []);
+    console.log(posts)
 
     const woman = useSelector(state => (
         state.women
             ? state.women.find( woman => woman.womanId === match.params.womanId)
             : null
     ));
+
+    const datefunction = (dateparameter) => {
+        let myDate = new Date(dateparameter);
+        return (myDate.getMonth() + 1) + '/' + myDate.getDate() + '/' + myDate.getFullYear();
+    }
 
     return (
         <>
@@ -45,8 +57,8 @@ export const DetailPage = ({match}) => {
                                     <Card.Title></Card.Title>
                                     <div className={style.Info}>
                                         <p>Aliases: {woman.womanAliases}</p>
-                                        <p>DateOfDisappearance: {woman.womanDateOfDisappearance}</p>
-                                        <p>DateOfBirth: {woman.womanDateOfBirth}</p>
+                                        <p>DateOfDisappearance: {datefunction(woman.womanDateOfDisappearance)}</p>
+                                        <p>DateOfBirth: {datefunction(woman.womanDateOfBirth)}</p>
                                         <p>EyeColor:m {woman.womanEyeColor}</p>
                                         <p>FavoriteHangoutPlaces: {woman.womanFavoriteHangoutPlaces}</p>
                                         <p>FirstName: {woman.womanFirstName}</p>
@@ -69,21 +81,15 @@ export const DetailPage = ({match}) => {
                 </Container>
 
                 <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
-                    <Row>
-                        <Col>
-
-                            <div className={" border-dark border-bottom "}>
-                                <h1>POSTS</h1>
-                            </div>
-
-                        </Col>
-                    </Row>
+                    <h1>POSTS</h1>
+                    {posts.map((post,index) => <PostOutput post={post} key={index}/>)}
                 </Container>
+
 
                 <PostLogic/>
 
                 <div className="mt-3 justify-content-center">
-                    <Button className={'m-2'}>Submit new missing person</Button>{' '} <Link to="/map"
+                    <Link to="/InfoForm" className={'m-2 btn btn-primary'}>Edit missing person</Link>{' '} <Link to="/map"
                                                                                       className="btn btn-primary">Close</Link>
                 </div>
             </Container>
