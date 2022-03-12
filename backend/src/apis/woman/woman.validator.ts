@@ -1,11 +1,6 @@
 import {Schema} from 'express-validator';
 
 export const womanValidator : Schema = {
-    womanId: {
-        isUUID: {
-            errorMessage: 'please provide a valid womanId'
-        }
-    },
     womanAliases: {
         isLength: {
             errorMessage: 'woman Aliases cannot be longer than 40 characters',
