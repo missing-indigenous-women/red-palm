@@ -110,7 +110,7 @@ return (
                                   field={"appUserPassword"}
                     />
                 </Row>
-                <Button type={"submit"}> Login</Button>  <Link to="/MapPage" className="btn btn-primary"> Cancel</Link>
+                <Button type={"submit"}> Login</Button>  <Link to="/map" className="btn btn-primary"> Cancel</Link>
             </Container>
 </form>
             {

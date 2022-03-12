@@ -10,6 +10,7 @@ export async function selectAllSocialMedia() : Promise<Array<SocialMedia>|null> 
         console.log(mySqlQuery)
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery)
         const socialMedia : Array<SocialMedia> = result[0] as Array<SocialMedia>
+        await mySqlConnection.release()
         console.log('socialMedia', socialMedia)
         return socialMedia.length >= 1 ? [...socialMedia] : null;
     } catch (error) {

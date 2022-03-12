@@ -4,6 +4,7 @@ import {httpConfig} from "../utils/http-config";
 import {Formik} from "formik";
 import * as Yup from "yup";
 import {FormDebugger} from "./shared/Components/FormDebugger";
+import {fetchPostsByWomanId} from "../store/posts";
 
 
 
@@ -32,6 +33,7 @@ export const PostLogic = (props) => {
 
                     if (reply.status === 200) {
                         resetForm();
+                        dispatch(fetchPostsByWomanId(womanId))
                     }
                     setStatus({message, type});
                 }

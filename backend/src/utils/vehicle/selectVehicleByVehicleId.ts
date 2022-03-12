@@ -12,6 +12,7 @@ export async function selectVehicleByVehicleId(vehicleId: string) : Promise<Vehi
         console.log(mySqlQuery)
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {vehicleId})
         const vehicle : Array<Vehicle> = result[0] as Array<Vehicle>
+        await mySqlConnection.release()
         console.log('vehicle', vehicle)
         return vehicle.length === 1 ? {...vehicle[0]} : null;
     } catch (error) {

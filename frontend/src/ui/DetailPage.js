@@ -14,6 +14,21 @@ export const DetailPage = ({match}) => {
     console.log(match)
 
 
+    const clickLike = () => {
+        httpConfig.post("/apis/post/", {   postAppUserId, postWomanId: match.params.womanId,
+            postDate:
+            postText})
+            .then(reply => {
+                    if(reply.status === 200) {
+                        console.log(reply)
+                        dispatch(getAllTweets())
+                    }
+                    console.log(reply)
+                }
+            );
+    }
+
+
 
     // Returns the the userPosts store from redux and assigns it to the userPosts variable.
     const dispatch = useDispatch();
