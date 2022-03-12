@@ -1,15 +1,89 @@
 import React from "react"
 import {Col, Container, FormControl, InputGroup, Row, Image, Button} from "react-bootstrap";
 import flower from "../images/flower.jpg"
-
+import * as Yup from 'yup'
+import moment from 'moment'
 //<input type="file" id="myFile" 
-export const InfoForm = () => {
+export const Help = (props) => {
+const validator = Yup.object().shape({
+    womanAliases: Yup.string()
+        .required()
+        .max(40,"Woman Aliases cant exceed 4o characters"),
+    womanDateOfDisappearance: Yup.date()
+        .required("Date Of disappearance is required")
+        .transform(value => {
+        return value ? moment(value).toDate() : value;
+    })
+,
+    womanDateOfBirth: Yup.date()
+        .required("Date of Birth is required")
+        .transform(value => {
+            return value ? moment(value).toDate() : value;
+        }),
+    womanEyeColor: Yup.string()
+        .required("Eye color required")
+        .max(40, "Eye color can't exceed 40 characters"),
+
+    womanFavoriteHangoutPlaces: Yup.string()
+        .required("Eye color required")
+        .max(150, "Favorite hangout places can't exceed 150 characters."),
+
+    womanFirstName: Yup.string()
+        .required("First Name required")
+        .max(40, "First Name can't exceed 40 characters."),
+
+    womanHairColor: Yup.string()
+        .required("Hair Color required")
+        .max(40, "Hair Color can't exceed 40 characters."),
+
+    womanHeight: Yup.string()
+        .required("Height is required")
+        .max(25, "Hight cant exceed 25 charaters."),
+
+    womanHobbiesAndInterests: Yup.string()
+        .required("Hobbies and Interests")
+        .max(150 "Hobbies and Intrests can't exceed 25 charaters."),
+
+    womanIdentifyingMarks:Yup.string
+        .required("Identifying Marks"),
+    womanLastName ,
+    womanLastLocation ,
+    womanLatitude,
+    womanLongitude ,
+    womanPhoto1,
+    womanTribe,
+    womanWeight
+
+
+
+
+})
+}
+
+
+
+
+
+const InfoForm = (props) => {
+    const {
+        status,
+        values,
+        errors,
+        touched,
+        dirty,
+        isSubmitting,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        handleReset
+    } = props;
     return (
         <>
             <Container className="mb-3">
             <h1>Information Form</h1>
                 <Image src={flower} alt={flower} height="200px"/>
             </Container>
+            <form onSubmit={handleSubmit}>
             <Container>
                 <Row>
                     <Col md={6}>
@@ -64,7 +138,7 @@ export const InfoForm = () => {
                             <FormControl aria-label="body type"/>
                         </InputGroup>
                         <InputGroup className="mb-3">
-                            <InputGroup.Text>Hight:</InputGroup.Text>
+                            <InputGroup.Text>Height:</InputGroup.Text>
                             <FormControl aria-label="Tattoo"/>
                         </InputGroup>
                         <InputGroup className="mb-3">
@@ -73,14 +147,16 @@ export const InfoForm = () => {
                         </InputGroup>
                     </Col>
                 </Row>
-            </Container>
-            <Container>
                 <Row>
                     <Col mb={2}>
                         <Button variant="primary">Submit</Button>
                         <Button variant="danger">Cancel</Button>
                     </Col>
                 </Row>
+            </Container>
+            </form>
+            <Container>
+
             </Container>
                 </>
                 )
