@@ -39,6 +39,11 @@ export const DetailPage = ({match}) => {
             : null
     ));
 
+    const datefunction = (dateparameter) => {
+        let myDate = new Date(dateparameter);
+        return (myDate.getMonth() + 1) + '/' + myDate.getDate() + '/' + myDate.getFullYear();
+    }
+
     return (
         <>
             <Container fluid className={style.Background}>
@@ -52,8 +57,8 @@ export const DetailPage = ({match}) => {
                                     <Card.Title></Card.Title>
                                     <div className={style.Info}>
                                         <p>Aliases: {woman.womanAliases}</p>
-                                        <p>DateOfDisappearance: {woman.womanDateOfDisappearance}</p>
-                                        <p>DateOfBirth: {woman.womanDateOfBirth}</p>
+                                        <p>DateOfDisappearance: {datefunction(woman.womanDateOfDisappearance)}</p>
+                                        <p>DateOfBirth: {datefunction(woman.womanDateOfBirth)}</p>
                                         <p>EyeColor:m {woman.womanEyeColor}</p>
                                         <p>FavoriteHangoutPlaces: {woman.womanFavoriteHangoutPlaces}</p>
                                         <p>FirstName: {woman.womanFirstName}</p>

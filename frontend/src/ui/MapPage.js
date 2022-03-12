@@ -57,13 +57,12 @@ export const MapPage = () => {
                         zoom: 12
                     }}
                     mapStyle="mapbox://styles/mapbox/dark-v9"
-                    style={{width: 600, height: 400}}
+                    style={{width: 1200, height: 800}}
                 >
                     {women.map((woman, index) => <Pin lat={woman.womanLatitude} lng={woman.womanLongitude} index={index} key={index}/>)}
                 </Map>
             </Container>
             <Container className={'pb-5'}>
-                {/*{women.map(woman => <MissingWoman woman={woman} />)}*/}
                 {women.map((woman,index) => <MissingWoman woman={woman} key={index}/>)}
             </Container>
         </>
