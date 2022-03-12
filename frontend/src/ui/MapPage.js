@@ -29,12 +29,13 @@ export const MapPage = () => {
 
     //console.log(women)
 
-    const [points, setPoints] = React.useState([
-        {lat: 35.332, lng: -106.652},
-        {lat: 35.339, lng: -106.656},
-        {lat: 35.40, lng: -106.666},
-        {lat: 35.23, lng: -106.4444}
-    ]);
+    // const [points, setPoints] = React.useState([
+    //     {lat: 35.332, lng: -106.652},
+    //     {lat: 35.339, lng: -106.656},
+    //     {lat: 35.40, lng: -106.666},
+    //     {lat: 35.23, lng: -106.4444}
+    // ]);
+
     // center={[-106.65, 35.33]}
 
     return (
@@ -49,7 +50,6 @@ export const MapPage = () => {
                 </Form>
             </Container>
             <Container className="text-center pb-5">
-    {/*`   `        <Image fluid src={"https://via.placeholder.com/1000x800"} alt={"map of missing women"}/>*/}
                 <Map
                     initialViewState = {{
                         latitude: 35.33,
@@ -59,7 +59,7 @@ export const MapPage = () => {
                     mapStyle="mapbox://styles/mapbox/dark-v9"
                     style={{width: 600, height: 400}}
                 >
-                    {points.map((point, index) => <Pin lat={point.lat} lng={point.lng} index={index} key={index}/>)}
+                    {women.map((woman, index) => <Pin lat={woman.womanLatitude} lng={woman.womanLongitude} index={index} key={index}/>)}
                 </Map>
             </Container>
             <Container className={'pb-5'}>

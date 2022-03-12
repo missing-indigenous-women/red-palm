@@ -4,12 +4,13 @@ import {ReactComponent as Bear} from '../images/bear5.svg';
 import {ReactComponent as Wolf} from '../images/wolf.svg';
 import {ReactComponent as Eagle} from "../images/eagle.svg";
 import Mel from '../images/MelanieMarieJames.jpg';
-import {Container, Card, Row, Button, Col, Image, Carousel, } from "react-bootstrap";
+import {Container, Card, Row, Col, Image, Carousel, } from "react-bootstrap";
 import Graph from '../images/graph.png';
 import Gabby from '../images/gabbyPetito.png';
 import Tribes from '../images/tribeMap.png';
 import style from "./Home.module.css"
-
+import Button1 from "./shared/Components/Button1";
+import Button2 from "./shared/Components/Button2";
 /*import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women"; */
 
@@ -43,7 +44,7 @@ export const Home = () => {
                         <Card className="mt-5 mt-5"  style={{width: '36rem'}}>
                             <Card.Img variant="top" src={Graph}/>
                             <Card.Body>
-                                <Card.Title> Missing? Murdered? lost? Alive? </Card.Title>
+                                <Card.Title> Missing? Murdered? lost? Alive? Traffic?</Card.Title>
                                 <Card.Text>
                                     This is the Justice Department's unsettling graph of untold stories.
                                     A graph that doesn't get the attention it deserves and lacking data from state,
@@ -107,9 +108,9 @@ export const Home = () => {
                                 <Card.Body className="bg-danger">
                                     <Card.Title>Case of the Week</Card.Title>
                                     <Card.Text>
-                                     tip   check profile info
+                                     Melanie Marie james
                                     </Card.Text>
-                                    <Button variant="primary">Profile</Button>
+                                    <Button1/>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -125,7 +126,7 @@ export const Home = () => {
                                     <Card.Text>
                                         Bird's eye view
                                     </Card.Text>
-                                    <Button variant="primary">choose</Button>
+                                    <Button2/>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -137,7 +138,7 @@ export const Home = () => {
                                     <Card.Text>
                                         Prepares for hardships to come.
                                     </Card.Text>
-                                    <Button variant="primary">choose</Button>
+                                    <Button2/>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -149,7 +150,7 @@ export const Home = () => {
                                     <Card.Text>
                                         alone he is usually nothing but with a pack...
                                     </Card.Text>
-                                    <Button variant="primary">Choose</Button>
+                                    <Button2/>
                                 </Card.Body>
                             </Card>
                         </Col>
