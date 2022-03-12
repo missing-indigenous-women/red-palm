@@ -6,7 +6,7 @@ import {ReactComponent as Redpalm} from "../../images/bloodyHandPrint.svg";
 
 export function NavBar() {
     return (
-        <Navbar expand="lg" className="ps-3 sticky-top">
+        <Navbar expand="lg" className="ps-3">
             <Container fluid>
                 <Navbar.Brand href="/"><Col className='mt-3'><Redpalm  style={{height:70, width:70, background: "black"}}/> </Col></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
