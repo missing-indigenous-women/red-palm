@@ -38,18 +38,31 @@ const validator = Yup.object().shape({
 
     womanHeight: Yup.string()
         .required("Height is required")
-        .max(25, "Hight cant exceed 25 charaters."),
+        .max(25, "Height cant exceed 25 characters."),
 
     womanHobbiesAndInterests: Yup.string()
         .required("Hobbies and Interests")
-        .max(150 "Hobbies and Intrests can't exceed 25 charaters."),
+        .max(150, "Hobbies and Interests can't exceed 25 characters."),
 
-    womanIdentifyingMarks:Yup.string
-        .required("Identifying Marks"),
-    womanLastName ,
-    womanLastLocation ,
-    womanLatitude,
-    womanLongitude ,
+    womanIdentifyingMarks: Yup.string()
+        .required("Identifying Marks")
+        .max(150, "Identifying Marks cannot exceed 150 characters."),
+
+    womanLastName: Yup.string()
+        .required("Last Name")
+        .max(40, "Last Name cannot exceed 40 characters"),
+
+    womanLastLocation: Yup.string()
+        .required("Last Location seen")
+        .max(60, "Last Location seen cannot exceed 60 characters"),
+
+    womanLatitude: Yup.string()
+        .required("Latitude format")
+        .max(),
+
+    womanLongitude: Yup.string()
+        .required("Latitude format")
+        .max(),
     womanPhoto1,
     womanTribe,
     womanWeight
