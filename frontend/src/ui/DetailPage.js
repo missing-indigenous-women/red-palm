@@ -6,8 +6,10 @@ import style from "./Home.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchWomanByWomanId} from "../store/women";
 import {PostLogic} from "./Posts";
+import {PostOutput} from "./Output";
 
 export const DetailPage = ({match}) => {
+    console.log(match)
 
 
 
@@ -16,6 +18,7 @@ export const DetailPage = ({match}) => {
 
     const sideEffects = () => {
         // The dispatch function takes actions as arguments to make changes to the store/redux.
+        dispatch(fetch)
         dispatch(fetchWomanByWomanId(match.params.womanId));
     };
 
@@ -74,16 +77,19 @@ export const DetailPage = ({match}) => {
 
                             <div className={" border-dark border-bottom "}>
                                 <h1>POSTS</h1>
+                                {/*<p> {post.postText}</p>*/}
                             </div>
 
                         </Col>
                     </Row>
                 </Container>
 
+                {/*<PostOutput/>*/}
+
                 <PostLogic/>
 
                 <div className="mt-3 justify-content-center">
-                    <Button className={'m-2'}>Submit new missing person</Button>{' '} <Link to="/map"
+                    <Link to="/InfoForm" className={'m-2 btn btn-primary'}>Edit missing person</Link>{' '} <Link to="/map"
                                                                                       className="btn btn-primary">Close</Link>
                 </div>
             </Container>
