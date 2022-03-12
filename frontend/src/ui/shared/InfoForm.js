@@ -63,8 +63,10 @@ const validator = Yup.object().shape({
     womanLongitude: Yup.string()
         .required("Latitude format")
         .max(),
-    womanPhoto1,
-    womanTribe,
+    womanPhoto1: Yup.string()
+        .required()
+        .max(),
+    womanTribe: Yup.string(),
     womanWeight
 
 
