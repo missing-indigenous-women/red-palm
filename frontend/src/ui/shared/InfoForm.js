@@ -61,13 +61,17 @@ const validator = Yup.object().shape({
         .max(),
 
     womanLongitude: Yup.string()
-        .required("Latitude format")
+        .required("Please provide valid longitude format")
         .max(),
     womanPhoto1: Yup.string()
         .required()
         .max(),
-    womanTribe: Yup.string(),
-    womanWeight
+    womanTribe: Yup.string()
+        .required("Tribe Name")
+        .max(150,"trive name cannot be over 150 characters"),
+    womanWeight: Yup.number()
+        .required("Weight")
+        .max(4, "max number is 4")
 
 
 
