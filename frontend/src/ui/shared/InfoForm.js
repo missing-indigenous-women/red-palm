@@ -67,7 +67,7 @@ const validator = Yup.object().shape({
         .required()
         .max(),
     womanTribe: Yup.string(),
-    womanWeight
+    // womanWeight
 
 
 

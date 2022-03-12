@@ -55,7 +55,7 @@ export const MissingWoman = ({woman}) => {
                                         <p>{womanTribe}</p>
                                     </Col>
                                 </Row>
-                                <Link to={`/InfoPage/${womanId}`} state={{ woman: woman }}>
+                                <Link to={`/DetailPage/${womanId}`} state={{ woman: woman }}>
                                     Details
                                 </Link>
                             </Card.Text>

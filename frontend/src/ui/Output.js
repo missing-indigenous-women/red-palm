@@ -3,7 +3,14 @@ import {Col, Container, Row} from "react-bootstrap";
 
 
 
-export const PostOutput = () => {
+export const PostOutput = ({post}) => {
+    const {
+        postId,
+        postAppUserId,
+        postDate,
+        postText
+    } = post
+
 
 
     return(
@@ -13,19 +20,14 @@ export const PostOutput = () => {
 
 
 
+            <div className={" border-dark border-bottom "}>
 
-    <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
-        <Row>
-            <Col>
-
-                <div className={" border-dark border-bottom "}>
-                    <h1>POSTS</h1>
-                    {/*<p> {post.postText}</p>*/}
+                    <p> {post.postText}</p>
                 </div>
 
-            </Col>
-        </Row>
-    </Container>
+
+
+
         </>
 
     )

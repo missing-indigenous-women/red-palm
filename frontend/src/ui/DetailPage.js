@@ -7,6 +7,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchWomanByWomanId} from "../store/women";
 import {PostLogic} from "./Posts";
 import {PostOutput} from "./Output";
+import {fetchPostsByWomanId} from "../store/posts";
+import {MissingWoman} from "./MissingWoman";
 
 export const DetailPage = ({match}) => {
     console.log(match)
@@ -18,7 +20,7 @@ export const DetailPage = ({match}) => {
 
     const sideEffects = () => {
         // The dispatch function takes actions as arguments to make changes to the store/redux.
-        dispatch(fetch)
+        dispatch(fetchPostsByWomanId(match.params.womanId))
         dispatch(fetchWomanByWomanId(match.params.womanId));
     };
 
@@ -28,6 +30,8 @@ export const DetailPage = ({match}) => {
      * E.g when a network request to an api has completed and there is new data to display on the dom.
      **/
     useEffect(sideEffects, [match.params.womanId, dispatch]);
+    const posts = useSelector(state => state.posts ? state.posts : []);
+    console.log(posts)
 
     const woman = useSelector(state => (
         state.women
@@ -72,19 +76,10 @@ export const DetailPage = ({match}) => {
                 </Container>
 
                 <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
-                    <Row>
-                        <Col>
-
-                            <div className={" border-dark border-bottom "}>
-                                <h1>POSTS</h1>
-                                {/*<p> {post.postText}</p>*/}
-                            </div>
-
-                        </Col>
-                    </Row>
+                    <h1>POSTS</h1>
+                    {posts.map((post,index) => <PostOutput post={post} key={index}/>)}
                 </Container>
 
-                {/*<PostOutput/>*/}
 
                 <PostLogic/>
 
