@@ -4,7 +4,10 @@ import flower from "../images/flower.jpg"
 import * as Yup from 'yup'
 import moment from 'moment'
 //<input type="file" id="myFile" 
-export const Help = (props) => {
+export const InfoForm = (props) => {
+
+
+
 const validator = Yup.object().shape({
     womanAliases: Yup.string()
         .required()
@@ -77,13 +80,7 @@ const validator = Yup.object().shape({
 
 
 })
-}
 
-
-
-
-
-const InfoForm = (props) => {
     const {
         status,
         values,
