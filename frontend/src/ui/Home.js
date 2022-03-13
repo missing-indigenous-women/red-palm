@@ -10,11 +10,12 @@ import Gabby from '../images/gabbyPetito.png';
 import style from "./Home.module.css"
 import Button1 from "./shared/Components/Button1";
 import Button2 from "./shared/Components/Button2";
-/*import {useDispatch, useSelector} from "react-redux";
-import {fetchAllWomen} from "../store/women"; */
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllWomen} from "../store/women";
 import Tribes from '../images/tribeMap.png';
 
 export const Home = () => {
+
   /*  // returns the users store from Redux and assigns it to the users variable
     const women = useSelector(state => state.women ? state.women : []);
 
