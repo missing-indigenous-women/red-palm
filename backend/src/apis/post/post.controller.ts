@@ -13,13 +13,13 @@ import {getPostByWomanId} from "../../utils/post/getPostByWomanId";
 export async function postPost(request: Request, response: Response) : Promise<Response<Status>> {
     try {
 
-        const {postAppUserId, postWomanId, postDate, postText} = request.body;
+        const {postAppUserId, postWomanId, postText} = request.body;
 
         const post: Post = {
             postId: null,
             postAppUserId,
             postWomanId,
-            postDate,
+            postDate: null,
             postText
         }
         const result = await insertPost (post)

@@ -14,19 +14,19 @@ export const DetailPage = ({match}) => {
     console.log(match)
 
 
-    const clickLike = () => {
-        httpConfig.post("/apis/post/", {   postAppUserId, postWomanId: match.params.womanId,
-            postDate:
-            postText})
-            .then(reply => {
-                    if(reply.status === 200) {
-                        console.log(reply)
-                        dispatch(getAllTweets())
-                    }
-                    console.log(reply)
-                }
-            );
-    }
+    // const clickLike = () => {
+    //     httpConfig.post("/apis/post/", {   postAppUserId, postWomanId: match.params.womanId,
+    //         postDate:
+    //         postText})
+    //         .then(reply => {
+    //                 if(reply.status === 200) {
+    //                     console.log(reply)
+    //                     dispatch(getAllTweets())
+    //                 }
+    //                 console.log(reply)
+    //             }
+    //         );
+    // }
 
 
 
@@ -64,7 +64,7 @@ export const DetailPage = ({match}) => {
                                 <Image className={" mx-auto"} fluid roundedCircle src={woman.womanPhoto1}/>
                                 <Card className={'border border-dark m-2'}>
 
-                                    <Card.Title></Card.Title>
+
                                     <div className={style.Info}>
                                         <p>Aliases: {woman.womanAliases}</p>
                                         <p>DateOfDisappearance: {woman.womanDateOfDisappearance}</p>
@@ -96,7 +96,7 @@ export const DetailPage = ({match}) => {
                 </Container>
 
 
-                <PostLogic/>
+                <PostLogic postWomanId={woman.womanId} />
 
                 <div className="mt-3 justify-content-center">
                     <Link to="/InfoForm" className={'m-2 btn btn-primary'}>Edit missing person</Link>{' '} <Link to="/map"
