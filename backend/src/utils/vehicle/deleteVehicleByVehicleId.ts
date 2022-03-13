@@ -9,6 +9,7 @@ export async function deleteVehicle(vehicleId: string) : Promise<string> {
         const mySqlQuery:string = 'DELETE FROM vehicle WHERE vehicleId = UUID_TO_BIN(:vehicleId)'
         console.log(mySqlQuery)
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {vehicleId})
+        await mySqlConnection.release()
         return "Vehicle deleted successfully"
     } catch (error) {
         throw error

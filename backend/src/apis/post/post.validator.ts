@@ -11,13 +11,7 @@ export const postValidator : Schema = {
             errorMessage: 'please provide a valid postWomanId'
         }
     },
-    postDate: {
-        isDate: {
-            errorMessage: 'a postDate must be a valid date',
-        },
-        trim: true,
-        escape: true
-    },
+
     postText: {
         isLength: {
             errorMessage: 'a postText cannot be longer than 1000 characters',

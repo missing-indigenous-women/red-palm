@@ -39,6 +39,7 @@ export const Signin = () => {
                     window.localStorage.setItem("authorization", reply.headers["authorization"]);
                     resetForm();
                     let jwtToken = jwtDecode(reply.headers["authorization"])
+                    console.log(jwtToken)
                     dispatch(getAuth(jwtToken))
                 }
                 setStatus({message, type});
@@ -110,7 +111,7 @@ return (
                                   field={"appUserPassword"}
                     />
                 </Row>
-                <Button type={"submit"}> Login</Button>  <Link to="/MapPage" className="btn btn-primary"> Cancel</Link>
+                <Button type={"submit"}> Login</Button>  <Link to="/map" className="btn btn-primary"> Cancel</Link>
             </Container>
 </form>
             {
