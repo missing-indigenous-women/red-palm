@@ -1,23 +1,27 @@
 import {Schema} from 'express-validator';
 
 export const postValidator : Schema = {
-    statusId: {
+    postAppUserId: {
         isUUID: {
-            errorMessage: 'please provide a valid statusId'
+            errorMessage: 'please provide a valid postAppUserId'
         }
     },
-    statusColor: {
-        isLength: {
-            errorMessage: 'a statusColor cannot be longer than 50 characters',
-            options: { max: 50 }
+    postWomanId: {
+        isUUID: {
+            errorMessage: 'please provide a valid postWomanId'
+        }
+    },
+    postDate: {
+        isDate: {
+            errorMessage: 'a postDate must be a valid date',
         },
         trim: true,
         escape: true
     },
-    statusValue: {
+    postText: {
         isLength: {
-            errorMessage: 'a statusValue cannot be longer than 50 characters',
-            options: { max: 50 }
+            errorMessage: 'a postText cannot be longer than 1000 characters',
+            options: { max: 1000 }
         },
         trim: true,
         escape: true

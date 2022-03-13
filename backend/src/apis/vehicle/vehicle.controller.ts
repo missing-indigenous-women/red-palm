@@ -7,12 +7,12 @@ import {insertVehicle} from "../../utils/vehicle/insertVehicle"
 import {selectVehicleByVehicleId} from "../../utils/vehicle/selectVehicleByVehicleId";
 import {updateVehicle} from "../../utils/vehicle/updateVehicleByVehicleId";
 import {deleteVehicle} from "../../utils/vehicle/deleteVehicleByVehicleId";
+import {selectAllVehicle} from "../../utils/vehicle/selectAllVehicle";
 
 export async function postVehicle(request: Request, response: Response) : Promise<Response<Status>> {
   try {
-
     const { vehicleWomanId, vehicleColor, vehicleDescription, vehicleMake, vehicleModel, vehiclePlateNumber, vehicleYear } = request.body;
-    //console.log(request.body)
+    console.log(request.body)
     const vehicle: Vehicle = {
       vehicleId: null,
       vehicleWomanId,
@@ -35,7 +35,8 @@ export async function postVehicle(request: Request, response: Response) : Promis
     console.error(error.message)
     return  response.json({
       status: 500,
-      message: "Error Creating vehicle try again later.",
+      // @ts-ignore
+      message: `Error Creating vehicle. ${error.toString()}`,
       data: null
     });
   }
@@ -49,32 +50,54 @@ export async function getVehicleByVehicleId(request : Request, response: Respons
   } catch(error) {
     return response.json({
       status: 500,
-      message: "Error getting vehicle try again later.",
+      // @ts-ignore
+      message: `Error getting vehicle. ${error.toString()}`,
       data: []
     })
   }
 }
 
-
-
-
-
-//TODO: come back to this
-export async function updateVehicleByVehicleId(request : Request, response: Response): Promise<Response<Status>>{
+export async function getAllVehicle(request : Request, response: Response): Promise<Response<Status>>{
   try {
-    const     {vehicleId} = request.params
-    const data  = await updateVehicle(vehicleId)
+    const data  = await selectAllVehicle()
     return response.json({status:200, message: null, data});
   } catch(error) {
     return response.json({
       status: 500,
-      message: "Error getting vehicle try again later.",
+      // @ts-ignore
+      message: `Error getting all vehicles. ${error.toString()}`,
       data: []
     })
   }
 }
 
-//TODO: come back to this
+export async function updateVehicleByVehicleId(request : Request, response: Response): Promise<Response<Status>>{
+  try {
+    const { vehicleWomanId, vehicleColor, vehicleDescription, vehicleMake, vehicleModel, vehiclePlateNumber, vehicleYear } = request.body;
+    const     {vehicleId} = request.params
+    //console.log(request.body)
+    const vehicle: Vehicle = {
+      vehicleId,
+      vehicleWomanId,
+      vehicleColor,
+      vehicleDescription,
+      vehicleMake,
+      vehicleModel,
+      vehiclePlateNumber,
+      vehicleYear
+    }
+    const data  = await updateVehicle(vehicle)
+    return response.json({status:200, message: null, data});
+  } catch(error) {
+    return response.json({
+      status: 500,
+      // @ts-ignore
+      message: `Error updating vehicle. ${error.toString()}`,
+      data: []
+    })
+  }
+}
+
 export async function deleteVehicleByVehicleId(request : Request, response: Response): Promise<Response<Status>>{
   try {
     const     {vehicleId} = request.params
@@ -83,7 +106,8 @@ export async function deleteVehicleByVehicleId(request : Request, response: Resp
   } catch(error) {
     return response.json({
       status: 500,
-      message: "Error getting vehicle try again later.",
+      // @ts-ignore
+      message: `Error getting vehicle. ${error.toString()}`,
       data: []
     })
   }

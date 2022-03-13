@@ -1,6 +1,6 @@
-import ReactDOM from "react-dom";
-import store from "./store/store"
-import { App } from './ui/App'
+import ReactDOM from 'react-dom'
+import {App} from "./ui/App"
+import 'bootstrap/dist/css/bootstrap.css'
+import {store} from "./store"
 
-ReactDOM.render(App(store) , document.querySelector("#root"));
-
+ReactDOM.render(App(store), document.querySelector('#root'));

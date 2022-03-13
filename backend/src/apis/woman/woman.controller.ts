@@ -6,13 +6,15 @@ import {Status} from '../../utils/interfaces/Status';
 import {insertWoman} from "../../utils/woman/insertWoman"
 import {selectWomanByWomanId} from "../../utils/woman/selectWomanByWomanId";
 import {Woman} from "../../utils/interfaces/Woman";
+import {updateWoman} from "../../utils/woman/updateWomanByWomanId";
+import {deleteWoman} from "../../utils/woman/deleteWomanByWomanId";
+import {selectAllWoman} from "../../utils/woman/selectAllWoman";
+
 export async function postWoman(request: Request, response: Response) : Promise<Response<Status>> {
     try {
-
-        const { womanAliases,womanDateOfDisappearance , womanDateOfBirth, womanEyeColor, womanFavoriteHangoutPlaces, womanFirstName, womanHairColor, womanHeight,womanHobbiesAndInterests,womanIdentifyingMarks,womanLastName,womanLastLocation, womanLatitude, womanLongitude,  womanPhoto1, womanTribe, womanWeight   } = request.body;
-
+        const { womanId, womanAliases,womanDateOfDisappearance , womanDateOfBirth, womanEyeColor, womanFavoriteHangoutPlaces, womanFirstName, womanHairColor, womanHeight,womanHobbiesAndInterests,womanIdentifyingMarks,womanLastName,womanLastLocation, womanLatitude, womanLongitude,  womanPhoto1, womanTribe, womanWeight   } = request.body;
         const woman: Woman = {
-            womanId: null ,
+            womanId,
             womanAliases ,
             womanDateOfDisappearance,
             womanDateOfBirth,
@@ -43,7 +45,8 @@ export async function postWoman(request: Request, response: Response) : Promise<
         console.error(error.message)
         return  response.json({
             status: 500,
-            message: "Error Creating status try again later.",
+            // @ts-ignore
+            message: `Error Creating woman. ${error.toString()}`,
             data: null
         });
     }
@@ -54,9 +57,79 @@ export async function getWomanByWomanId(request : Request, response: Response): 
         const data  = await selectWomanByWomanId(womanId)
         return response.json({status:200, message: null, data});
     } catch(error) {
+
         return response.json({
             status: 500,
-            message: "Error getting status try again later.",
+            // @ts-ignore
+            message: error.toString(),
+            data: []
+        })
+    }
+}
+
+
+export async function updateWomanByWomanId(request : Request, response: Response): Promise<Response<Status>>{
+    try {
+        const { womanAliases , womanDateOfDisappearance,  womanDateOfBirth, womanEyeColor,womanFavoriteHangoutPlaces,womanFirstName,womanHairColor,womanHeight,womanHobbiesAndInterests,womanIdentifyingMarks,womanLastName, womanLastLocation,  womanLatitude,womanLongitude,womanPhoto1, womanTribe,womanWeight } = request.body;
+        const     {womanId} = request.params
+        console.log(request.body)
+        const woman: Woman = {
+            womanId ,
+            womanAliases ,
+            womanDateOfDisappearance,
+            womanDateOfBirth ,
+            womanEyeColor,
+            womanFavoriteHangoutPlaces ,
+            womanFirstName ,
+            womanHairColor ,
+            womanHeight,
+            womanHobbiesAndInterests,
+            womanIdentifyingMarks,
+            womanLastName ,
+            womanLastLocation,
+            womanLatitude,
+            womanLongitude ,
+            womanPhoto1 ,
+            womanTribe,
+            womanWeight
+        }
+
+        const data  = await updateWoman(woman)
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        return response.json({
+            status: 500,
+            // @ts-ignore
+            message: `Error updating woman. ${error.toString()}`,
+            data: []
+        })
+    }
+}
+
+export async function deleteWomanByWomanId(request : Request, response: Response): Promise<Response<Status>>{
+    try {
+        const     {womanId} = request.params
+        const data  = await deleteWoman(womanId)
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        return response.json({
+            status: 500,
+            // @ts-ignore
+            message: `Error getting vehicle. ${error.toString()}`,
+            data: []
+        })
+    }
+}
+
+export async function getAllWoman(request : Request, response: Response): Promise<Response<Status>>{
+    try {
+        const data  = await selectAllWoman()
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        return response.json({
+            status: 500,
+            // @ts-ignore
+            message: `Error getting all women. ${error.toString()}`,
             data: []
         })
     }

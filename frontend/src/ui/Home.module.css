@@ -1,0 +1,47 @@
+.Background {
+        background-image: url(../images/native2.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-position-y: center;
+        background-position-x: center;
+
+        background-size: cover;
+
+    }
+
+
+.Redpalm {
+    background-color: black;
+    image-resolution: normal;
+}
+
+.Welcome {
+    background-color: black;
+}
+
+.Card1 {
+
+    top: 20em;
+    left:10em;
+
+}
+
+.Card2 {
+    top: 25em;
+}
+
+.Card3 {
+    top: 20em;
+    right: 10em;
+}
+
+
+.Info{
+    text-decoration: underline;
+    text-underline: black;
+    color: black;
+    font-weight: bold;
+    margin: 4px;
+    padding: 4px;
+}
