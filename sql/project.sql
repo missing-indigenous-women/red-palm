@@ -9,7 +9,7 @@ CREATE TABLE appUser (
     -- auto_increment tells mySQL to number them {1, 2, 3, ...}
     -- not null means the attribute is required!
                          appUserId BINARY(16) NOT NULL,
-                         appUserActivationToken CHAR(32) NOT NULL,
+                         appUserActivationToken CHAR(32) ,
                          appUserDisplayName VARCHAR(32) NOT NULL,
                          appUserEmail  VARCHAR(255) NOT NULL,
     -- to make sure duplicate data cannot exist, create a unique index
@@ -17,13 +17,14 @@ CREATE TABLE appUser (
     -- to make something optional, exclude the not null
                          appUserHash CHAR(97) NOT NULL,
                          appUserLastName VARCHAR(40) NOT NULL,
+                         appUserAvatarUrl VARCHAR(255),
                          UNIQUE(appUserEmail),
                          UNIQUE(appUserDisplayName),
                          INDEX(appUserEmail),
     -- this officiates the primary key for the entity
                          PRIMARY KEY(appUserId)
 );
--- create the tweet entity
+-- create the woman entity
 CREATE TABLE woman (
     -- this is for yet another primary key...
                        womanId BINARY(16) NOT NULL,
@@ -38,17 +39,17 @@ CREATE TABLE woman (
                        womanHairColor VARCHAR (40),
                        womanHeight VARCHAR (10),
                        womanHobbiesAndInterests VARCHAR (150),
-                       womanIdentifyingMarks VARCHAR (150),
+                       womanIdentifyingMarks VARCHAR (3000),
                        womanLastName VARCHAR (40),
                        womanLastLocation VARCHAR (60),
                        womanLatitude DECIMAL(9,7),
-                       womanLongitude DECIMAL (9,7),
+                       womanLongitude DECIMAL (9,6),
                        womanPhoto1 VARCHAR (160),
                        womanTribe VARCHAR (150),
                        womanWeight VARCHAR (4),
                        PRIMARY KEY(womanId)
 );
--- create the tweetImage entity
+-- create the socialMedia entity
 CREATE TABLE socialMedia (
                        socialMediaId BINARY(16) NOT NULL,
                        socialMediaWomanId BINARY(16) NOT NULL,

@@ -1,38 +1,40 @@
+import {BrowserRouter} from 'react-router-dom'
+import {Route, Switch} from 'react-router'
+import {Home} from './Home'
+import {MapPage} from './MapPage'
+import {FourOhFour} from './FourOhFour'
 import React from 'react'
-import {Home} from "./home/Home";
-import {Profile} from "./profile/Profile";
-import {Image} from "./image/Image"
-import {FourOhFour} from "./four-oh-four/FourOhFour";
-import {MainNav} from "./shared/components/main-nav/MainNav";
-import 'bootstrap/dist/css/bootstrap.css';
-import {Route, BrowserRouter, Switch} from 'react-router-dom'
+import {NavBar} from "./shared/NavBar";
+import {Footer} from "./shared/Footer";
+import {Help} from "./shared/InfoForm";
 import {Provider} from "react-redux";
+import {DetailPage} from "./DetailPage";
+import {Signup} from "./Signup";
+import {Signin} from "./Signin";
+import 'mapbox-gl/dist/mapbox-gl.css';
+import {ImageDropZone} from "./shared/Components/ImageDropZone";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {
-	faDove,
-	faEnvelope,
-	faKey,
-	faPencilAlt,
-	faPhone,
-	faSignOutAlt,
-	faStroopwafel, faUser,
-} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faStroopwafel, faEnvelope, faKey, faDove, faPhone, faPencilAlt, faSignOutAlt, faUser);
+import ImageSlider from "./shared/Components/ImageSlider";
+import {SliderData} from "./shared/Components/SliderData";
 
 export const App = (store) => (
-	<>
-		<Provider store={store}>
-			<BrowserRouter>
-				<MainNav/>
-				<Switch>
-					<Route exact path="/profile/:profileHandle" component={Profile} />
-					<Route exact path="/image" component={Image} />
-					<Route exact path="/" component={Home} />
-					<Route component={FourOhFour} />
-				</Switch>
-			</BrowserRouter>
-		</Provider>
-	</>
-);
+    <>
+        <Provider store={store}>
+            <BrowserRouter>
+                <NavBar/>
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route exact path='/map' component={MapPage}/>
+                    <Route exact path='/DetailPage/:womanId' component={DetailPage} womanId=":womanId"/>
+                    <Route exact path='/InfoForm' component={Help}/>
+                    <Route exact path='/sign-up' component={Signup}/>
+                    <Route exact path='/sign-in' component={Signin} />
+                    <Route exact path='/image' component={ImageDropZone}/>
+                    <Route component={FourOhFour}/>
+                </Switch>
+                <ImageSlider slides={SliderData}/>
+                <Footer/>
+            </BrowserRouter>
+        </Provider>
+    </>
+)

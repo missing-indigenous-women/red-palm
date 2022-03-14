@@ -2,7 +2,10 @@ import {Router} from "express"
 
 import {
     getWomanByWomanId,
-    postWoman
+    postWoman,
+    updateWomanByWomanId,
+    deleteWomanByWomanId,
+    getAllWoman
 } from './woman.controller';
 import { asyncValidatorController } from '../../utils/controllers/asyncValidator.controller';
 import { womanValidator } from './woman.validator';
@@ -16,6 +19,12 @@ womanRoute.route("/:womanId")
     .get( asyncValidatorController([
         check("womanId","please provide a valid womanId").isUUID()
     ]), getWomanByWomanId)
+    .put(asyncValidatorController(checkSchema(womanValidator)),updateWomanByWomanId)
+    .delete(asyncValidatorController([
+        check("womanId","please provide a valid womanId").isUUID()
+    ]),deleteWomanByWomanId)
+
 
 womanRoute.route("/")
-    .post(asyncValidatorController(checkSchema(womanValidator)), postWoman);
+    .get(getAllWoman)
+    .post(asyncValidatorController(checkSchema(womanValidator)), postWoman)

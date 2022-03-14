@@ -1,0 +1,26 @@
+
+.Background111 {
+
+    background-image: url('../images/Rio_Grande_in_Big_Bend.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-position-y: center;
+    background-position-x: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+
+
+
+
+
+.Info {
+     text-decoration: underline;
+     text-underline: black;
+     color: black;
+    font-weight: bold;
+ }

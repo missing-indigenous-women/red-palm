@@ -1,20 +1,19 @@
-import {Post} from "../interfaces/Post";
-import {Status} from "../interfaces/Status";
-import {connect} from "../database.utils";
+import {Status} from "../../utils/interfaces/Status";
+import {connect} from "../../utils/database.utils";
 import {RowDataPacket} from 'mysql2';
 
-export async function deleteAppUser(postId: string) : Promise<Post|null> {
-    try {
-        console.log("postId", postId)
-        const mySqlConnection = await connect();
-        const mySqlQuery = 'SELECT BIN_TO_UUID(postId) AS postId,BIN_TO_UUID(postAppUserId) AS postAppUserId, BIN_TO_UUID(postWomanId) AS postWomanId, postDate, postText FROM post WHERE postId = UUID_TO_BIN (:postId)'
-        const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {postId})
-        const posts : Array<Post> = result[0] as Array<Post>
-        return posts.length === 1 ? {...posts[0]} : null;
+export async function deleteAppUser(appUserId: string) : Promise<string> {
 
+    try {
+        console.log("appUserId: ",appUserId)
+        const mySqlConnection = await connect();
+        const mySqlQuery:string = 'DELETE FROM appUser WHERE appUserId = UUID_TO_BIN(:appUserId)'
+        console.log(mySqlQuery)
+        await mySqlConnection.release()
+        const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {appUserId})
+        return "appUSer deleted successfully"
     } catch (error) {
         throw error
     }
 }
 
-//TODO come back
