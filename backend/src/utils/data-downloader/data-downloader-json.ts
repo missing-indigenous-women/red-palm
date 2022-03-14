@@ -88,7 +88,7 @@ function redPalmDataDownloader() : Promise<any> {
 	async function downloadUsers() {
 		try {
 			//let buffer = fs.readFileSync('./MissingPersonsDataNewMexicoSingleExample.json')
-			let buffer = fs.readFileSync('./MissingPersonsDataNewMexico.json')
+			let buffer = fs.readFileSync('./MissingPersonsDataTribal2.json')
 			const data = buffer.toJSON()
 			const results = JSON.parse(buffer.toString())
 			console.log("results", results)
@@ -103,6 +103,7 @@ function redPalmDataDownloader() : Promise<any> {
 				appUserEmail: appUserId + "@fake-acounts.com",
 				appUserFirstName: "fakefirstname",
 				appUserHash,
+				appUserAvatarUrl: "https",
 				appUserLastName: "fakelastname"
 			}
 			console.log(await insertAppUser(appUser))
