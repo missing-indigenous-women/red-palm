@@ -10,6 +10,7 @@ export async function selectAllWoman() : Promise<Array<Woman>|null> {
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery)
         console.log('result',result)
         const women : Array<Woman> = result[0] as Array<Woman>
+        await mySqlConnection.release()
         console.log('women.length', women)
         return women.length >= 1 ? [...women] : null;
 

@@ -9,6 +9,7 @@ export async function deleteAppUser(appUserId: string) : Promise<string> {
         const mySqlConnection = await connect();
         const mySqlQuery:string = 'DELETE FROM appUser WHERE appUserId = UUID_TO_BIN(:appUserId)'
         console.log(mySqlQuery)
+        await mySqlConnection.release()
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {appUserId})
         return "appUSer deleted successfully"
     } catch (error) {

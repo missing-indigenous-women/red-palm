@@ -8,6 +8,7 @@ export async function selectAppUserByAppUserEmail(appUserEmail: string): Promise
 		const sqlQuery: string = "SELECT BIN_TO_UUID(appUserId) as appUserId, appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserHash, appUserLastName FROM appUser WHERE appUserEmail = :appUserEmail"
 		const result = await mysqlConnection.execute(sqlQuery, {appUserEmail}) as RowDataPacket[]
 		const rows: AppUser[]  = result[0] as AppUser[]
+		await mysqlConnection.release()
 		return rows.length === 1 ? {...rows[0]} : null;
 	} catch (error) {
 		throw error

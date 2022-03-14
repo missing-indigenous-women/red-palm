@@ -11,8 +11,10 @@ import {DetailPage} from "./DetailPage";
 import {Signup} from "./Signup";
 import {Signin} from "./Signin";
 import 'mapbox-gl/dist/mapbox-gl.css';
-import {ImageDropZone} from "./shared/Components/ImageDropZone";
 import {InfoForm} from "./shared/InfoForm";
+import {ImageDropZone} from "./shared/components/ImageDropZone";
+import ImageSlider from "./shared/components/ImageSlider";
+import {SliderData} from "./shared/components/SliderData";
 
 export const App = (store) => (
     <>
@@ -29,6 +31,7 @@ export const App = (store) => (
                     <Route exact path='/image' component={ImageDropZone}/>
                     <Route component={FourOhFour}/>
                 </Switch>
+                <ImageSlider slides={SliderData}/>
                 <Footer/>
             </BrowserRouter>
         </Provider>

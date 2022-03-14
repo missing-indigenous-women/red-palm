@@ -7,6 +7,7 @@ export const PostOutput = ({post}) => {
     const {
         postId,
         postAppUserId,
+        postWomanId,
         postDate,
         postText
     } = post

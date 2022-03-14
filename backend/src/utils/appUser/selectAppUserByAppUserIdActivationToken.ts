@@ -11,6 +11,7 @@ export async function selectAppUserByAppUserActivationToken(appUserActivationTok
 		const mysqlQuery: string = "SELECT BIN_TO_UUID(appUserId) as appUserId,  appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserLastName FROM appUser WHERE appUserActivationToken = :appUserActivationToken"
 		const result = await mysqlConnection.execute(mysqlQuery ,{appUserActivationToken}) as RowDataPacket[]
 		const rows: AppUser[]  = result[0] as AppUser[]
+		await mysqlConnection.release()
 		return rows.length === 1 ? {...rows[0]} : null;
 	}  catch (error) {
 		throw error

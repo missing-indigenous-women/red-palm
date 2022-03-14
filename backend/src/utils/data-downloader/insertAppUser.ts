@@ -7,6 +7,7 @@ export async function insertAppUser(appUser:AppUser) : Promise<string> {
 		const mySqlConnection = await connect()
 		const query : string = "INSERT INTO appUser(appUserId, appUserActivationToken,appUserDisplayName,appUserEmail,appUserFirstName,appUserHash, appUserLastName) VALUES (UUID_TO_BIN(:appUserId), :appUserActivationToken, :appUserDisplayName, :appUserEmail, :appUserFirstName, :appUserHash, :appUserLastName)";
 		await mySqlConnection.execute(query, appUser);
+		await mySqlConnection.release()
 		return "appUser created successfully"
 	} catch (error) {
 		throw error

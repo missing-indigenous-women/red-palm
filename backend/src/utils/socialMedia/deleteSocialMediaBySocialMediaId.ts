@@ -10,6 +10,7 @@ export async function deleteSocialMedia(socialMediaId: string) : Promise<string>
         const mySqlQuery:string = 'DELETE FROM socialMedia WHERE socialMediaId = UUID_TO_BIN(:socialMediaId)'
         console.log(mySqlQuery)
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {socialMediaId})
+        await mySqlConnection.release()
         return "socialMedia deleted successfully"
     } catch (error) {
         throw error

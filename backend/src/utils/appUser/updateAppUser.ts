@@ -8,6 +8,7 @@ export async function updateAppUser(appUser: AppUser): Promise<string>  {
 		const mysqlConnection = await connect();
 		const query : string = 'UPDATE appUser SET appUserActivationToken = :appUserActivationToken, appUserDisplayName = :appUserDisplayName, appUserEmail = :appUserEmail, appUserFirstName = :appUserFirstName WHERE appUserId = UUID_TO_BIN(:appUserId)';
 		await mysqlConnection.execute(query, appUser)
+		await mysqlConnection.release()
 		return 'appUser successfully updated'
 	} catch (error) {
 		throw error

@@ -8,6 +8,7 @@ export async function insertPost(post: Post) : Promise<string> {
         const mySqlQuery = "INSERT INTO post(postId, postAppUserId, postWomanId, postDate, postText) VALUES(UUID_TO_BIN(UUID()), UUID_TO_BIN(:postAppUserId),UUID_TO_BIN(:postWomanId), NOW(), :postText)";
 
         const [result]= await mySqlConnection.execute(mySqlQuery, post) as [ResultSetHeader, RowDataPacket]
+        await mySqlConnection.release()
         return "Post created successfully"
     } catch (error) {
         throw error

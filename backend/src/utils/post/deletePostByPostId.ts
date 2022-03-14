@@ -7,6 +7,7 @@ export async function deletePost(postId: string) : Promise<string> {
         const mySqlConnection = await connect();
         const mySqlQuery:string = 'DELETE FROM post WHERE postId = UUID_TO_BIN(:postId)'
         console.log(mySqlQuery)
+        await mySqlConnection.release()
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {postId})
         return "Post deleted successfully"
     } catch (error) {

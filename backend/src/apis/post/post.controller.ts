@@ -8,16 +8,18 @@ import {selectAllPost} from "../../utils/post/selectAllPost";
 import {Post} from "../../utils/interfaces/Post";
 import {updatePost} from "../../utils/post/updatePostByPostId";
 import {deletePost} from "../../utils/post/deletePostByPostId";
+import {getPostByWomanId} from "../../utils/post/getPostByWomanId";
+
 export async function postPost(request: Request, response: Response) : Promise<Response<Status>> {
     try {
 
-        const {postAppUserId, postWomanId, postDate, postText} = request.body;
+        const {postAppUserId, postWomanId, postText} = request.body;
 
         const post: Post = {
             postId: null,
             postAppUserId,
             postWomanId,
-            postDate,
+            postDate: null,
             postText
         }
         const result = await insertPost (post)
@@ -98,6 +100,21 @@ export async function deletePostByPostId(request : Request, response: Response):
             status: 500,
             // @ts-ignore
             message: `Error getting post. ${error.toString()}`,
+            data: []
+        })
+    }
+}
+
+export async function getPostsByWomanId(request : Request, response: Response): Promise<Response<Status>>{
+    try {
+        const     {postWomanId} = request.params
+        const data  = await getPostByWomanId(postWomanId)
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        console.error(error)
+        return response.json({
+            status: 500,
+            message: "Error getting status try again later.",
             data: []
         })
     }
