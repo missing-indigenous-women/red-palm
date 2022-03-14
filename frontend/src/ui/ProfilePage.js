@@ -25,7 +25,7 @@ export const ProfilePage = ({appUser}) => {
                     <p> Your password:</p>
                 </Col>
             </Row>
-            <Button> Edit</Button> <Button> close</Button>
+            <Button> </Button> <Button> close</Button>
         </Container>
 
 
