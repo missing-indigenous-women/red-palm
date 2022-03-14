@@ -14,6 +14,7 @@ export function NavBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
+
                         <Route render={({history}) => (
                             <>
                         <Nav.Link onClick={() => {
