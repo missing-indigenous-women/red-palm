@@ -10,6 +10,9 @@ import Gabby from '../images/gabbyPetito.png';
 import style from "./Home.module.css"
 import Button1 from "./shared/Components/Button1";
 import Button2 from "./shared/Components/Button2";
+import ImageSlider from "./shared/Components/ImageSlider";
+import {SliderData} from "./shared/Components/SliderData";
+
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
 import Tribes from '../images/tribeMap.png';
@@ -155,7 +158,13 @@ export const Home = () => {
                             </Card>
                         </Col>
                     </Row>
-
+                <Container>
+                    <Row>
+                        <Col className="d-flex justify-content-center">
+                            <ImageSlider slides={SliderData}/>
+                        </Col>
+                    </Row>
+                </Container>
             </Container>
             </Container>
 
