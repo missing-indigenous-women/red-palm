@@ -46,7 +46,8 @@ export async function signupAppUserController(request: Request, response: Respon
 			appUserEmail,
 			appUserFirstName ,
 			appUserLastName,
-			appUserHash
+			appUserHash,
+			appUserAvatarUrl
 		};
 		await insertAppUser(appUser)
 		console.log('checkit:',appUser)

@@ -12,7 +12,7 @@ import {Vehicle} from "../../utils/interfaces/Vehicle";
 export async function postAppUser(request: Request, response: Response) : Promise<Response<Status>> {
     try {
 
-        const {  appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserHash, appUserLastName} = request.body;
+        const {  appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserHash, appUserLastName, appUserAvatarUrl } = request.body;
 
         const appUser: AppUser = {
             appUserId: null,
@@ -21,8 +21,8 @@ export async function postAppUser(request: Request, response: Response) : Promis
             appUserEmail,
             appUserFirstName,
             appUserHash,
-            appUserLastName
-
+            appUserLastName,
+            appUserAvatarUrl
         }
         const result = await insertAppUser(appUser)
         const status: Status = {
@@ -59,7 +59,7 @@ export async function getAppUserByAppUserId(request : Request, response: Respons
 
 export async function updateAppUserByAppUserId(request : Request, response: Response): Promise<Response<Status>>{
     try {
-        const { appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserHash, appUserLastName } = request.body;
+        const { appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserHash, appUserLastName, appUserAvatarUrl } = request.body;
         const     {appUserId} = request.params
         const appUser: AppUser = {
             appUserId,
@@ -68,7 +68,8 @@ export async function updateAppUserByAppUserId(request : Request, response: Resp
             appUserEmail,
             appUserFirstName,
             appUserHash,
-            appUserLastName
+            appUserLastName,
+            appUserAvatarUrl
 
         }
         const data  = await updateAppUser(appUser)

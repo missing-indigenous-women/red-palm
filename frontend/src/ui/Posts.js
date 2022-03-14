@@ -32,8 +32,8 @@ export const PostLogic = (props) => {
     const submitPost = (values, {resetForm, setStatus}) => {
         const {postWomanId}= props
         const postAppUserId = auth?.appUserId ?? null
-        console.log(auth)
-        const post = {postWomanId,postAppUserId,...values}
+        const postAppUserUrl =  dispatch(fetchPostsByWomanId(postWomanId))
+        const post = {postWomanId,postAppUserId,postAppUserUrl,...values}
         console.log('made it here')
         httpConfig.post("/apis/post/", post)
             .then(reply => {

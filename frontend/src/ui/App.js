@@ -31,7 +31,6 @@ export const App = (store) => (
                     <Route exact path='/image' component={ImageDropZone}/>
                     <Route component={FourOhFour}/>
                 </Switch>
-                <ImageSlider slides={SliderData}/>
                 <Footer/>
             </BrowserRouter>
         </Provider>
