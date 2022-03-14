@@ -103,6 +103,7 @@ function redPalmDataDownloader() : Promise<any> {
 				appUserEmail: appUserId + "@fake-acounts.com",
 				appUserFirstName: "fakefirstname",
 				appUserHash,
+				appUserAvatarUrl: "https",
 				appUserLastName: "fakelastname"
 			}
 			console.log(await insertAppUser(appUser))

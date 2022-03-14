@@ -18,7 +18,7 @@ export async function signInController(request: Request, response: Response): Pr
             const {appUserPassword} = request.body;
 
             // @ts-ignore isEmailValid determines mySqlResult will not be null
-            const {appUserId,appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName , appUserHash , appUserLastName } = mySqlResult
+            const {appUserId,appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName , appUserHash , appUserLastName, appUserAvatarUrl } = mySqlResult
 
             const appUser: AppUser = {
                 appUserId,
@@ -27,7 +27,8 @@ export async function signInController(request: Request, response: Response): Pr
                 appUserEmail,
                 appUserFirstName ,
                 appUserHash,
-                appUserLastName
+                appUserLastName,
+                appUserAvatarUrl
             }
 
 
