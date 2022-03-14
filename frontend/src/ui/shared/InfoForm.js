@@ -100,7 +100,7 @@ export const InfoForm = (props) => {
 
     function InfoForms(props) {
         const {
-            status, values, errors, touched, dirty, isSubmitting, handledChange, handleBlur, handleSubmit, handleReset,
+            status, values, errors, touched, dirty, isSubmitting, handleChange, handleBlur, handleSubmit, handleReset,
 
 
         } = props;
