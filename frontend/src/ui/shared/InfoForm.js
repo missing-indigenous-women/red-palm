@@ -95,7 +95,8 @@ export const InfoForm = (props) => {
                 {InfoForms}
             </Formik>
         </Container>
-    </>)
+        </>
+    )
 
     function InfoForms(props) {
         const {
@@ -108,83 +109,83 @@ export const InfoForm = (props) => {
             <h1>Information Form</h1>
             <Image src={flower} alt={flower} height="200px"/>
         </Container>
-        <form onSubmit={handleSubmit}>
-            <Container>
-                <Row>
-                    <Col md={6}>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>First Name:</InputGroup.Text>
-                            <FormControl aria-label="First Name"
+            <form onSubmit={handleSubmit}>
+                <Container>
+                    <Row>
+                        <Col md={6}>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text>First Name:</InputGroup.Text>
+                                <FormControl aria-label="First Name"
                                          onChange={handleChange}
                                          onBlur={handleBlur}
                                          value={values.womanFirstName}
                                          name={'womanFirstName'}
-                            />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>Last Name:</InputGroup.Text>
-                            <FormControl aria-label="Last name Name"
+                                />
+                            </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text>Last Name:</InputGroup.Text>
+                                <FormControl aria-label="Last name Name"
                                          onChange={handleChange}
                                          onBlur={handleBlur}
                                          value={values.womanLastName}
                                          name={'womanLastName'}
                             />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>Nick Name or other Names:</InputGroup.Text>
-                            <FormControl aria-label="Nick-Name Or other Names"
+                            </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text>Nick Name or other Names:</InputGroup.Text>
+                                <FormControl aria-label="Nick-Name Or other Names"
                                          onChange={handleChange}
                                          onBlur={handleBlur}
                                          value={values.womanAliases}
                                          name={'womanAliases'}
                             />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>Missing Since:</InputGroup.Text>
-                            <FormControl aria-label="Missing-Since"
+                            </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text>Missing Since:</InputGroup.Text>
+                                <FormControl aria-label="Missing-Since"
                                          onChange={handleChange}
                                          onBlur={handleBlur}
                                          value={values.womanDateOfDisappearance}
                                          name={'womanDateOfDisappearance'}
-                            />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>Date of Birth</InputGroup.Text>
-                            <FormControl aria-label="Date-Of-Birth"
+                                />
+                            </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text>Date of Birth</InputGroup.Text>
+                                <FormControl aria-label="Date-Of-Birth"
                                          onChange={handleChange}
                                          onBlur={handleBlur}
                                          value={values.womanDateOfBirth}
                                          name={'womanDateOfBirth'}
                             />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>Last seen address</InputGroup.Text>
-                            <FormControl aria-label="age"
+                            </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text>Last seen address</InputGroup.Text>
+                                <FormControl aria-label="age"
                                          onChange={handleChange}
                                          onBlur={handleBlur}
                                          value={values.womanLastLocation}
                                          name={'womanLastLocation'}
-                            />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>Tribe</InputGroup.Text>
-                            <FormControl aria-label="Tribe"
+                                />
+                            </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text>Tribe</InputGroup.Text>
+                                <FormControl aria-label="Tribe"
                                          onChange={handleChange}
                                          onBlur={handleBlur}
                                          value={values.womanTribe}
                                          name={'womanTribe'}
-                            />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>Latitude:</InputGroup.Text>
-                            <FormControl aria-label="Latitude"
+                                />
+                            </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text>Latitude:</InputGroup.Text>
+                                <FormControl aria-label="Latitude"
                                          onChange={handleChange}
                                          onBlur={handleBlur}
                                          value={values.womanLatitude}
                                          name={'womanLatitude'}
-                            />
-                        </InputGroup>
-                    </Col>
+                                />
+                            </InputGroup>
+                        </Col>
                     <Col md={6}>
                         <InputGroup className="mb-3">
                             <InputGroup.Text>Eye Color:</InputGroup.Text>
@@ -249,35 +250,35 @@ export const InfoForm = (props) => {
                                          name={'womanHairColor'}
                             />
                         </InputGroup>
-                    </InputGroup>
-                    <InputGroup className="mb-3">
-                        <InputGroup.Text>Longitude:</InputGroup.Text>
-                        <FormControl aria-label="Longitude"
+                        <InputGroup className="mb-3">
+                            <InputGroup.Text>Longitude:</InputGroup.Text>
+                            <FormControl aria-label="Longitude"
                                      onChange={handleChange}
                                      onBlur={handleBlur}
                                      value={values.womanLastLocation}
                                      name={'womanLastLocation'}
-                        />
-                    </InputGroup>
-                    <InputGroup className="mb-3">
-                        <InputGroup.Text>Photo:</InputGroup.Text>
-                        <FormControl aria-label="Longitude"
+                            />
+                        </InputGroup>
+                        <InputGroup className="mb-3">
+                            <InputGroup.Text>Photo:</InputGroup.Text>
+                            <FormControl aria-label="Longitude"
                                      onChange={handleChange}
                                      onBlur={handleBlur}
                                      value={values.womanPhoto1}
                                      name={'womanPhoto1'}
-                        />
-                    </InputGroup>
-                </Col>
-            </Row>
+                            />
+                        </InputGroup>
+                    </Col>
+                    </Row>
             <Row>
                 <Col mb={2}>
                     <Button variant="primary">Submit</Button>
                     <Button variant="danger">Cancel</Button>
                 </Col>
             </Row>
-        </Container>
+            </Container>
         </form>
-    </>)
+    </>
+    )
     }
 }
