@@ -5,8 +5,14 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
 import Map from 'react-map-gl';
 import {Pin} from "./Pin";
+import { useState } from "react";
 
 export const MapPage = () => {
+    const [displayText, setDisplayText] = useState(true);
+
+    const changeDisplayText = () => {
+        setDisplayText(!displayText);
+    };
     // returns the users store from Redux and assigns it to the users variable
     const women = useSelector(state => state.women ? state.women : []);
 
@@ -45,26 +51,31 @@ export const MapPage = () => {
                     <Form.Check
                         type="switch"
                         id="maplist-switch"
+                        checked={displayText}
+                        onChange={changeDisplayText}
                         label="MapPage | List"
                     />
                 </Form>
             </Container>
-            <Container className="text-center pb-5">
+            {!displayText && (<Container className="text-center pb-5">
                 <Map
                     initialViewState = {{
                         latitude: 35.33,
                         longitude: -106.65,
-                        zoom: 12
+                        zoom: 6
                     }}
                     mapStyle="mapbox://styles/mapbox/dark-v9"
                     style={{width: 1200, height: 800}}
                 >
                     {women.map((woman, index) => <Pin lat={woman.womanLatitude} lng={woman.womanLongitude} index={index} key={index}/>)}
                 </Map>
-            </Container>
-            <Container className={'pb-5'}>
+            </Container>)}
+            {displayText && (<Container className={'pb-5'}>
                 {women.map((woman,index) => <MissingWoman woman={woman} key={index}/>)}
-            </Container>
+            </Container>)}
+            {/*<Container className={'pb-5'}>*/}
+            {/*    {women.map((woman,index) => <MissingWoman woman={woman} key={index}/>)}*/}
+            {/*</Container>*/}
         </>
     )
 }

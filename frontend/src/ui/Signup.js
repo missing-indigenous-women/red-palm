@@ -1,13 +1,10 @@
 import React from "react";
 import {Button, Col, Container, FormControl, Image, InputGroup, Row} from "react-bootstrap";
 import {Formik} from 'formik'
-
-import style from "./InfosPage.module.css"
 import {Link} from "react-router-dom";
 import * as Yup from "yup";
 import {httpConfig} from "../utils/http-config";
-import {DisplayError} from "./shared/Components/DisplayError";
-import {FormDebugger} from "./shared/Components/FormDebugger";
+import {DisplayError} from "./shared/components/DisplayError";
 
 
 export const Signup = (props) => {

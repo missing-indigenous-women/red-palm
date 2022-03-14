@@ -3,7 +3,7 @@ import React from "react";
 import {httpConfig} from "../utils/http-config";
 import {Formik} from "formik";
 import * as Yup from "yup";
-import {FormDebugger} from "./shared/Components/FormDebugger";
+import {FormDebugger} from "./shared/components/FormDebugger";
 import {fetchPostsByWomanId} from "../store/posts";
 import {useDispatch, useSelector} from "react-redux";
 

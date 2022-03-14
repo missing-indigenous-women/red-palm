@@ -8,7 +8,7 @@ import {getAuth} from "../store/auth";
 import {httpConfig} from "../utils/http-config";
 import {Formik} from "formik";
 import jwtDecode from "jwt-decode";
-import {DisplayError} from "./shared/Components/DisplayError";
+import {DisplayError} from "./shared/components/DisplayError";
 
 
 export const Signin = () => {
