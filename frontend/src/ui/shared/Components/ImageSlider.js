@@ -3,11 +3,11 @@ import { SliderData } from './SliderData';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
 const ImageSlider = ({ slides }) => {
-    const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState(2);
     const length = slides.length;
 
     const nextSlide = () => {
-        setCurrent(current === length - 1 ? 0 : current + 1);
+        setCurrent(current === length - 3 ? 0 : current + 1);
     };
 
     const prevSlide = () => {
@@ -29,7 +29,7 @@ const ImageSlider = ({ slides }) => {
                         key={index}
                     >
                         {index === current && (
-                            <img src={slide.image} alt='travel image' className='image' />
+                            <img src={slide.image} alt='missing native american women' className='image' />
                         )}
                     </div>
                 );
