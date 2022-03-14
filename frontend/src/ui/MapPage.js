@@ -54,7 +54,7 @@ export const MapPage = () => {
                     initialViewState = {{
                         latitude: 35.33,
                         longitude: -106.65,
-                        zoom: 12
+                        zoom: 6
                     }}
                     mapStyle="mapbox://styles/mapbox/dark-v9"
                     style={{width: 1200, height: 800}}
