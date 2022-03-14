@@ -73,6 +73,9 @@ export const MapPage = () => {
             {displayText && (<Container className={'pb-5'}>
                 {women.map((woman,index) => <MissingWoman woman={woman} key={index}/>)}
             </Container>)}
+            {/*<Container className={'pb-5'}>*/}
+            {/*    {women.map((woman,index) => <MissingWoman woman={woman} key={index}/>)}*/}
+            {/*</Container>*/}
         </>
     )
 }
