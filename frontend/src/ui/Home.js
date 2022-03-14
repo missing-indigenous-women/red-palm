@@ -8,10 +8,10 @@ import {Container, Card, Row, Col, Image, Carousel,} from "react-bootstrap";
 import Graph from '../images/graph.png';
 import Gabby from '../images/gabbyPetito.png';
 import style from "./Home.module.css"
-import Button1 from "./shared/Components/Button1";
-import Button2 from "./shared/Components/Button2";
-import ImageSlider from "./shared/Components/ImageSlider";
-import {SliderData} from "./shared/Components/SliderData"
+import Button1 from "./shared/components/Button1";
+import Button2 from "./shared/components/Button2";
+import ImageSlider from "./shared/components/ImageSlider";
+import {SliderData} from "./shared/components/SliderData"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
 import Tribes from '../images/tribeMap.png';
