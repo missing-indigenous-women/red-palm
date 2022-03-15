@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import moment from 'moment'
 import {httpConfig} from "../../utils/http-config";
 import {Control} from "mapbox-gl";
+import {FormDebugger} from "./components/FormDebugger";
 //<input type="file" id="myFile" 
 export const InfoForm = () => {
 
@@ -52,11 +53,6 @@ export const InfoForm = () => {
         womanLastLocation: Yup.string()
             .required("Last Location seen")
             .max(60, "Last Location seen cannot exceed 60 characters"),
-        womanPhoto1: Yup.string()
-            .required()
-            .max(), womanTribe: Yup.string()
-            .required("Tribe Name")
-            .max(150, "Tribe name cannot be over 150 characters"),
         womanWeight: Yup.number()
             .required("Weight")
             .max(1000, "Max number is 1000"),
@@ -75,8 +71,8 @@ export const InfoForm = () => {
         womanIdentifyingMarks: "",
         womanLastName: "",
         womanLastLocation: "",
-        womanLatitude: "",
-        womanLongitude: "",
+        womanLatitude: 72.8110000,
+        womanLongitude: 72.8110000,
         womanPhoto1: "",
         womanTribe: "",
         womanWeight: "",
@@ -84,8 +80,8 @@ export const InfoForm = () => {
     };
     const submitMissingPersonInfo = (values, {resetForm, setStatus}) => {
         console.log("here")
-        const womanLatitude = 53.77
-        const womanLongitude = -108.77
+        const womanLatitude = 72.8110000
+        const womanLongitude = 18.2880000
         const womanPhoto1 = 'https'
         const woman = {womanLatitude, womanLongitude, womanPhoto1, ...values}
 
@@ -102,10 +98,10 @@ export const InfoForm = () => {
 
     return (
         <>
-            {/*<Container className="mb-1">*/}
-            {/*    <h1>Information Form</h1>*/}
-            {/*    <Image src={flower} alt={flower} height="200px"/>*/}
-            {/*</Container>*/}
+            <Container className="mb-1">
+                <h1>Information Form</h1>
+                <Image src={flower} alt={flower} height="200px"/>
+            </Container>
 
             <Container>
                 <Formik
@@ -127,7 +123,7 @@ function FormContent1(props) {
     } = props;
     return (
         <>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Row>
                     <Col md={6}>
                         <Form.Group className="mb-1">
@@ -310,8 +306,9 @@ function FormContent1(props) {
                                 variant="danger">Cancel</Button>
                     </Col>
                 </Row>
+                {/*<FormDebugger {...props}/>*/}
             </Form>
-
+            {status && (<div className={status.type}>{status.message}</div>)}
         </>
     )
 }
