@@ -105,8 +105,8 @@ export const DetailPage = ({match}) => {
                 <PostLogic postWomanId={woman.womanId} />
 
                 <div className="mt-3 justify-content-center">
-                    <Link to="/InfoForm" className={'m-2 btn btn-primary'}>Edit missing person</Link>{' '} <Link to="/map"
-                                                                                      className="btn btn-primary">Close</Link>
+                     <Link to="/map"
+                           className="btn btn-primary">Close</Link>
                 </div>
             </Container>
         </>
