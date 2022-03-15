@@ -43,22 +43,25 @@ export function NavBar() {
 
                         <Route render={({history}) => (
                             <>
+                                {auth !== null && (
+                                    <NavDropdown className="nav-link navbar-username" title={auth?.appUserDisplayName ?? ""} >
+                                        <div className="dropdown-item">
+                                            <Link to={`/profile-page/${auth?.appUserId}`} className="btn btn-outline-dark">
+                                                profile
+                                            </Link>
+                                        </div>
+                                        <SignOutComponent />
+                                        <Link to="/InfoForm"
+                                              className="btn btn-outline-dark"> Submit New Info </Link>
+                                    </NavDropdown>
+                                )}
                         <Nav.Link onClick={() => {
                             history.push(`/`)}}>Home</Nav.Link>
                         <Nav.Link onClick={() => {
                             history.push(`/sign-in`)}}>Sign-in</Nav.Link>
                             <Nav.Link onClick={() => {
                             history.push(`/map`)}}> Map</Nav.Link>
-                        {auth !== null && (
-                                <NavDropdown className="nav-link navbar-username" title={auth?.appUserDisplayName ?? ""} >
-                                    <div className="dropdown-item">
-                                        <Link to={`/profile-page/${auth?.appUserId}`} className="btn btn-outline-dark">
-                                             profile
-                                        </Link>
-                                    </div>
-                                    <SignOutComponent />
-                                </NavDropdown>
-                        )}
+
 
 
 
