@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+
 import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
 import {ReactComponent as Bear} from '../images/bear5.svg';
 import {ReactComponent as Wolf} from '../images/wolf.svg';
@@ -12,6 +12,7 @@ import Button1 from "./shared/components/Button1";
 import Button2 from "./shared/components/Button2";
 import ImageSlider from "./shared/components/ImageSlider";
 import {SliderData} from "./shared/components/SliderData"
+import {ReactComponent as Logo} from '../images/reactbootstrap.svg';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
 import Tribes from '../images/tribeMap.png';
@@ -39,7 +40,7 @@ export const Home = () => {
       useEffect(sideEffects, [dispatch])*/
     return (
         <>
-            <Container fluid className={style.Background}>
+            <div className={style.Background}>
                 <Container>
                     <Row>
                         <Col className="d-flex justify-content-center mt-5 mb-5">
@@ -171,15 +172,18 @@ export const Home = () => {
                             </Card>
                         </Col>
                     </Row>
+                </Container>
                     <Container>
+
                         <Row>
                             <Col className="d-flex justify-content-center">
-                                <ImageSlider slides={SliderData}/>
+                                {/*<ImageSlider slides={SliderData}/>*/}
                             </Col>
+                            <Logo/>
                         </Row>
-                    </Container>
+
                 </Container>
-            </Container>
+            </div>
 
         </>
     )

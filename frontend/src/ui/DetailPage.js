@@ -9,7 +9,9 @@ import {PostLogic} from "./Posts";
 import {PostOutput} from "./Output";
 import {fetchPostsByWomanId} from "../store/posts";
 import {MissingWoman} from "./MissingWoman";
+import { Document, Page } from 'react-pdf';
 
+import melaniePdf from "../pdf/melaniePoliceReport.pdf";
 export const DetailPage = ({match}) => {
     console.log(match)
 
@@ -81,12 +83,14 @@ export const DetailPage = ({match}) => {
                                         <p>Height: {woman.womanHeight}</p>
                                         <p>HobbiesAndInterests: {woman.womanHobbiesAndInterests}</p>
                                         <p>IdentifyingMarks: {woman.womanIdentifyingMarks}</p>
-                                        <p>LastName: {woman.womanLastName}</p>
                                         <p>LastLocation: {woman.womanLastLocation}</p>
-                                        <p>Latitude: {woman.womanLatitude}</p>
-                                        <p> Longitude: {woman.womanLongitude}</p>
+                                        {/*<p>Latitude: {woman.womanLatitude}</p>*/}
+                                        {/*<p> Longitude: {woman.womanLongitude}</p>*/}
                                         <p>Tribe: {woman.womanTribe}</p>
                                         <p>Weight: {woman.womanWeight}</p>
+                                        <Document file={melaniePdf}>
+                                            <Page pageNumber={1} />
+                                        </Document>
                                     </div>
                                 </Card>
                             </Col>
