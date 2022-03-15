@@ -31,7 +31,7 @@ export const App = (store) => (
                     <Route exact path='/sign-up' component={Signup}/>
                     <Route exact path='/sign-in' component={Signin} />
                     <Route exact path='/image' component={ImageDropZone}/>
-                    <Route exact path='/profile-page' component={ProfilePage}/>
+                    <Route exact path='/profile-page/:appUserId' component={ProfilePage}  appUserId=":appUserId" />
                     <Route component={FourOhFour}/>
                 </Switch>
                 <Footer/>

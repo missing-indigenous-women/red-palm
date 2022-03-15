@@ -1,8 +1,29 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Button, Col, Container, Row} from "react-bootstrap";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAppUserByAppUserId} from "../store/users";
+import {fetchAuth} from "../store/auth";
+
 
 
 export const ProfilePage = () => {
+
+    const users = useSelector(state => state.users ? state.users : []);
+    const auth = useSelector(state => state.auth ? state.auth : []);
+    const dispatch = useDispatch();
+    const sideEffects = () => {
+        // The dispatch function takes actions as arguments to make changes to the store/redux.
+        dispatch(fetchAuth())
+        if (auth !== null) {
+            dispatch(fetchAppUserByAppUserId(auth.appUserId))
+        }
+
+    };
+
+    useEffect(sideEffects, [auth.appUserId, dispatch]);
+    console.log(users)
+
+
 
     // const {
     //     appUserDisplayName,

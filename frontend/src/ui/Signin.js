@@ -10,10 +10,12 @@ import {Formik} from "formik";
 import jwtDecode from "jwt-decode";
 import {DisplayError} from "./shared/components/DisplayError";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 
 export const Signin = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const validator = Yup.object().shape({
         appUserEmail: Yup.string()
@@ -42,13 +44,18 @@ export const Signin = () => {
                     let jwtToken = jwtDecode(reply.headers["authorization"])
                     console.log(jwtToken)
                     dispatch(getAuth(jwtToken))
+                    history.push('/')
+
                 }
                 setStatus({message, type});
             });
     };
 
 
-return (
+
+
+
+        return (
     <>
         <Formik onSubmit={submitSignIn} initialValues={SignIn} validationSchema={validator}>
             {
@@ -81,6 +88,8 @@ return (
          // inverse the boolean state of passwordShown
          setPasswordShown(!passwordShown);
      };
+
+
 
     return(
         <>
@@ -121,7 +130,7 @@ return (
                                   field={"appUserPassword"}
                     />
                 </Row>
-                <Button type={"submit"}> Login</Button>  <Link to="/map" className="btn btn-primary"> Cancel</Link>
+                <Button  type={"submit"}> Login</Button>   <Link to="/map" className="btn btn-primary"> Cancel</Link>
                 <button className="btn-primary m-1" onClick={togglePassword}>Show Password</button>
             </Container>
 </form>
