@@ -131,9 +131,10 @@ export const Signin = () => {
                     />
                 </Row>
                 <Button  type={"submit"}> Login</Button>   <Link to="/map" className="btn btn-primary"> Cancel</Link>
-                <button className="btn-primary m-1" onClick={togglePassword}>Show Password</button>
+
             </Container>
 </form>
+<button className="btn-primary m-1" onClick={togglePassword}>Show Password</button>
             {
                 status && (<div className={status.type}>{status.message}</div>)
             }

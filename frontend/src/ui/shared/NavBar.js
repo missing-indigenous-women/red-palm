@@ -18,17 +18,17 @@ export function NavBar() {
     };
     const inputs = [];
     useEffect(effects, inputs);
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
 
 
-    const isModalOpen = ()=> {
-        if(!auth) {
-            return !auth
-        } else if(show === true && auth  ) {
-            return true
-        }
-    }
+    // const isModalOpen = ()=> {
+    //     if(!auth) {
+    //         return !auth
+    //     } else if(show === true && auth  ) {
+    //         return true
+    //     }
+    // }
 
 
     return (
