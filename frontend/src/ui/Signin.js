@@ -9,6 +9,7 @@ import {httpConfig} from "../utils/http-config";
 import {Formik} from "formik";
 import jwtDecode from "jwt-decode";
 import {DisplayError} from "./shared/components/DisplayError";
+import { useState } from "react";
 
 
 export const Signin = () => {
@@ -73,6 +74,13 @@ return (
          handleSubmit,
          handleReset
      } = props;
+     const [passwordShown, setPasswordShown] = useState(false);
+     // Password toggle handler
+     const togglePassword = () => {
+         // When the handler is invoked
+         // inverse the boolean state of passwordShown
+         setPasswordShown(!passwordShown);
+     };
 
     return(
         <>
@@ -94,10 +102,12 @@ return (
 
                 />
             </InputGroup>
-            <InputGroup className="mb-3">
+            <InputGroup className="mb-3" >
                 <InputGroup.Text> Password:</InputGroup.Text>
                 <FormControl aria-label="password"
 
+
+                             type={passwordShown ? "text" : "password"}
                              onChange={handleChange}
                              onBlur={handleBlur}
                              value={values.appUserPassword}
@@ -112,6 +122,7 @@ return (
                     />
                 </Row>
                 <Button type={"submit"}> Login</Button>  <Link to="/map" className="btn btn-primary"> Cancel</Link>
+                <button className="btn-primary m-1" onClick={togglePassword}>Show Password</button>
             </Container>
 </form>
             {
