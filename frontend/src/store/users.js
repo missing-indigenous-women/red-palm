@@ -22,7 +22,7 @@ export const fetchAllAppUsers = () => async dispatch => {
 }
 
 export const fetchAppUserByAppUserId = (id) => async dispatch => {
-  const {data} = await httpConfig(`/apis/appusers/${id}`);
+  const {data} = await httpConfig(`/apis/appuser/${id}`);
   dispatch(getAppUserByAppUserId(data))
 }
 

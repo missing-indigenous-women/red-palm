@@ -10,6 +10,7 @@ import {PostOutput} from "./Output";
 import {fetchPostsByWomanId} from "../store/posts";
 import {MissingWoman} from "./MissingWoman";
 
+
 export const DetailPage = ({match}) => {
     console.log(match)
 

@@ -6,6 +6,6 @@ import {configureStore} from '@reduxjs/toolkit'
 import posts from "./posts";
 import auth from "./auth";
 
-const reducer = combineReducers({vehicles, women,posts,auth})
+const reducer = combineReducers({vehicles, women,posts,auth,users})
 //In order to use redux a store must be initialized and passed to the Provider component.
 export const store = configureStore({reducer})
