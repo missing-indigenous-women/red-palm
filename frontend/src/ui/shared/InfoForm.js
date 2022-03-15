@@ -102,10 +102,10 @@ export const InfoForm = () => {
 
     return (
         <>
-            <Container className="mb-1">
-                <h1>Information Form</h1>
-                <Image src={flower} alt={flower} height="200px"/>
-            </Container>
+            {/*<Container className="mb-1">*/}
+            {/*    <h1>Information Form</h1>*/}
+            {/*    <Image src={flower} alt={flower} height="200px"/>*/}
+            {/*</Container>*/}
 
             <Container>
                 <Formik
@@ -113,13 +113,13 @@ export const InfoForm = () => {
                     onSubmit={submitMissingPersonInfo}
                     validationSchema={validator}
                 >
-                    FormContent
+                    {FormContent1}
                 </Formik>
             </Container>
         </>
     )
 }
-function FormContent(props) {
+function FormContent1(props) {
     const {
         status, values, errors, touched, dirty, isSubmitting, handleChange, handleBlur, handleSubmit, handleReset,
 
@@ -127,7 +127,7 @@ function FormContent(props) {
     } = props;
     return (
         <>
-            <Form onSubmit={handleSubmit}>
+            <Form>
                 <Row>
                     <Col md={6}>
                         <Form.Group className="mb-1">
