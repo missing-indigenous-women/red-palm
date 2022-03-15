@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Col, Container, FormControl, Image, InputGroup, Row} from "react-bootstrap";
 import {Formik} from 'formik'
 import {Link} from "react-router-dom";
 import * as Yup from "yup";
 import {httpConfig} from "../utils/http-config";
 import {DisplayError} from "./shared/components/DisplayError";
+
+
 
 
 export const Signup = (props) => {
@@ -80,102 +82,112 @@ function SignUpFormContent(props) {
         handleReset
     } = props;
 
-    return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <Container>
-                    <Row>
-                        <Col className='mb-xl-5'>
+    const [passwordShown, setPasswordShown] = useState(false);
+    // Password toggle handler
+    const togglePassword = () => {
+        // When the handler is invoked
+        // inverse the boolean state of passwordShown
+        setPasswordShown(!passwordShown)};
 
-                            <h1>Please Create A User Profile</h1>
-                            <p> Already A User? Log-in <Link to="/sign-in"> here </Link></p>
+        return (
+            <>
+                <form onSubmit={handleSubmit}>
+                    <Container>
+                        <Row>
+                            <Col className='mb-xl-5'>
 
-                            <InputGroup className="mb-3">
+                                <h1>Please Create A User Profile</h1>
+                                <p> Already A User? Log-in <Link to="/sign-in"> here </Link></p>
 
-                                <InputGroup.Text>Password:</InputGroup.Text>
-                                <FormControl
-                                    aria-label="Password"
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    value={values.appUserPassword}
-                                    name={'appUserPassword'}
+                                <InputGroup className="mb-3">
+
+                                    <InputGroup.Text>Password:</InputGroup.Text>
+                                    <FormControl
+                                        type={passwordShown ? "text" : "password"}
+                                        aria-label="Password"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.appUserPassword}
+                                        name={'appUserPassword'}
+                                    />
+                                </InputGroup>
+                                <DisplayError errors={errors}
+                                              touched={touched}
+                                              field={"appUserPassword"}
                                 />
-                            </InputGroup>
-                            <DisplayError errors={errors}
-                            touched={touched}
-                                          field={"appUserPassword"}
-                            />
-                            <InputGroup className="mb-3">
-                                <InputGroup.Text> Display name:</InputGroup.Text>
-                                <FormControl aria-label="display-name"
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Text> Display name:</InputGroup.Text>
+                                    <FormControl aria-label="display-name"
 
-                                             onChange={handleChange}
-                                             onBlur={handleBlur}
-                                             value={values.appUserDisplayName}
-                                             name={'appUserDisplayName'}
+                                                 onChange={handleChange}
+                                                 onBlur={handleBlur}
+                                                 value={values.appUserDisplayName}
+                                                 name={'appUserDisplayName'}
 
-                                />
-                            </InputGroup>
+                                    />
+                                </InputGroup>
 
-                            <InputGroup className="mb-3">
-                                <InputGroup.Text> Email:</InputGroup.Text>
-                                <FormControl aria-label="email"
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Text> Email:</InputGroup.Text>
+                                    <FormControl aria-label="email"
 
-                                             onChange={handleChange}
-                                             onBlur={handleBlur}
-                                             value={values.appUserEmail}
-                                             name={'appUserEmail'}
+                                                 onChange={handleChange}
+                                                 onBlur={handleBlur}
+                                                 value={values.appUserEmail}
+                                                 name={'appUserEmail'}
 
-                                />
-                            </InputGroup>
-                            <InputGroup className="mb-3">
-                                <InputGroup.Text>First Name:</InputGroup.Text>
-                                <FormControl aria-label="first-name"
+                                    />
+                                </InputGroup>
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Text>First Name:</InputGroup.Text>
+                                    <FormControl aria-label="first-name"
 
-                                             onChange={handleChange}
-                                             onBlur={handleBlur}
-                                             value={values.appUserFirstName}
-                                             name={'appUserFirstName'}
+                                                 onChange={handleChange}
+                                                 onBlur={handleBlur}
+                                                 value={values.appUserFirstName}
+                                                 name={'appUserFirstName'}
 
 
+                                    />
+                                </InputGroup>
 
-                                />
-                            </InputGroup>
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Text>Last Name:</InputGroup.Text>
+                                    <FormControl aria-label="last-name"
 
-                            <InputGroup className="mb-3">
-                                <InputGroup.Text>Last Name:</InputGroup.Text>
-                                <FormControl aria-label="last-name"
+                                                 onChange={handleChange}
+                                                 onBlur={handleBlur}
+                                                 value={values.appUserLastName}
+                                                 name={'appUserLastName'}
 
-                                             onChange={handleChange}
-                                             onBlur={handleBlur}
-                                             value={values.appUserLastName}
-                                             name={'appUserLastName'}
+                                    />
+                                </InputGroup>
 
-                                />
-                            </InputGroup>
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Text>Password Confirm:</InputGroup.Text>
+                                    <FormControl aria-label="Password-confirm"
 
-                            <InputGroup className="mb-3">
-                                <InputGroup.Text>Password Confirm:</InputGroup.Text>
-                                <FormControl aria-label="Password-confirm"
+                                                 type={passwordShown ? "text" : "password"}
+                                                 onChange={handleChange}
+                                                 onBlur={handleBlur}
+                                                 value={values.appUserPasswordConfirm}
+                                                 name={'appUserPasswordConfirm'}
 
-                                             onChange={handleChange}
-                                             onBlur={handleBlur}
-                                             value={values.appUserPasswordConfirm}
-                                             name={'appUserPasswordConfirm'}
+                                    />
+                                </InputGroup>
 
-                                />
-                            </InputGroup>
+                                <Button type={"submit"}>Submit</Button> <Link to="/map"
+                                                                              className="btn btn-primary">Cancel </Link>
+                                <button className="btn-primary m-1" onClick={togglePassword}>Show Password</button>
+                            </Col>
+                        </Row>
+                    </Container>
+                </form>
 
-                            <Button type={"submit"}>Submit</Button> <Link to="/map" className="btn btn-primary">Cancel </Link>
-                        </Col>
-                    </Row>
-                </Container>
-            </form>
-
-            {
-                status && (<div className={status.type}>{status.message}</div>)
-            }
-        </>
-    )
+                {
+                    status && (<div className={status.type}>{status.message}</div>)
+                }
+            </>
+        )
 
 }

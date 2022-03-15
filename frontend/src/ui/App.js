@@ -13,6 +13,7 @@ import {Signup} from "./Signup";
 import {Signin} from "./Signin";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {ImageDropZone} from "./shared/components/ImageDropZone";
+import {ProfilePage} from "./ProfilePage";
 
 import ImageSlider from "./shared/components/ImageSlider";
 import {SliderData} from "./shared/components/SliderData";
@@ -30,6 +31,7 @@ export const App = (store) => (
                     <Route exact path='/sign-up' component={Signup}/>
                     <Route exact path='/sign-in' component={Signin} />
                     <Route exact path='/image' component={ImageDropZone}/>
+                    <Route exact path='/profile-page' component={ProfilePage}/>
                     <Route component={FourOhFour}/>
                 </Switch>
                 <Footer/>

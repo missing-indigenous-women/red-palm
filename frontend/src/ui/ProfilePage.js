@@ -2,15 +2,16 @@ import React from "react";
 import {Button, Col, Container, Row} from "react-bootstrap";
 
 
-export const ProfilePage = ({appUser}) => {
+export const ProfilePage = () => {
 
-    const {
-        appUserDisplayName,
-        appUserEmail,
-        appUserFirstName,
-        appUserHash,
-        appUserLastName,
-    } = appUser
+    // const {
+    //     appUserDisplayName,
+    //     appUserEmail,
+    //     appUserFirstName,
+    //     appUserHash,
+    //     appUserLastName,
+    //     appUserAvatarUrl,
+    // } = appUser
 
     return(
         <>
