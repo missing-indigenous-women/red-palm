@@ -14,7 +14,7 @@ import {Signin} from "./Signin";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {ImageDropZone} from "./shared/components/ImageDropZone";
 import {ProfilePage} from "./ProfilePage";
-
+gti
 
 
 export const App = (store) => (

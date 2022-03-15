@@ -13,6 +13,14 @@ import Button2 from "./shared/components/Button2";
 
 import {ReactComponent as Logo} from '../images/reactbootstrap.svg';
 
+import ImageSlider from "./shared/components/ImageSlider";
+import {SliderData} from "./shared/components/SliderData"
+import {ReactComponent as Logo} from '../images/reactbootstrap.svg';
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllWomen} from "../store/women";
+import Tribes from '../images/tribeMap.png';
+
+
 export const Home = () => {
 
     /*  // returns the users store from Redux and assigns it to the users variable
@@ -130,12 +138,59 @@ export const Home = () => {
                     </Row>
                 </Container>
 
+
+
+                <Container fluid className="mt-5">
+                    <Row>
+                        <Col className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 bg-black" style={{width: '18rem'}}>
+                                <Eagle/>
+                                <Card.Body className="bg-danger">
+                                    <Card.Title>Eagle</Card.Title>
+                                    <Card.Text>
+                                        Bird's eye view
+                                    </Card.Text>
+                                    <Button2/>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 bg-black" style={{width: '18rem'}}>
+                                <Bear/>
+                                <Card.Body className="bg-danger">
+                                    <Card.Title>Bear</Card.Title>
+                                    <Card.Text>
+                                        Prepares for hardships to come.
+                                    </Card.Text>
+                                    <Button2/>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col className="d-flex justify-content-center mt-5 mb-5">
+                            <Card className="mt-5 bg-black" style={{width: '18rem'}}>
+                                <Wolf/>
+                                <Card.Body className="bg-danger">
+                                    <Card.Title>Wolf</Card.Title>
+                                    <Card.Text>
+                                        alone he is usually nothing but with a pack...
+                                    </Card.Text>
+                                    <Button2/>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
+
                     <Container>
 
                         <Row>
                             <Col className="d-flex justify-content-center">
                                 {/*<ImageSlider slides={SliderData}/>*/}
                             </Col>
+
+
+
+                            <Logo/>
 
                         </Row>
 
