@@ -15,8 +15,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import {ImageDropZone} from "./shared/components/ImageDropZone";
 import {ProfilePage} from "./ProfilePage";
 
-import ImageSlider from "./shared/components/ImageSlider";
-import {SliderData} from "./shared/components/SliderData";
+
 
 export const App = (store) => (
     <>
