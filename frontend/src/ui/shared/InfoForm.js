@@ -169,6 +169,7 @@ function FormContent1(props) {
                                           onBlur={handleBlur}
                                           value={values.womanDateOfDisappearance}
                                           name={'womanDateOfDisappearance'}
+                                          placeholder={"Year-Date-Month ex:0000-00-00"}
                             />
                             {errors.womanDateOfDisappearance && touched.womanDateOfDisappearance && (
                                 <div
@@ -182,6 +183,7 @@ function FormContent1(props) {
                                           onBlur={handleBlur}
                                           value={values.womanDateOfBirth}
                                           name={'womanDateOfBirth'}
+                                          placeholder={"Year-Date-Month ex:0000-00-00"}
                             />
                             {errors.womanDateOfBirth && touched.womanDateOfBirth && (
                                 <div className="alert alert-danger">{errors.womanDateOfBirth}</div>
@@ -232,6 +234,7 @@ function FormContent1(props) {
                                           onBlur={handleBlur}
                                           value={values.womanWeight}
                                           name={'womanWeight'}
+                                          placeholder={"Lbs"}
                             />
                             {errors.womanWeight && touched.womanWeight && (
                                 <div className="alert alert-danger">{errors.womanWeight}</div>
@@ -280,6 +283,7 @@ function FormContent1(props) {
                                           onBlur={handleBlur}
                                           value={values.womanHeight}
                                           name={'womanHeight'}
+                                          placeholder={"Inches"}
                             />
                             {errors.womanHeight && touched.womanHeight && (
                                 <div className="alert alert-danger">{errors.womanHeight}</div>

@@ -93,98 +93,35 @@ export const DetailPage = ({match}) => {
         <>
             <Container fluid className={style.Background}>
                 <Container>
-                    <Row>
-                        {woman && <>
-                            <Col>
-                                <Image className={" mx-auto"} fluid roundedCircle src={woman.womanPhoto1}/>
-                                <Card className={'border border-dark m-2'}>
-
-
-                                    <div className={style.Info}>
-                                        <p>Aliases: {woman.womanAliases}</p>
-                                        <p>DateOfDisappearance: {datefunction(woman.womanDateOfDisappearance)}</p>
-                                        <p>DateOfBirth: {datefunction(woman.womanDateOfBirth)}</p>
-                                        <p>EyeColor:m {woman.womanEyeColor}</p>
-                                        <p>FavoriteHangoutPlaces: {woman.womanFavoriteHangoutPlaces}</p>
-                                        <p>FirstName: {woman.womanFirstName}</p>
-                                        <p>HairColor: {woman.womanHairColor}</p>
+                    {woman && <>
+                        <Image className={"mx-auto"} fluid roundedCircle src={woman.womanPhoto1}/>
+                        <Card className={'border border-dark m-2 p-2'}>
+                            <Row>
+                                <div className={style.Info}>
+                                    <Col>
+                                        <p>First Name: {woman.womanFirstName}</p>
+                                        <p>Last Name: {woman.womanLastName}</p>
+                                        <p>Nick Name: {woman.womanAliases}</p>
+                                        <p>Date Of Disappearance: {datefunction(woman.womanDateOfDisappearance)}</p>
+                                        <p>Date Of Birth: {datefunction(woman.womanDateOfBirth)}</p>
+                                        <p>Eye Color: {woman.womanEyeColor}</p>
+                                        <p>Favorite Hangout Places: {woman.womanFavoriteHangoutPlaces}</p>
+                                    </Col>
+                                        <p>Hgit c {woman.womanHairColor}</p>
                                         <p>Height: {woman.womanHeight}</p>
-                                        <p>HobbiesAndInterests: {woman.womanHobbiesAndInterests}</p>
-                                        <p>IdentifyingMarks: {woman.womanIdentifyingMarks}</p>
-                                        <p>LastLocation: {woman.womanLastLocation}</p>
-                                        {/*<p>Latitude: {woman.womanLatitude}</p>*/}
-                                        {/*<p> Longitude: {woman.womanLongitude}</p>*/}
+                                        <p>Hobbies And Interests: {woman.womanHobbiesAndInterests}</p>
+                                        <p>Identifying Marks: {woman.womanIdentifyingMarks}</p>
+                                        <p>Last Location: {woman.womanLastLocation}</p>
+                                        <p>Latitude: {woman.womanLatitude}</p>
+                                        <p>Longitude: {woman.womanLongitude}</p>
                                         <p>Tribe: {woman.womanTribe}</p>
                                         <p>Weight: {woman.womanWeight}</p>
-                                        {
-                                            woman.womanFirstName === "Melanie"
-                                            &&
-                                            <>
-                                            <a href={mFpd2} target="_blank">Police report</a>
-                                                <br/>
-                                            <a href={mFpd3} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd1} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd5} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd6} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd7} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd8} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd9} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd10} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={mFpd11} target="_blank">Police report</a>
-
-                                            </>
-
-                                            }
-                                            {
-                                            woman.womanFirstName === "Stephanie"
-                                            &&
-                                            <>
-                                                <a href={sFpd} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={sFpd1} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={sFpd2} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={sFpd3} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={sFpd4} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={sFpd5} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={sFpd6} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={sFpd7} target="_blank">Police report</a>
-                                                <br/>
-                                                <a href={sFpd8} target="_blank">Police report</a>
-
-
-                                                </>
-
-                                                }
-
-
-
-
-
-
-
-                                    </div>
-                                </Card>
-                            </Col>
-
-                        </>}
-                    </Row>
+                                </div>
+                            </Row>
+                        </Card>
+                    </>}
                 </Container>
+
 
                 <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
                     <h1>POSTS</h1>
