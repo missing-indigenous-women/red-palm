@@ -95,7 +95,7 @@ export const DetailPage = ({match}) => {
         <>
             <Container fluid className={style.Background}>
                 <Container>
-<<<<<<< HEAD
+
                     {woman && <>
                         <Image className={"mx-auto"} fluid roundedCircle src={woman.womanPhoto1}/>
                         <Card className={'border border-dark m-2 p-2'}>
@@ -123,7 +123,7 @@ export const DetailPage = ({match}) => {
                             </Row>
                         </Card>
                     </>}
-=======
+
                     <Row>
                         {woman && <>
                             <Col>
@@ -215,7 +215,7 @@ export const DetailPage = ({match}) => {
 
                         </>}
                     </Row>
->>>>>>> 6cb9279580fbce5a3808dbb29a72f1d501a9df98
+
                 </Container>
 
 

@@ -8,6 +8,7 @@ import moment from 'moment'
 import {httpConfig} from "../../utils/http-config";
 import {Control} from "mapbox-gl";
 import {FormDebugger} from "./components/FormDebugger";
+import style from "../Home.module.css";
 //<input type="file" id="myFile" 
 export const InfoForm = () => {
 
@@ -123,7 +124,7 @@ function FormContent1(props) {
     } = props;
     return (
         <>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className="bg-info p-5">
                 <Row>
                     <Col md={6}>
                         <Form.Group className="mb-1">
