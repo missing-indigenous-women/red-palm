@@ -33,16 +33,24 @@ import sFpd8 from "../images/stephanieJBrown8.png";
 
 
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3866cbe541efac7701b1a545aeb98f619f917f0b
 
 
 
 import {MissingWoman} from "./MissingWoman";
 
+<<<<<<< HEAD
 import { Document, Page } from 'react-pdf';
 import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
 
 
+=======
+import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
+
+>>>>>>> 3866cbe541efac7701b1a545aeb98f619f917f0b
 
 
 
@@ -101,6 +109,9 @@ export const DetailPage = ({match}) => {
         <>
             <Container fluid className={style.Background}>
                 <Container>
+
+
+
                     <Row>
                         {woman && <>
                             <Col>
@@ -193,9 +204,11 @@ export const DetailPage = ({match}) => {
 
                         </>}
                     </Row>
+
                 </Container>
 
-                <Container className={style.PostBox}  style={{width: 300, height: 200, }}>
+                <Container className={style.PostBox}  style={{width: 300, height: 200}}>
+
                     <h1>POSTS</h1>
                     {posts.map((post,index) => <PostOutput post={post} key={index}/>)}
                 </Container>
