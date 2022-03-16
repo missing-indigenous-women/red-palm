@@ -1,11 +1,12 @@
 import React, {useEffect} from "react"
-import {Container, Form, Image} from "react-bootstrap";
+import {Container, Form} from "react-bootstrap";
 import {MissingWoman} from "./MissingWoman";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
 import Map from 'react-map-gl';
 import {Pin} from "./Pin";
 import { useState } from "react";
+import "./App.css"
 
 export const MapPage = () => {
     const [displayText, setDisplayText] = useState(true);
@@ -57,7 +58,7 @@ export const MapPage = () => {
                     />
                 </Form>
             </Container>
-            {!displayText && (<Container className="text-center pb-5">
+            {!displayText && (<Container id="test" className="text-center pb-5">
                 <Map
                     initialViewState = {{
                         latitude: 35.33,
@@ -65,7 +66,7 @@ export const MapPage = () => {
                         zoom: 6
                     }}
                     mapStyle="mapbox://styles/mapbox/dark-v9"
-                    style={{width: 1200, height: 800}}
+                    style={{width: 100, height: 100}}
                 >
                     {women.map((woman, index) => <Pin lat={woman.womanLatitude} lng={woman.womanLongitude} index={index} key={index}/>)}
                 </Map>
