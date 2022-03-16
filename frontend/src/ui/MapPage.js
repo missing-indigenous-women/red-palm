@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-import {Container, Form} from "react-bootstrap";
+import {Container, Form, Image} from "react-bootstrap";
 import {MissingWoman} from "./MissingWoman";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
@@ -36,7 +36,8 @@ export const MapPage = () => {
      */
     useEffect(sideEffects, [dispatch])
 
-    //console.log(women)
+    console.log("displayedWoman: ",displayedWoman)
+    console.log("isPopupDisplayed: ",isPopupDisplayed)
 
     // const [points, setPoints] = React.useState([
     //     {lat: 35.332, lng: -106.652},
@@ -94,11 +95,28 @@ export const MapPage = () => {
                     )
                     }
                     {isPopupDisplayed === true &&
-                    <Popup longitude={displayedWoman.womanLongitude} latitude={displayedWoman.womanLatitude}
-                           anchor="top"
-                           onClose={() => setIsPopupDisplayed(false)}>
-                        You are here
-                    </Popup> }
+                        <Popup longitude={Number(displayedWoman.womanLongitude)}
+                               latitude={Number(displayedWoman.womanLatitude)}
+                               anchor="top"
+                               onClose={() => {
+                                   setIsPopupDisplayed(false)
+                               }}
+                               closeOnClick={false}
+                        >
+                            <div>
+                                {displayedWoman.womanFirstName} {displayedWoman.womanLastName}
+                                <Image src={displayedWoman.womanPhoto1} />
+
+                                {/*            <a*/}
+                                {/*                target="_new"*/}
+                                {/*                href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${popupInfo.city}, ${popupInfo.state}`}*/}
+                                {/*            >*/}
+                                {/*                Wikipedia*/}
+                                {/*            </a>*/}
+                                {/*        </div>*/}
+                            </div>
+                        </Popup>
+                    }
 
                     {/*{pins}*/}
 
