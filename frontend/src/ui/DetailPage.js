@@ -21,7 +21,7 @@ import mFpd8 from "../images/melanieFpd8.png";
 import mFpd9 from "../images/melanieFpd9.png";
 import mFpd10 from "../images/melanieFpd9.png";
 import mFpd11 from "../images/melanieFpd9.png";
-import melaniePdf from "../pdf/melaniePoliceReport.pdf";
+
 
 
 import {MissingWoman} from "./MissingWoman";
@@ -92,21 +92,21 @@ export const DetailPage = ({match}) => {
 
 
                                     <div className={style.Info}>
-                                        <p>Aliases: {woman.womanAliases}</p>
-                                        <p>DateOfDisappearance: {datefunction(woman.womanDateOfDisappearance)}</p>
-                                        <p>DateOfBirth: {datefunction(woman.womanDateOfBirth)}</p>
-                                        <p>EyeColor:m {woman.womanEyeColor}</p>
-                                        <p>FavoriteHangoutPlaces: {woman.womanFavoriteHangoutPlaces}</p>
-                                        <p>FirstName: {woman.womanFirstName}</p>
-                                        <p>HairColor: {woman.womanHairColor}</p>
-                                        <p>Height: {woman.womanHeight}</p>
-                                        <p>HobbiesAndInterests: {woman.womanHobbiesAndInterests}</p>
-                                        <p>IdentifyingMarks: {woman.womanIdentifyingMarks}</p>
-                                        <p>LastLocation: {woman.womanLastLocation}</p>
+                                        <p><strong>Aliases:</strong>{'  '} {woman.womanAliases}</p>
+                                        <p><strong>Date Of Disappearance:</strong>{'  '} {datefunction(woman.womanDateOfDisappearance)}</p>
+                                        <p><strong>Date Of Birth:</strong>{'  '}  {datefunction(woman.womanDateOfBirth)}</p>
+                                        <p><strong>Eye Color:</strong> {'  '}  {woman.womanEyeColor}</p>
+                                        <p><strong>Favorite Hangout Places:</strong> {'  '}  {woman.womanFavoriteHangoutPlaces}</p>
+                                        <p><strong>FirstName:</strong>{'  '}  {woman.womanFirstName}</p>
+                                        <p><strong>Hair Color:</strong>{'  '}  {woman.womanHairColor}</p>
+                                        <p><strong>Height:</strong> {'  '}  {woman.womanHeight}</p>
+                                        <p><strong>Hobbies And Interests:</strong>{'  '}  {woman.womanHobbiesAndInterests}</p>
+                                        <p><strong>Identifying Marks:</strong> {'  '}  {woman.womanIdentifyingMarks}</p>
+                                        <p><strong>Last Location:</strong> {'  '}  {woman.womanLastLocation}</p>
                                         {/*<p>Latitude: {woman.womanLatitude}</p>*/}
                                         {/*<p> Longitude: {woman.womanLongitude}</p>*/}
-                                        <p>Tribe: {woman.womanTribe}</p>
-                                        <p>Weight: {woman.womanWeight}</p>
+                                        <p><strong>Tribe:</strong>{'  '}  {woman.womanTribe}</p>
+                                        <p><strong>Weight:</strong>{'  '}  {woman.womanWeight}</p>
                                         {
                                             woman.womanFirstName === "Melanie"
                                             &&
@@ -132,15 +132,6 @@ export const DetailPage = ({match}) => {
                                                 <a href={mFpd10} target="_blank">Police report</a>
                                                 <br/>
                                                 <a href={mFpd11} target="_blank">Police report</a>
-
-
-
-
-
-
-
-
-
 
                                             </>
                                         }
