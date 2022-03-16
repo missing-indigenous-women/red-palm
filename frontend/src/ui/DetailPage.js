@@ -100,33 +100,7 @@ export const DetailPage = ({match}) => {
             <Container fluid className={style.Background}>
                 <Container>
 
-                    {woman && <>
-                        <Image className={"mx-auto"} fluid roundedCircle src={woman.womanPhoto1}/>
-                        <Card className={'border border-dark m-2 p-2'}>
-                            <Row>
-                                <div className={style.Info}>
-                                    <Col>
-                                        <p>First Name: {woman.womanFirstName}</p>
-                                        <p>Last Name: {woman.womanLastName}</p>
-                                        <p>Nick Name: {woman.womanAliases}</p>
-                                        <p>Date Of Disappearance: {datefunction(woman.womanDateOfDisappearance)}</p>
-                                        <p>Date Of Birth: {datefunction(woman.womanDateOfBirth)}</p>
-                                        <p>Eye Color: {woman.womanEyeColor}</p>
-                                        <p>Favorite Hangout Places: {woman.womanFavoriteHangoutPlaces}</p>
-                                    </Col>
-                                        <p>Hgit c {woman.womanHairColor}</p>
-                                        <p>Height: {woman.womanHeight}</p>
-                                        <p>Hobbies And Interests: {woman.womanHobbiesAndInterests}</p>
-                                        <p>Identifying Marks: {woman.womanIdentifyingMarks}</p>
-                                        <p>Last Location: {woman.womanLastLocation}</p>
-                                        <p>Latitude: {woman.womanLatitude}</p>
-                                        <p>Longitude: {woman.womanLongitude}</p>
-                                        <p>Tribe: {woman.womanTribe}</p>
-                                        <p>Weight: {woman.womanWeight}</p>
-                                </div>
-                            </Row>
-                        </Card>
-                    </>}
+
 
                     <Row>
                         {woman && <>
