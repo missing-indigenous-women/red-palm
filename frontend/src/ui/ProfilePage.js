@@ -13,6 +13,8 @@ import {Link} from "react-router-dom";
 
 export const ProfilePage = ({match}) => {
 
+
+
     const users = useSelector(state => state.users ? state.users : []);
     const auth = useSelector(state => state.auth ? state.auth : []);
     const dispatch = useDispatch();
