@@ -3,14 +3,16 @@ import {Container, Form} from "react-bootstrap";
 import {MissingWoman} from "./MissingWoman";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
-import Map from 'react-map-gl';
+import Map, {FullscreenControl, GeolocateControl, Marker, NavigationControl, Popup, ScaleControl} from 'react-map-gl';
 import {Pin} from "./Pin";
-import { useState } from "react";
+import { useState,useMemo } from "react";
 import "./App.css"
+//import {render} from 'react-dom';
 
 export const MapPage = () => {
     const [displayText, setDisplayText] = useState(true);
-
+    const [isPopupDisplayed, setIsPopupDisplayed] = useState(false);
+    const [displayedWoman, setDisplayedWoman] = useState(null)
     const changeDisplayText = () => {
         setDisplayText(!displayText);
     };
@@ -45,6 +47,21 @@ export const MapPage = () => {
 
     // center={[-106.65, 35.33]}
 
+    // const pins = useMemo(
+    //     () =>
+    //         women.map((woman, index) => (
+    //             <Marker
+    //                 key={`marker-${index}`}
+    //                 longitude={woman.longitude}
+    //                 latitude={woman.latitude}
+    //                 anchor="bottom"
+    //             >
+    //                 <Pin onClick={() => setPopupInfo(woman)} />
+    //             </Marker>
+    //         )),
+    //     []
+    // );
+
     return (
         <>
             <Container className={'py-4'}>
@@ -66,9 +83,45 @@ export const MapPage = () => {
                         zoom: 6
                     }}
                     mapStyle="mapbox://styles/mapbox/dark-v9"
-                    style={{width: 100, height: 100}}
-                >
-                    {women.map((woman, index) => <Pin lat={woman.womanLatitude} lng={woman.womanLongitude} index={index} key={index}/>)}
+                    style={{width: 1200, height: 800}}
+                    >
+                    <GeolocateControl position="top-left" />
+                    <FullscreenControl position="top-left" />
+                    <NavigationControl position="top-left" />
+                    <ScaleControl />
+                    {women.map((woman, index) =>
+                        <Pin lat={woman.womanLatitude} lng={woman.womanLongitude} index={index} key={index} woman={woman} setDisplayedWoman={setDisplayedWoman} setIsPopupDisplayed={setIsPopupDisplayed}/>
+                    )
+                    }
+                    {isPopupDisplayed === true &&
+                    <Popup longitude={displayedWoman.womanLongitude} latitude={displayedWoman.womanLatitude}
+                           anchor="top"
+                           onClose={() => setIsPopupDisplayed(false)}>
+                        You are here
+                    </Popup> }
+
+                    {/*{pins}*/}
+
+                    {/*{popupInfo && (*/}
+                    {/*    <Popup*/}
+                    {/*        anchor="top"*/}
+                    {/*        longitude={Number(popupInfo.longitude)}*/}
+                    {/*        latitude={Number(popupInfo.latitude)}*/}
+                    {/*        closeOnClick={false}*/}
+                    {/*        onClose={() => setPopupInfo(null)}*/}
+                    {/*    >*/}
+                    {/*        <div>*/}
+                    {/*            {popupInfo.womanFirstName} {popupInfo.womanLastName} |{' '}*/}
+                    {/*            <a*/}
+                    {/*                target="_new"*/}
+                    {/*                href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${popupInfo.city}, ${popupInfo.state}`}*/}
+                    {/*            >*/}
+                    {/*                Wikipedia*/}
+                    {/*            </a>*/}
+                    {/*        </div>*/}
+                    {/*        <img width="100%" src={popupInfo.womanPhoto1} />*/}
+                    {/*    </Popup>*/}
+                    {/*)}*/}
                 </Map>
             </Container>)}
             {displayText && (<Container className={'pb-5'}>
