@@ -116,6 +116,19 @@ function SignUpFormContent(props) {
                                               field={"appUserPassword"}
                                 />
                                 <InputGroup className="mb-3">
+                                    <InputGroup.Text>Password Confirm:</InputGroup.Text>
+                                    <FormControl aria-label="Password-confirm"
+
+                                                 type={passwordShown ? "text" : "password"}
+                                                 onChange={handleChange}
+                                                 onBlur={handleBlur}
+                                                 value={values.appUserPasswordConfirm}
+                                                 name={'appUserPasswordConfirm'}
+
+                                    />
+                                </InputGroup>
+
+                                <InputGroup className="mb-3">
                                     <InputGroup.Text> Display name:</InputGroup.Text>
                                     <FormControl aria-label="display-name"
 
@@ -163,26 +176,16 @@ function SignUpFormContent(props) {
                                     />
                                 </InputGroup>
 
-                                <InputGroup className="mb-3">
-                                    <InputGroup.Text>Password Confirm:</InputGroup.Text>
-                                    <FormControl aria-label="Password-confirm"
 
-                                                 type={passwordShown ? "text" : "password"}
-                                                 onChange={handleChange}
-                                                 onBlur={handleBlur}
-                                                 value={values.appUserPasswordConfirm}
-                                                 name={'appUserPasswordConfirm'}
-
-                                    />
-                                </InputGroup>
 
                                 <Button type={"submit"}>Submit</Button> <Link to="/map"
                                                                               className="btn btn-primary">Cancel </Link>
-                                <button className="btn-primary m-1" onClick={togglePassword}>Show Password</button>
+
                             </Col>
                         </Row>
                     </Container>
                 </form>
+                <button className="btn-primary m-1" onClick={togglePassword}>Show Password</button>
 
                 {
                     status && (<div className={status.type}>{status.message}</div>)

@@ -11,7 +11,11 @@ import {fetchPostsByWomanId} from "../store/posts";
 import {MissingWoman} from "./MissingWoman";
 import { Document, Page } from 'react-pdf';
 
+<<<<<<< HEAD
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
+=======
+
+>>>>>>> 893a9d4e5c8deb8f344cf543c2a5ffaf2ad59b63
 export const DetailPage = ({match}) => {
     console.log(match)
 
@@ -108,8 +112,8 @@ export const DetailPage = ({match}) => {
                 <PostLogic postWomanId={woman.womanId} />
 
                 <div className="mt-3 justify-content-center">
-                    <Link to="/InfoForm" className={'m-2 btn btn-primary'}>Edit missing person</Link>{' '} <Link to="/map"
-                                                                                      className="btn btn-primary">Close</Link>
+                     <Link to="/map"
+                           className="btn btn-primary">Close</Link>
                 </div>
             </Container>
         </>

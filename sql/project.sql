@@ -37,7 +37,7 @@ CREATE TABLE woman (
                        womanFavoriteHangoutPlaces VARCHAR(150),
                        womanFirstName VARCHAR (40),
                        womanHairColor VARCHAR (40),
-                       womanHeight VARCHAR (10),
+                       womanHeight VARCHAR (25),
                        womanHobbiesAndInterests VARCHAR (150),
                        womanIdentifyingMarks VARCHAR (3000),
                        womanLastName VARCHAR (40),

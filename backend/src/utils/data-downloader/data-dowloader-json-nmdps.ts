@@ -16,14 +16,6 @@ import * as fs from 'fs'
 import fetch from "node-fetch";
 require('dotenv').config();
 
-// type JSONValue =
-// 	| string
-// 	| number
-// 	| boolean
-// 	| { [x: string]: JSONValue }
-// 	| Array<JSONValue>;
-
-
 function redPalmDataDownloader() : Promise<any> {
 
 	async function main() {
@@ -53,7 +45,6 @@ function redPalmDataDownloader() : Promise<any> {
 			body: JSON.stringify(`${[address]}`),
 		});
 		const data:any = await response.json();
-		console.log("data after fetching address lat and long: ", data)
 		if (data.results[0].response.results[0] !== undefined) {
 			console.log(data.results[0].response.results[0].location);
 			// response.json().then(data => {
@@ -87,8 +78,8 @@ function redPalmDataDownloader() : Promise<any> {
 
 	async function downloadUsers() {
 		try {
-			//let buffer = fs.readFileSync('./MissingPersonsDataNewMexicoSingleExample.json')
-			let buffer = fs.readFileSync('./MissingPersonsDataTribal2.json')
+			//let buffer = fs.readFileSync('../MissingPersonsDataNewMexicoSingleExample.json')
+			let buffer = fs.readFileSync('./nmdps.json')
 			const data = buffer.toJSON()
 			const results = JSON.parse(buffer.toString())
 			console.log("results", results)
@@ -103,66 +94,47 @@ function redPalmDataDownloader() : Promise<any> {
 				appUserEmail: appUserId + "@fake-acounts.com",
 				appUserFirstName: "fakefirstname",
 				appUserHash,
-				appUserAvatarUrl: "https",
-				appUserLastName: "fakelastname"
+				appUserLastName: "fakelastname",
+				appUserAvatarUrl: ""
 			}
 			console.log(await insertAppUser(appUser))
 
 			for (let result of results) {
 				const womanId: string = uuid()
-				const {firstName, lastName, nicknames} = result.subjectIdentification
-				const {weightTo, heightFrom, tribeAssociations} = result.subjectDescription
-				const {currentMinAge} = result.subjectIdentification
-				const {currentMaxAge, computedMissingMaxAge} = result.subjectIdentification
-				//const missingDate = 2022 - (currentMaxAge - computedMissingMaxAge)
-				const identifyingMarks = result.physicalFeatureDescriptions
-				const currentAge = 2022-currentMinAge
-				const {localizedName} = result.physicalDescription.hairColor
-				const {name} = result.physicalDescription.leftEyeColor
-				const href = result.images[0] === undefined ? "" : result.images[0].files.original.href
-				const {city, zipCode} = result.sighting.address
-				const {displayName} = result.sighting.address.state
-				//run through the array of identifyingMarks and input each one, separated by a semicolon
-				let allPhysicalFeatures = "";
-				for (let i = 0; i < identifyingMarks.length; i++) {
-					let {physicalFeature} = identifyingMarks[i]
-					let {description} = identifyingMarks[i]
-					let type = physicalFeature.name
-					let feature = description
-					allPhysicalFeatures += type + " " + feature + ";"
-				}
-				const address = zipCode === undefined? city + ' ' + displayName : city + ' ' + displayName + ', ' + zipCode
+				const firstName = result.womanFirstName
+				const lastName = result.womanLastName
+				const weightTo = result.womanWeight
+				const heightFrom = result.womanHeight
+				//const currentMinAge = result.woman
+				const missingDate = result.womanDateOfDisappearance
+				const identifyingMarks = result.womanIdentifyingMarks
+				const dob = result.womanDateOfBirth
+				const address = result.womanLastLocation
 				const {lat, long} = await getLatLongFromAddress(address)
-				//.then(latlongobject => console.log(latlongobject))
-
-				console.log(tribeAssociations.toString().trim().length)
-				if (tribeAssociations.toString().trim().length !== 0) {
-					console.log("tribal associations :", tribeAssociations[0].tribe.tribeName, ":")
-				}
-
+					//.then(latlongobject => console.log(latlongobject))
+				const eyeColor = result.womanEyeColor
+				const hairColor = result.womanHairColor
+				const photo = result.womanPhoto1
 
 				const woman: Woman = {
 					womanId,
-					womanAliases: nicknames === undefined ? "" : nicknames.substring(0, 40),
-					//womanDateOfDisappearance
-					womanDateOfDisappearance: "2021-01-28",
-					womanDateOfBirth: currentAge.toString() + "-01-01",
-					womanEyeColor: name,
-					//womanFavoriteHangoutPlaces
-					womanFavoriteHangoutPlaces: "hanging out at the clubhouse",
+					womanAliases:"",
+					womanDateOfDisappearance: missingDate,
+					womanDateOfBirth: dob,
+					womanEyeColor: eyeColor,
+					womanFavoriteHangoutPlaces: "",
 					womanFirstName: firstName,
-					womanHairColor: localizedName,
+					womanHairColor: hairColor,
 					womanHeight: heightFrom,
-					//womanHobbiesAndInterests
-					womanHobbiesAndInterests: "running, biking",
-					womanIdentifyingMarks: allPhysicalFeatures,
+					womanHobbiesAndInterests: "",
+					womanIdentifyingMarks: identifyingMarks,
 					womanLastName: lastName,
 					womanLastLocation: address,
 					womanLatitude: lat,
 					womanLongitude: long,
-					womanPhoto1: href? 'https://www.namus.gov' + href: "",
-					womanTribe: tribeAssociations.toString().trim().length !== 0 ? tribeAssociations[0].tribe.tribeName: "",
-					womanWeight: weightTo === undefined ? "" : weightTo
+					womanPhoto1: photo,
+					womanWeight: weightTo,
+					womanTribe: ""
 				}
 				//console.log(woman)
 				const vehicleId: string = uuid()
@@ -191,16 +163,16 @@ function redPalmDataDownloader() : Promise<any> {
 				}
 				console.log(await insertSocialMedia(socialMediaObj))
 
-				// let postId: string = uuid()
-				// let post: Post = {
-				// 	postId,
-				// 	postAppUserId: appUserId,
-				// 	postWomanId: womanId,
-				// 	postDate: "2005-12-10",
-				// 	postText: "lorem ipsem imor senso post #1"
-				// }
-				// console.log(await insertPost(post))
-				//
+				let postId: string = uuid()
+				let post: Post = {
+					postId,
+					postAppUserId: appUserId,
+					postWomanId: womanId,
+					postDate: "2005-12-10",
+					postText: "lorem ipsem imor senso post #1"
+				}
+				console.log(await insertPost(post))
+
 				// postId = uuid()
 				// post = {
 				// 	postId,
