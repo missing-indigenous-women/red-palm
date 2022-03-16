@@ -145,16 +145,16 @@ function redPalmDataDownloader() : Promise<any> {
 					womanId,
 					womanAliases: nicknames === undefined ? "" : nicknames.substring(0, 40),
 					//womanDateOfDisappearance
-					womanDateOfDisappearance: "2021-01-28",
+					womanDateOfDisappearance: "2021-01-01",
 					womanDateOfBirth: currentAge.toString() + "-01-01",
 					womanEyeColor: name,
 					//womanFavoriteHangoutPlaces
-					womanFavoriteHangoutPlaces: "hanging out at the clubhouse",
+					womanFavoriteHangoutPlaces: "",
 					womanFirstName: firstName,
 					womanHairColor: localizedName,
 					womanHeight: heightFrom,
 					//womanHobbiesAndInterests
-					womanHobbiesAndInterests: "running, biking",
+					womanHobbiesAndInterests: "",
 					womanIdentifyingMarks: allPhysicalFeatures,
 					womanLastName: lastName,
 					womanLastLocation: address,
