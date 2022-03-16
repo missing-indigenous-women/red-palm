@@ -8,7 +8,6 @@ import {fetchWomanByWomanId} from "../store/women";
 import {PostLogic} from "./Posts";
 import {PostOutput} from "./Output";
 import {fetchPostsByWomanId} from "../store/posts";
-
 import mFpd from "../images/melanieFpd4.png";
 import mFpd1 from "../images/melanieFpd1.png";
 import mFpd2 from "../images/melanieFpd2.png";
@@ -31,12 +30,17 @@ import sFpd5 from "../images/stephanieJBrown5.png";
 import sFpd6 from "../images/stephanieJBrown6.png";
 import sFpd7 from "../images/stephanieJBrown7.png";
 import sFpd8 from "../images/stephanieJBrown8.png";
+
+
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
 
 
 
 import {MissingWoman} from "./MissingWoman";
+
 import { Document, Page } from 'react-pdf';
+import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
+
 
 
 
@@ -147,6 +151,7 @@ export const DetailPage = ({match}) => {
                                         {/*<p> Longitude: {woman.womanLongitude}</p>*/}
                                         <p><strong>Tribe:</strong>{'  '}  {woman.womanTribe}</p>
                                         <p><strong>Weight:</strong>{'  '}  {woman.womanWeight}</p>
+
                                         {
                                             woman.womanFirstName === "Melanie"
                                             &&
@@ -218,8 +223,8 @@ export const DetailPage = ({match}) => {
 
                 </Container>
 
+                <Container className={style.PostBox}  style={{width: 300, height: 200}}>
 
-                <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
                     <h1>POSTS</h1>
                     {posts.map((post,index) => <PostOutput post={post} key={index}/>)}
                 </Container>

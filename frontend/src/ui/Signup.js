@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import * as Yup from "yup";
 import {httpConfig} from "../utils/http-config";
 import {DisplayError} from "./shared/components/DisplayError";
-
+import style from "./Home.module.css"
 
 
 
@@ -92,7 +92,7 @@ function SignUpFormContent(props) {
         return (
             <>
                 <form onSubmit={handleSubmit}>
-                    <Container>
+                    <Container className={style.Background}>
                         <Row>
                             <Col className='mb-xl-5'>
 

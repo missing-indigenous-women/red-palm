@@ -79,12 +79,13 @@ export const InfoForm = () => {
         womanWeight: "",
 
     };
-    const submitMissingPersonInfo = (values, {resetForm, setStatus}) => {
-        console.log("here")
-        const womanLatitude = 72.8110000
-        const womanLongitude = 18.2880000
-        const womanPhoto1 = 'https'
-        const woman = {womanLatitude, womanLongitude, womanPhoto1, ...values}
+
+
+    const submitMissingPersonInfo = async (values, {resetForm, setStatus}) => {
+        //let womanLatitude = 35.3300000
+        //let womanLongitude = -106.650000
+        const womanPhoto1 = ''
+        const woman = {womanPhoto1, ...values}
 
         httpConfig.post("/apis/woman/", woman)
             .then(reply => {
@@ -209,6 +210,7 @@ function FormContent1(props) {
                                           onBlur={handleBlur}
                                           value={values.womanTribe}
                                           name={'womanTribe'}
+
                             />
                             {errors.womanTribe && touched.womanTribe && (
                                 <div className="alert alert-danger">{errors.womanTribe}</div>

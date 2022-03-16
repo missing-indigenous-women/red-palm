@@ -56,7 +56,7 @@ export const ProfilePage = ({match}) => {
                         <p><strong> E-mail:</strong>{'  '}{appUser.appUserEmail}</p>
                         <p> <strong>First Name:</strong>{'  '}{appUser.appUserFirstName}</p>
                         <p> <strong>Last Name:</strong>{'  '}{appUser.appUserLastName}</p>
-                        <p> <strong>Your password:</strong></p>
+                        <p> <strong>Your password:</strong>{appUser.appUserPassword}</p>
                     </Col>
                     </>
 
