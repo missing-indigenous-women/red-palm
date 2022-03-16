@@ -22,7 +22,7 @@ export const PostOutput = ({post}) => {
 
 
             <div className={" border-dark border-bottom "}>
-
+                    {/*<image src = ""></image>*/}
                     <p> {post.postText}</p>
                 </div>
 

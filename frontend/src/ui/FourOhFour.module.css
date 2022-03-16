@@ -1,0 +1,12 @@
+.Background {
+    background-image: url(../images/native2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-position-y: center;
+    background-position-x: center;
+
+    background-size: cover;
+
+}
+

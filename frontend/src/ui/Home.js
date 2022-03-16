@@ -1,21 +1,17 @@
-
+import React from "react";
 import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
-import {ReactComponent as Bear} from '../images/bear5.svg';
-import {ReactComponent as Wolf} from '../images/wolf.svg';
-import {ReactComponent as Eagle} from "../images/eagle.svg";
 import Mel from '../images/MelanieMarieJames.jpg';
 import {Container, Card, Row, Col,} from "react-bootstrap";
 import Graph from '../images/graph.png';
 import Gabby from '../images/gabbyPetito.png';
 import style from "./Home.module.css"
 import Button1 from "./shared/components/Button1";
-import Button2 from "./shared/components/Button2";
-import ImageSlider from "./shared/components/ImageSlider";
-import {SliderData} from "./shared/components/SliderData"
-import {ReactComponent as Logo} from '../images/reactbootstrap.svg';
-import {useDispatch, useSelector} from "react-redux";
-import {fetchAllWomen} from "../store/women";
-import Tribes from '../images/tribeMap.png';
+import {ReactComponent as Logo1} from '../images/reactLogo.svg';
+
+
+
+
+
 
 export const Home = () => {
 
@@ -69,7 +65,7 @@ export const Home = () => {
                                         In August of 2021 Gabby went missing. September 19, 2021 is the date human
                                         remains
                                         consistent with her description was found. The disappearance of Gabby sparked a
-                                        national interest and an unofficial campaign to find Gabby was underway. How was
+                                        national interest and an unofficial campaign was underway. How was
                                         she found so
                                         quick? Maybe, it was partly due to the power of the interWebs and people with a
                                         thirst for real life crime and drama, with skills to become what is known as an
@@ -88,7 +84,7 @@ export const Home = () => {
                             <p className={"text-center text-white"}>
                                 A community where family, friends, and curious web sleuths can come together to share
                                 their stories.
-                                Most importantly its a place where new clues can be shared, theories can examined, and
+                                Most importantly its a place where new clues can be shared, theories can be examined, and
                                 families can update the users of the app to collectively examine new data.
 
                                 The goal of this app is to combine data from the Justice's Department NAMUS missing
@@ -96,7 +92,7 @@ export const Home = () => {
                                 and the New Mexico Department of Public Safety data base into one easy to use resource.
                                 Our hope is that the
                                 information passed here keeps the stories of our lost girls and women in the spot light
-                                and eventually solve these
+                                and hopefully solve these
                                 mysteries.
 
                                 If you wanna help please sign in and choose a profile avatar and take a look at our case
@@ -133,58 +129,20 @@ export const Home = () => {
                         </Col>
                     </Row>
                 </Container>
+
+
+
                 <Container fluid className="mt-5">
                     <Row>
-                        <Col className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5 bg-black" style={{width: '18rem'}}>
-                                <Eagle/>
-                                <Card.Body className="bg-danger">
-                                    <Card.Title>Eagle</Card.Title>
-                                    <Card.Text>
-                                        Bird's eye view
-                                    </Card.Text>
-                                    <Button2/>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5 bg-black" style={{width: '18rem'}}>
-                                <Bear/>
-                                <Card.Body className="bg-danger">
-                                    <Card.Title>Bear</Card.Title>
-                                    <Card.Text>
-                                        Prepares for hardships to come.
-                                    </Card.Text>
-                                    <Button2/>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5 bg-black" style={{width: '18rem'}}>
-                                <Wolf/>
-                                <Card.Body className="bg-danger">
-                                    <Card.Title>Wolf</Card.Title>
-                                    <Card.Text>
-                                        alone he is usually nothing but with a pack...
-                                    </Card.Text>
-                                    <Button2/>
-                                </Card.Body>
-                            </Card>
+                        <Col className="d-flex justify-content-center mt-5">
+                            <Logo1/>
                         </Col>
                     </Row>
-                </Container>
-                    <Container>
-
-                        <Row>
-                            <Col className="d-flex justify-content-center">
-                                {/*<ImageSlider slides={SliderData}/>*/}
-                            </Col>
-                            <Logo/>
-                        </Row>
-
                 </Container>
             </div>
 
         </>
     )
 }
+
+

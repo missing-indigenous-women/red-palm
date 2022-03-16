@@ -16,6 +16,7 @@ import {ImageDropZone} from "./shared/components/ImageDropZone";
 import {ProfilePage} from "./ProfilePage";
 
 
+
 export const App = (store) => (
     <>
         <Provider store={store}>
