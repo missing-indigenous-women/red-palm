@@ -21,6 +21,15 @@ import mFpd8 from "../images/melanieFpd8.png";
 import mFpd9 from "../images/melanieFpd9.png";
 import mFpd10 from "../images/melanieFpd9.png";
 import mFpd11 from "../images/melanieFpd9.png";
+import sFpd from "../images/stephanieJBrown.png";
+import sFpd1 from "../images/stephanieJBrown1.png";
+import sFpd2 from "../images/stephanieJBrown2.png";
+import sFpd3 from "../images/stephanieJBrown3.png";
+import sFpd4 from "../images/stephanieJBrown4.png";
+import sFpd5 from "../images/stephanieJBrown5.png";
+import sFpd6 from "../images/stephanieJBrown6.png";
+import sFpd7 from "../images/stephanieJBrown7.png";
+import sFpd8 from "../images/stephanieJBrown8.png";
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
 
 
@@ -133,17 +142,39 @@ export const DetailPage = ({match}) => {
                                                 <br/>
                                                 <a href={mFpd11} target="_blank">Police report</a>
 
-
-
-
-
-
-
-
-
-
                                             </>
-                                        }
+
+                                            }
+                                            {
+                                            woman.womanFirstName === "Stephanie"
+                                            &&
+                                            <>
+                                                <a href={sFpd} target="_blank">Police report</a>
+                                                <br/>
+                                                <a href={sFpd1} target="_blank">Police report</a>
+                                                <br/>
+                                                <a href={sFpd2} target="_blank">Police report</a>
+                                                <br/>
+                                                <a href={sFpd3} target="_blank">Police report</a>
+                                                <br/>
+                                                <a href={sFpd4} target="_blank">Police report</a>
+                                                <br/>
+                                                <a href={sFpd5} target="_blank">Police report</a>
+                                                <br/>
+                                                <a href={sFpd6} target="_blank">Police report</a>
+                                                <br/>
+                                                <a href={sFpd7} target="_blank">Police report</a>
+                                                <br/>
+                                                <a href={sFpd8} target="_blank">Police report</a>
+
+
+                                                </>
+
+                                                }
+
+
+
+
 
 
 
