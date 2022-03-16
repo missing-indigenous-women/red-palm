@@ -8,7 +8,7 @@ import {fetchWomanByWomanId} from "../store/women";
 import {PostLogic} from "./Posts";
 import {PostOutput} from "./Output";
 import {fetchPostsByWomanId} from "../store/posts";
-import mFpd from "../images/melanieFpd.png";
+import mFpd from "../images/melanieFpd4.png";
 import mFpd1 from "../images/melanieFpd1.png";
 import mFpd2 from "../images/melanieFpd2.png";
 import mFpd3 from "../images/melanieFpd3.png";
@@ -102,16 +102,25 @@ export const DetailPage = ({match}) => {
                                             &&
                                             <>
                                             <a href={mFpd2} target="_blank">Police report</a>
-
+                                                <br/>
                                             <a href={mFpd3} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd1} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd5} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd6} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd7} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd8} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd9} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd10} target="_blank">Police report</a>
+                                                <br/>
                                                 <a href={mFpd11} target="_blank">Police report</a>
 
 
