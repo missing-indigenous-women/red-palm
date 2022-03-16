@@ -31,20 +31,18 @@ import sFpd6 from "../images/stephanieJBrown6.png";
 import sFpd7 from "../images/stephanieJBrown7.png";
 import sFpd8 from "../images/stephanieJBrown8.png";
 
-<<<<<<< HEAD
-=======
+
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
->>>>>>> a1d326d6f86e26ea21537bdd4e64b1868804566c
+
 
 
 
 import {MissingWoman} from "./MissingWoman";
-<<<<<<< HEAD
-=======
+
 import { Document, Page } from 'react-pdf';
 import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
 
->>>>>>> a1d326d6f86e26ea21537bdd4e64b1868804566c
+
 
 
 
