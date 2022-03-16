@@ -87,7 +87,7 @@ function posting (props){
 
                 <Row>
                     <Col>
-                        <image src={mFpd}/>
+
 
 
                         <form onSubmit={handleSubmit} >

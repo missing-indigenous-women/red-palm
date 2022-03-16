@@ -8,10 +8,18 @@ import {fetchWomanByWomanId} from "../store/women";
 import {PostLogic} from "./Posts";
 import {PostOutput} from "./Output";
 import {fetchPostsByWomanId} from "../store/posts";
-import {MissingWoman} from "./MissingWoman";
-import { Document, Page } from 'react-pdf';
+import mFpd1 from "../images/melanieFpd1.png.png";
+import mFpd5 from "../images/melanieFpd5.png";
+import mFpd7 from "../images/melanieFpd7.png";
+import mFpd3 from "../images/melanieFpd3.png";
+import mFpd2 from "../images/melanieFpd2.png";
+import mFpd4 from "../images/melanieFpd1.png";
+import mFpd8 from "../images/melanieFpd8.png";
+import mFpd9 from "../images/melanieFpd9.png";
 
-import melaniePdf from "../pdf/melaniePoliceReport.pdf";
+
+
+
 export const DetailPage = ({match}) => {
     console.log(match)
 
@@ -88,9 +96,36 @@ export const DetailPage = ({match}) => {
                                         {/*<p> Longitude: {woman.womanLongitude}</p>*/}
                                         <p>Tribe: {woman.womanTribe}</p>
                                         <p>Weight: {woman.womanWeight}</p>
-                                        <Document file={melaniePdf}>
-                                            <Page pageNumber={1} />
-                                        </Document>
+                                        {
+                                            woman.womanFirstName === "Melanie"
+                                            &&
+                                            <>
+                                            <a href={mFpd2} target="_blank">Police report</a>
+
+                                            <a href={mFpd3} target="_blank">Police report</a>
+                                                <a href={mFpd1} target="_blank">Police report</a>
+                                                <a href={mFpd5} target="_blank">Police report</a>
+                                                <a href={mFpd6} target="_blank">Police report</a>
+                                                <a href={mFpd7} target="_blank">Police report</a>
+                                                <a href={mFpd8} target="_blank">Police report</a>
+                                                <a href={mFpd9} target="_blank">Police report</a>
+                                                <a href={mFpd} target="_blank">Police report</a>
+
+
+
+
+
+
+
+
+
+
+
+                                            </>
+                                        }
+
+
+
                                     </div>
                                 </Card>
                             </Col>
