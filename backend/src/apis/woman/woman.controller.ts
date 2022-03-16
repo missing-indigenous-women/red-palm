@@ -12,7 +12,26 @@ import {selectAllWoman} from "../../utils/woman/selectAllWoman";
 
 export async function postWoman(request: Request, response: Response) : Promise<Response<Status>> {
     try {
-        const { womanId, womanAliases,womanDateOfDisappearance , womanDateOfBirth, womanEyeColor, womanFavoriteHangoutPlaces, womanFirstName, womanHairColor, womanHeight,womanHobbiesAndInterests,womanIdentifyingMarks,womanLastName,womanLastLocation, womanLatitude, womanLongitude,  womanPhoto1, womanTribe, womanWeight   } = request.body;
+        const { womanId, womanAliases,womanDateOfDisappearance , womanDateOfBirth, womanEyeColor, womanFavoriteHangoutPlaces, womanFirstName, womanHairColor, womanHeight,womanHobbiesAndInterests,womanIdentifyingMarks,womanLastName,womanLastLocation, womanPhoto1, womanTribe, womanWeight   } = request.body;
+        let womanLatitude = 35.3300000
+        let womanLongitude = -106.650000
+
+        const response2 = await fetch("https://api.geocod.io/v1.7/geocode?api_key=" + process.env.GEOCODIO_SECRET, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(`${womanLastLocation}`),
+        });
+        const data = await response2.json();
+        console.log("data after fetching address lat and long: ", data)
+        if (data.results[0].response.results[0] !== undefined) {
+            console.log(data.results[0].response.results[0].location);
+            womanLatitude = data.results[0].response.results[0].location.lat
+            womanLongitude = data.results[0].response.results[0].location.lng
+        }
+
         const woman: Woman = {
             womanId,
             womanAliases ,

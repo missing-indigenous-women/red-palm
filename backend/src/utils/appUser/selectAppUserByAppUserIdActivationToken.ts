@@ -8,7 +8,7 @@ export async function selectAppUserByAppUserActivationToken(appUserActivationTok
 	try {
 		console.log(appUserActivationToken)
 		const mysqlConnection = await connect();
-		const mysqlQuery: string = "SELECT BIN_TO_UUID(appUserId) as appUserId,  appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserLastName FROM appUser WHERE appUserActivationToken = :appUserActivationToken"
+		const mysqlQuery: string = "SELECT BIN_TO_UUID(appUserId) as appUserId,  appUserActivationToken, appUserDisplayName, appUserEmail, appUserFirstName, appUserLastName, appUserAvatarUrl FROM appUser WHERE appUserActivationToken = :appUserActivationToken"
 		const result = await mysqlConnection.execute(mysqlQuery ,{appUserActivationToken}) as RowDataPacket[]
 		const rows: AppUser[]  = result[0] as AppUser[]
 		await mysqlConnection.release()

@@ -46,7 +46,8 @@ export async function signupAppUserController(request: Request, response: Respon
 			appUserEmail,
 			appUserFirstName ,
 			appUserLastName,
-			appUserHash
+			appUserHash,
+			appUserAvatarUrl
 		};
 		await insertAppUser(appUser)
 		console.log('checkit:',appUser)
@@ -62,13 +63,15 @@ export async function signupAppUserController(request: Request, response: Respon
 		return response.json(status)
 
 	} catch (error: any) {
-console.log(error.toString())
-		const status: Status = {
-			status: 500,
-			message: error.message,
-			data: null
-		};
+		if(error.message === "Forbidden") {
 
-		return response.json(status);
+			const status: Status = {
+				status: 200,
+				message: 'profile succesfully created',
+				data: null
+			};
+
+			return response.json(status);
+		}
 	}
 }

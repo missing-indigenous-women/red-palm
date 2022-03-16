@@ -88,7 +88,7 @@ function redPalmDataDownloader() : Promise<any> {
 	async function downloadUsers() {
 		try {
 			//let buffer = fs.readFileSync('./MissingPersonsDataNewMexicoSingleExample.json')
-			let buffer = fs.readFileSync('./MissingPersonsDataNewMexico.json')
+			let buffer = fs.readFileSync('./MissingPersonsDataTribal2.json')
 			const data = buffer.toJSON()
 			const results = JSON.parse(buffer.toString())
 			console.log("results", results)
@@ -103,6 +103,7 @@ function redPalmDataDownloader() : Promise<any> {
 				appUserEmail: appUserId + "@fake-acounts.com",
 				appUserFirstName: "fakefirstname",
 				appUserHash,
+				appUserAvatarUrl: "https",
 				appUserLastName: "fakelastname"
 			}
 			console.log(await insertAppUser(appUser))
@@ -144,16 +145,16 @@ function redPalmDataDownloader() : Promise<any> {
 					womanId,
 					womanAliases: nicknames === undefined ? "" : nicknames.substring(0, 40),
 					//womanDateOfDisappearance
-					womanDateOfDisappearance: "2021-01-28",
+					womanDateOfDisappearance: "2021-01-01",
 					womanDateOfBirth: currentAge.toString() + "-01-01",
 					womanEyeColor: name,
 					//womanFavoriteHangoutPlaces
-					womanFavoriteHangoutPlaces: "hanging out at the clubhouse",
+					womanFavoriteHangoutPlaces: "",
 					womanFirstName: firstName,
 					womanHairColor: localizedName,
 					womanHeight: heightFrom,
 					//womanHobbiesAndInterests
-					womanHobbiesAndInterests: "running, biking",
+					womanHobbiesAndInterests: "",
 					womanIdentifyingMarks: allPhysicalFeatures,
 					womanLastName: lastName,
 					womanLastLocation: address,
@@ -190,55 +191,55 @@ function redPalmDataDownloader() : Promise<any> {
 				}
 				console.log(await insertSocialMedia(socialMediaObj))
 
-				let postId: string = uuid()
-				let post: Post = {
-					postId,
-					postAppUserId: appUserId,
-					postWomanId: womanId,
-					postDate: "2005-12-10",
-					postText: "lorem ipsem imor senso post #1"
-				}
-				console.log(await insertPost(post))
-
-				postId = uuid()
-				post = {
-					postId,
-					postAppUserId: appUserId,
-					postWomanId: womanId,
-					postDate: "2005-12-10",
-					postText: "lorem ipsem imor senso post #2"
-				}
-				console.log(await insertPost(post))
-
-				postId = uuid()
-				post = {
-					postId,
-					postAppUserId: appUserId,
-					postWomanId: womanId,
-					postDate: "2005-12-10",
-					postText: "lorem ipsem imor senso post #3"
-				}
-				console.log(await insertPost(post))
-
-				postId = uuid()
-				post = {
-					postId,
-					postAppUserId: appUserId,
-					postWomanId: womanId,
-					postDate: "2005-12-10",
-					postText: "lorem ipsem imor senso post #4"
-				}
-				console.log(await insertPost(post))
-
-				postId = uuid()
-				post = {
-					postId,
-					postAppUserId: appUserId,
-					postWomanId: womanId,
-					postDate: "2005-12-10",
-					postText: "lorem ipsem imor senso post #5"
-				}
-				console.log(await insertPost(post))
+				// let postId: string = uuid()
+				// let post: Post = {
+				// 	postId,
+				// 	postAppUserId: appUserId,
+				// 	postWomanId: womanId,
+				// 	postDate: "2005-12-10",
+				// 	postText: "lorem ipsem imor senso post #1"
+				// }
+				// console.log(await insertPost(post))
+				//
+				// postId = uuid()
+				// post = {
+				// 	postId,
+				// 	postAppUserId: appUserId,
+				// 	postWomanId: womanId,
+				// 	postDate: "2005-12-10",
+				// 	postText: "lorem ipsem imor senso post #2"
+				// }
+				// console.log(await insertPost(post))
+				//
+				// postId = uuid()
+				// post = {
+				// 	postId,
+				// 	postAppUserId: appUserId,
+				// 	postWomanId: womanId,
+				// 	postDate: "2005-12-10",
+				// 	postText: "lorem ipsem imor senso post #3"
+				// }
+				// console.log(await insertPost(post))
+				//
+				// postId = uuid()
+				// post = {
+				// 	postId,
+				// 	postAppUserId: appUserId,
+				// 	postWomanId: womanId,
+				// 	postDate: "2005-12-10",
+				// 	postText: "lorem ipsem imor senso post #4"
+				// }
+				// console.log(await insertPost(post))
+				//
+				// postId = uuid()
+				// post = {
+				// 	postId,
+				// 	postAppUserId: appUserId,
+				// 	postWomanId: womanId,
+				// 	postDate: "2005-12-10",
+				// 	postText: "lorem ipsem imor senso post #5"
+				// }
+				// console.log(await insertPost(post))
 			}
 		} catch (error) {
 			throw error

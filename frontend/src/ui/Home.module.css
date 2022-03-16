@@ -41,7 +41,22 @@
     text-decoration: underline;
     text-underline: black;
     color: black;
-    font-weight: bold;
     margin: 4px;
     padding: 4px;
+}
+
+.Poster{
+    border-bottom:  black;
+
+font-weight: bold;
+    color: blue;
+   ;
+
+
+}
+
+.PostBox{
+    background-color: white;
+    border: solid black;
+    overflow: scroll;
 }

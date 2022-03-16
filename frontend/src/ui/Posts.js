@@ -3,10 +3,10 @@ import React from "react";
 import {httpConfig} from "../utils/http-config";
 import {Formik} from "formik";
 import * as Yup from "yup";
-import {FormDebugger} from "./shared/Components/FormDebugger";
+import {FormDebugger} from "./shared/components/FormDebugger";
 import {fetchPostsByWomanId} from "../store/posts";
 import {useDispatch, useSelector} from "react-redux";
-
+import mFpd from '../images/melanieFpd1.png';
 
 
 export const PostLogic = (props) => {
@@ -32,8 +32,8 @@ export const PostLogic = (props) => {
     const submitPost = (values, {resetForm, setStatus}) => {
         const {postWomanId}= props
         const postAppUserId = auth?.appUserId ?? null
-        console.log(auth)
-        const post = {postWomanId,postAppUserId,...values}
+        const postAppUserUrl =  dispatch(fetchPostsByWomanId(postWomanId))
+        const post = {postWomanId,postAppUserId,postAppUserUrl,...values}
         console.log('made it here')
         httpConfig.post("/apis/post/", post)
             .then(reply => {
@@ -87,6 +87,7 @@ function posting (props){
 
                 <Row>
                     <Col>
+
 
 
                         <form onSubmit={handleSubmit} >
