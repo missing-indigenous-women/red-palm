@@ -206,6 +206,7 @@ function FormContent1(props) {
                                           onBlur={handleBlur}
                                           value={values.womanTribe}
                                           name={'womanTribe'}
+
                             />
                             {errors.womanTribe && touched.womanTribe && (
                                 <div className="alert alert-danger">{errors.womanTribe}</div>

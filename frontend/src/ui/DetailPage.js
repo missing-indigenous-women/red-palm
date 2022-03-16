@@ -37,6 +37,7 @@ import melaniePdf from "../pdf/melaniePoliceReport.pdf";
 
 import {MissingWoman} from "./MissingWoman";
 import { Document, Page } from 'react-pdf';
+import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
 
 
 
@@ -118,6 +119,7 @@ export const DetailPage = ({match}) => {
                                         {/*<p> Longitude: {woman.womanLongitude}</p>*/}
                                         <p><strong>Tribe:</strong>{'  '}  {woman.womanTribe}</p>
                                         <p><strong>Weight:</strong>{'  '}  {woman.womanWeight}</p>
+
                                         {
                                             woman.womanFirstName === "Melanie"
                                             &&
@@ -188,7 +190,7 @@ export const DetailPage = ({match}) => {
                     </Row>
                 </Container>
 
-                <Container className={'border border-dark mt-3'} style={{width: 300, height: 200}}>
+                <Container className={style.PostBox}  style={{width: 300, height: 200, }}>
                     <h1>POSTS</h1>
                     {posts.map((post,index) => <PostOutput post={post} key={index}/>)}
                 </Container>
