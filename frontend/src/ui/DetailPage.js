@@ -38,7 +38,6 @@ import melaniePdf from "../pdf/melaniePoliceReport.pdf";
 
 import {MissingWoman} from "./MissingWoman";
 
-import { Document, Page } from 'react-pdf';
 import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
 
 
