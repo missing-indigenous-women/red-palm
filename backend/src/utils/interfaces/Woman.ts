@@ -2,8 +2,8 @@
 export interface Woman {
     womanId: string | null ,
     womanAliases: string ,
-    womanDateOfDisappearance: string,
-    womanDateOfBirth: string ,
+    womanDateOfDisappearance: string | null,
+    womanDateOfBirth: string | null,
     womanEyeColor: string,
     womanFavoriteHangoutPlaces: string ,
     womanFirstName: string ,
