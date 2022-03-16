@@ -10,12 +10,10 @@ import {PostOutput} from "./Output";
 import {fetchPostsByWomanId} from "../store/posts";
 import {MissingWoman} from "./MissingWoman";
 import { Document, Page } from 'react-pdf';
-
-<<<<<<< HEAD
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
-=======
 
->>>>>>> 893a9d4e5c8deb8f344cf543c2a5ffaf2ad59b63
+
+
 export const DetailPage = ({match}) => {
     console.log(match)
 
