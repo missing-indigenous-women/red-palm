@@ -10,7 +10,8 @@ export const FourOhFour = () => {
             <div className={style.Background}>
                 <Logo1/>
                 <h1>File not found.</h1>
-                <h2>Thank you to all the staff at Deep Dive Coding cohort37</h2>
+                <h2>Thank you to all the staff and mentors at Deep Dive Coding cohort37!</h2>
+                <h2>The answer is 33 not 42.</h2>
                 <Logo/>
             </div>
             </>
