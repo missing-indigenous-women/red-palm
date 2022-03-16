@@ -1,16 +1,19 @@
 import React, {useEffect} from "react"
-import {Container, Form} from "react-bootstrap";
+import {Container, Form, Image} from "react-bootstrap";
 import {MissingWoman} from "./MissingWoman";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
-import Map from 'react-map-gl';
+import Map, {FullscreenControl, GeolocateControl, Marker, NavigationControl, Popup, ScaleControl} from 'react-map-gl';
 import {Pin} from "./Pin";
-import { useState } from "react";
+import { useState,useMemo } from "react";
 import "./App.css"
+import {Link} from "react-router-dom";
+//import {render} from 'react-dom';
 
 export const MapPage = () => {
     const [displayText, setDisplayText] = useState(true);
-
+    const [isPopupDisplayed, setIsPopupDisplayed] = useState(false);
+    const [displayedWoman, setDisplayedWoman] = useState(null)
     const changeDisplayText = () => {
         setDisplayText(!displayText);
     };
@@ -34,7 +37,8 @@ export const MapPage = () => {
      */
     useEffect(sideEffects, [dispatch])
 
-    //console.log(women)
+    console.log("displayedWoman: ",displayedWoman)
+    console.log("isPopupDisplayed: ",isPopupDisplayed)
 
     // const [points, setPoints] = React.useState([
     //     {lat: 35.332, lng: -106.652},
@@ -44,6 +48,21 @@ export const MapPage = () => {
     // ]);
 
     // center={[-106.65, 35.33]}
+
+    // const pins = useMemo(
+    //     () =>
+    //         women.map((woman, index) => (
+    //             <Marker
+    //                 key={`marker-${index}`}
+    //                 longitude={woman.longitude}
+    //                 latitude={woman.latitude}
+    //                 anchor="bottom"
+    //             >
+    //                 <Pin onClick={() => setPopupInfo(woman)} />
+    //             </Marker>
+    //         )),
+    //     []
+    // );
 
     return (
         <>
@@ -63,272 +82,66 @@ export const MapPage = () => {
                     initialViewState = {{
                         latitude: 35.33,
                         longitude: -106.65,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         zoom: 6
                     }}
                     mapStyle="mapbox://styles/mapbox/dark-v9"
-                    style={{width: 100, height: 100}}
-                >
-                    {women.map((woman, index) => <Pin lat={woman.womanLatitude} lng={woman.womanLongitude} index={index} key={index}/>)}
+                    style={{width: 1200, height: 800}}
+                    >
+                    <GeolocateControl position="top-left" />
+                    <FullscreenControl position="top-left" />
+                    <NavigationControl position="top-left" />
+                    <ScaleControl />
+                    {women.map((woman, index) =>
+                        <Pin lat={woman.womanLatitude} lng={woman.womanLongitude} index={index} key={index} woman={woman} setDisplayedWoman={setDisplayedWoman} setIsPopupDisplayed={setIsPopupDisplayed}/>
+                    )
+                    }
+                    {isPopupDisplayed === true &&
+                        <Popup longitude={Number(displayedWoman.womanLongitude)}
+                               latitude={Number(displayedWoman.womanLatitude)}
+                               anchor="top"
+                               onClose={() => {
+                                   setIsPopupDisplayed(false)
+                               }}
+                               closeOnClick={false}
+                        >
+                            <div>
+                                <p><strong>{displayedWoman.womanFirstName} {displayedWoman.womanLastName}</strong></p>
+                                <Image width="100%" src={displayedWoman.womanPhoto1} />
+                                <Link to={`/DetailPage/${displayedWoman.womanId}`} state={{ woman: displayedWoman }}>Details
+                                </Link>
+                                {/*            <a*/}
+                                {/*                target="_new"*/}
+                                {/*                href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${popupInfo.city}, ${popupInfo.state}`}*/}
+                                {/*            >*/}
+                                {/*                Wikipedia*/}
+                                {/*            </a>*/}
+                                {/*        </div>*/}
+                            </div>
+                        </Popup>
+                    }
+
+                    {/*{pins}*/}
+
+                    {/*{popupInfo && (*/}
+                    {/*    <Popup*/}
+                    {/*        anchor="top"*/}
+                    {/*        longitude={Number(popupInfo.longitude)}*/}
+                    {/*        latitude={Number(popupInfo.latitude)}*/}
+                    {/*        closeOnClick={false}*/}
+                    {/*        onClose={() => setPopupInfo(null)}*/}
+                    {/*    >*/}
+                    {/*        <div>*/}
+                    {/*            {popupInfo.womanFirstName} {popupInfo.womanLastName} |{' '}*/}
+                    {/*            <a*/}
+                    {/*                target="_new"*/}
+                    {/*                href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${popupInfo.city}, ${popupInfo.state}`}*/}
+                    {/*            >*/}
+                    {/*                Wikipedia*/}
+                    {/*            </a>*/}
+                    {/*        </div>*/}
+                    {/*        <img width="100%" src={popupInfo.womanPhoto1} />*/}
+                    {/*    </Popup>*/}
+                    {/*)}*/}
                 </Map>
             </Container>)}
             {displayText && (<Container className={'pb-5'}>
