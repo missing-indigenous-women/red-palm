@@ -8,6 +8,7 @@ import {fetchWomanByWomanId} from "../store/women";
 import {PostLogic} from "./Posts";
 import {PostOutput} from "./Output";
 import {fetchPostsByWomanId} from "../store/posts";
+
 import mFpd from "../images/melanieFpd4.png";
 import mFpd1 from "../images/melanieFpd1.png";
 import mFpd2 from "../images/melanieFpd2.png";
@@ -21,6 +22,14 @@ import mFpd9 from "../images/melanieFpd9.png";
 import mFpd10 from "../images/melanieFpd9.png";
 import mFpd11 from "../images/melanieFpd9.png";
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
+
+
+import {MissingWoman} from "./MissingWoman";
+import { Document, Page } from 'react-pdf';
+import melaniePdf from "../pdf/melaniePoliceReport.pdf";
+
+
+
 
 export const DetailPage = ({match}) => {
     console.log(match)
