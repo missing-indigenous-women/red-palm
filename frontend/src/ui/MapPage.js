@@ -7,6 +7,7 @@ import Map, {FullscreenControl, GeolocateControl, Marker, NavigationControl, Pop
 import {Pin} from "./Pin";
 import { useState,useMemo } from "react";
 import "./App.css"
+import {Link} from "react-router-dom";
 //import {render} from 'react-dom';
 
 export const MapPage = () => {
@@ -104,9 +105,10 @@ export const MapPage = () => {
                                closeOnClick={false}
                         >
                             <div>
-                                {displayedWoman.womanFirstName} {displayedWoman.womanLastName}
-                                <Image src={displayedWoman.womanPhoto1} />
-
+                                <p><strong>{displayedWoman.womanFirstName} {displayedWoman.womanLastName}</strong></p>
+                                <Image width="100%" src={displayedWoman.womanPhoto1} />
+                                <Link to={`/DetailPage/${displayedWoman.womanId}`} state={{ woman: displayedWoman }}>Details
+                                </Link>
                                 {/*            <a*/}
                                 {/*                target="_new"*/}
                                 {/*                href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${popupInfo.city}, ${popupInfo.state}`}*/}
