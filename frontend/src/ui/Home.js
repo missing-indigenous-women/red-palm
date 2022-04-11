@@ -1,5 +1,5 @@
 import React from "react";
-import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
+import {ReactComponent as Redpalm} from '../../../../carlos-personal-site/public_html/images/bloodyHandPrint.svg';
 import Mel from '../images/MelanieMarieJames.jpg';
 import {Container, Card, Row, Col,} from "react-bootstrap";
 import Graph from '../images/graph.png';
@@ -40,7 +40,7 @@ export const Home = () => {
                 <Container>
                     <Row>
                         <Col className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5 mt-5" style={{width: '36rem'}}>
+                            <Card className="mt-5" style={{width: '36rem'}}>
                                 <Card.Img variant="top" src={Graph}/>
                                 <Card.Body>
                                     <Card.Title> Missing? Murdered? lost? Alive? Traffic?</Card.Title>

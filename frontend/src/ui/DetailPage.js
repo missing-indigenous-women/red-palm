@@ -33,24 +33,17 @@ import sFpd8 from "../images/stephanieJBrown8.png";
 
 
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
-<<<<<<< HEAD
 
-=======
->>>>>>> 3866cbe541efac7701b1a545aeb98f619f917f0b
+
 
 
 
 import {MissingWoman} from "./MissingWoman";
 
-<<<<<<< HEAD
+
 import { Document, Page } from 'react-pdf';
-import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
 
 
-=======
-import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
-
->>>>>>> 3866cbe541efac7701b1a545aeb98f619f917f0b
 
 
 

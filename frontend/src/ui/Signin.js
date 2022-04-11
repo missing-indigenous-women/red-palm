@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Col, Container, FormControl, InputGroup, Row} from "react-bootstrap";
-import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
+import {ReactComponent as Redpalm} from '../../../../carlos-personal-site/public_html/images/bloodyHandPrint.svg';
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import * as Yup from "yup";
