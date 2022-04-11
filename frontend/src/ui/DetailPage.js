@@ -31,6 +31,7 @@ import sFpd6 from "../images/stephanieJBrown6.png";
 import sFpd7 from "../images/stephanieJBrown7.png";
 import sFpd8 from "../images/stephanieJBrown8.png";
 
+<<<<<<< HEAD
 
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";
 
@@ -49,6 +50,8 @@ import { Document, Page } from 'react-pdf';
 
 
 
+=======
+>>>>>>> b1bef4c9a587c952e4aa24c9cc2450fc74a15a9b
 export const DetailPage = ({match}) => {
     console.log(match)
 
