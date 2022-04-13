@@ -1,0 +1,93 @@
+[
+ {
+   "womanFirstName": "Samantha",
+   "womanLastName": "Begay",
+   "womanDateOfBirth": "1975/04/29",
+   "womanDateOfDisappearance": "2016/03/17",
+   "womanHairColor": "Brown",
+   "womanEyeColor": "Brown",
+   "womanHeight": "5 ft 07 in",
+   "womanWeight": 120,
+   "womanLastLocation": "Gallup NM",
+   "womanIdentifyingMarks": "",
+   "womanPhoto1":"https://res.cloudinary.com/dsegwvrng/image/upload/v1647434888/samanthabegay_bxl7tl.jpg"
+ },
+ {
+   "womanFirstName": "Tanya",
+   "womanLastName": "Begay",
+   "womanDateOfBirth": "1980/12/20",
+   "womanDateOfDisappearance": "2017/03/03",
+   "womanHairColor": "Brown",
+   "womanEyeColor": "Brown",
+   "womanHeight": "5 ft 05 in",
+   "womanWeight": 135,
+   "womanLastLocation": "Tohatchi NM",
+   "womanIdentifyingMarks": "Scar: Eye left; Tatto: Chest; Tattoo: Foot left",
+   "womanPhoto1": "https://res.cloudinary.com/dsegwvrng/image/upload/v1647434888/tanyabegay_qsgmxm.jpg"
+ },
+ {
+   "womanFirstName": "Awilda",
+   "womanLastName": "Frank",
+   "womanDateOfBirth": "1966/01/12",
+   "womanDateOfDisappearance": "2021/09/22",
+   "womanHairColor": "Black",
+   "womanEyeColor": "Brown",
+   "womanHeight": "5 ft 08 in",
+   "womanWeight": 180,
+   "womanLastLocation": "San Juan Pblo NM",
+   "womanIdentifyingMarks": "Scar: Arm Right",
+   "womanPhoto1":"https://res.cloudinary.com/dsegwvrng/image/upload/v1647434889/awildafrank_qjfoxb.jpg"
+ },
+ {
+   "womanFirstName": "Jessica",
+   "womanLastName": "Harms",
+   "womanDateOfBirth": "1989/07/27",
+   "womanDateOfDisappearance": "2019/09/16",
+   "womanHairColor": "Black",
+   "womanEyeColor": "Brown",
+   "womanHeight": "5 ft 07 in",
+   "womanWeight": 130,
+   "womanLastLocation": "Mescalero Apache Indian Rese NM",
+   "womanIdentifyingMarks": "Tattoo: Chest",
+   "womanPhoto1":"https://res.cloudinary.com/dsegwvrng/image/upload/v1647434888/jessicaharms_avcxlu.jpg"
+ },
+ {
+   "womanFirstName": "Pepita",
+   "womanLastName": "Redhair",
+   "womanDateOfBirth": "1992/08/04",
+   "womanDateOfDisappearance": "2020/03/27",
+   "womanHairColor": "Brown",
+   "womanEyeColor": "Brown",
+   "womanHeight": "5 ft 01 in",
+   "womanWeight": 141,
+   "womanLastLocation": "Albuquerque NM",
+   "womanIdentifyingMarks": "Tattoo:\tForearm right; Tattoo: Forearm left; Tattoo:\tShoulder; Tattoo:\tLeg",
+   "womanPhoto1":"https://res.cloudinary.com/dsegwvrng/image/upload/v1647434888/pepitaredhair_qoshpb.jpg"
+ },
+ {
+   "womanFirstName": "Victoria",
+   "womanLastName": "Yellowhorse",
+   "womanDateOfBirth": "2005/10/20",
+   "womanDateOfDisappearance": "2021/09/25",
+   "womanHairColor": "Black",
+   "womanEyeColor": "Brown",
+   "womanHeight": "5 ft 03 in",
+   "womanWeight": 105,
+   "womanLastLocation": "Albuquerque NM",
+   "womanIdentifyingMarks": "Mark",
+   "womanPhoto1":"https://res.cloudinary.com/dsegwvrng/image/upload/v1647434888/victoriayellowhorse_pggzyg.jpg"
+ },
+ {
+   "womanFirstName": "Erica",
+   "womanLastName": "Zamora",
+   "womanDateOfBirth": "1982/09/25",
+   "womanDateOfDisappearance": "2021/09/28",
+   "womanHairColor": "Brown",
+   "womanEyeColor": "Brown",
+   "womanHeight": "5 ft 02 in",
+   "womanWeight": 230,
+   "womanLastLocation": "Deming NM",
+   "womanIdentifyingMarks": "Tattoo: Breast left",
+   "womanPhoto1":"https://res.cloudinary.com/dsegwvrng/image/upload/v1647434888/ericazamora_laxki9.jpg"
+ }
+]

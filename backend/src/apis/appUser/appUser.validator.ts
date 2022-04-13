@@ -53,9 +53,12 @@ export const appUserValidator : Schema = {
         },
         trim: true,
         escape: true
+    },
+
+    appUserAvatarUrl: {
+        trim: true,
+        escape: true
     }
-
-
 
 };
 

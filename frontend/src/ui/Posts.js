@@ -3,11 +3,19 @@ import React from "react";
 import {httpConfig} from "../utils/http-config";
 import {Formik} from "formik";
 import * as Yup from "yup";
-import {FormDebugger} from "./shared/Components/FormDebugger";
-
+import {FormDebugger} from "./shared/components/FormDebugger";
+import {fetchPostsByWomanId} from "../store/posts";
+import {useDispatch, useSelector} from "react-redux";
+import mFpd from '../images/melanieFpd1.png';
 
 
 export const PostLogic = (props) => {
+
+    const auth = useSelector(state => state.auth ? state.auth : null);
+
+
+    const dispatch = useDispatch()
+
 
     const validator = Yup.object().shape({
         postText : Yup.string()
@@ -18,20 +26,22 @@ export const PostLogic = (props) => {
 
 
     const initialValues = {
-        postAppUserId: "",
-        postWomanId: "",
-        postDate: "",
         postText: ""
     };
 
     const submitPost = (values, {resetForm, setStatus}) => {
+        const {postWomanId}= props
+        const postAppUserId = auth?.appUserId ?? null
+        const postAppUserUrl =  dispatch(fetchPostsByWomanId(postWomanId))
+        const post = {postWomanId,postAppUserId,postAppUserUrl,...values}
         console.log('made it here')
-        httpConfig.post("/apis/post/", values)
+        httpConfig.post("/apis/post/", post)
             .then(reply => {
                     let {message, type} = reply;
 
                     if (reply.status === 200) {
                         resetForm();
+                        dispatch(fetchPostsByWomanId(postWomanId))
                     }
                     setStatus({message, type});
                 }
@@ -77,6 +87,7 @@ function posting (props){
 
                 <Row>
                     <Col>
+
 
 
                         <form onSubmit={handleSubmit} >

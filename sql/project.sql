@@ -24,7 +24,7 @@ CREATE TABLE appUser (
     -- this officiates the primary key for the entity
                          PRIMARY KEY(appUserId)
 );
--- create the tweet entity
+-- create the woman entity
 CREATE TABLE woman (
     -- this is for yet another primary key...
                        womanId BINARY(16) NOT NULL,
@@ -37,19 +37,19 @@ CREATE TABLE woman (
                        womanFavoriteHangoutPlaces VARCHAR(150),
                        womanFirstName VARCHAR (40),
                        womanHairColor VARCHAR (40),
-                       womanHeight VARCHAR (10),
+                       womanHeight VARCHAR (25),
                        womanHobbiesAndInterests VARCHAR (150),
-                       womanIdentifyingMarks VARCHAR (150),
+                       womanIdentifyingMarks VARCHAR (3000),
                        womanLastName VARCHAR (40),
                        womanLastLocation VARCHAR (60),
                        womanLatitude DECIMAL(9,7),
-                       womanLongitude DECIMAL (9,7),
+                       womanLongitude DECIMAL (9,6),
                        womanPhoto1 VARCHAR (160),
                        womanTribe VARCHAR (150),
                        womanWeight VARCHAR (4),
                        PRIMARY KEY(womanId)
 );
--- create the tweetImage entity
+-- create the socialMedia entity
 CREATE TABLE socialMedia (
                        socialMediaId BINARY(16) NOT NULL,
                        socialMediaWomanId BINARY(16) NOT NULL,
