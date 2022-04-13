@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Col, Container, FormControl, InputGroup, Row} from "react-bootstrap";
+import {Button, Card, Col, Container, FormControl, InputGroup, Row} from "react-bootstrap";
 import {ReactComponent as Redpalm} from './images/bloodyHandPrint.svg';
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
@@ -12,7 +12,8 @@ import {DisplayError} from "./shared/components/DisplayError";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import style from "./Home.module.css";
-
+import Alien from './images/alienThrone.jpeg';
+import Graph from "./images/graph.png";
 
 export const Signin = () => {
     const dispatch = useDispatch()
@@ -94,6 +95,7 @@ export const Signin = () => {
 
     return(
         <>
+            <Card.Img variant="top" src={Alien}/>
             <div className={style.Background}>
                 <form onSubmit={handleSubmit}>
                     <Container className={style.Background}  >

@@ -10,6 +10,16 @@
 
     }
 
+.Background2 {
+    background-image: url(images/alienThrone.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-position-y: center;
+    background-position-x: center;
+
+    background-size: cover;
+}
 
 .Redpalm {
     background-color: black;

@@ -5,6 +5,8 @@ import {Container, Card, Row, Col,} from "react-bootstrap";
 import Graph from './images/graph.png';
 import Gabby from './images/gabbyPetito.png';
 import style from "./Home.module.css"
+import Alien from './images/alienThrone.jpeg';
+
 import Button1 from "./shared/components/Button1";
 import {ReactComponent as Logo1} from './images/reactLogo.svg';
 
@@ -36,6 +38,7 @@ export const Home = () => {
       useEffect(sideEffects, [dispatch])*/
     return (
         <>
+
             <div className={style.Background}>
                 <Container>
                     <Row>
