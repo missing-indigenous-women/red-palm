@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-import {Container, Form, Image} from "react-bootstrap";
+import {Card, Container, Form, Image} from "react-bootstrap";
 import {MissingWoman} from "./MissingWoman";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllWomen} from "../store/women";
@@ -8,6 +8,8 @@ import {Pin} from "./Pin";
 import { useState,useMemo } from "react";
 import "./App.css"
 import {Link} from "react-router-dom";
+import South from './images/southWest.jpeg';
+
 
 export const MapPage = () => {
     const [displayText, setDisplayText] = useState(true);
@@ -65,6 +67,7 @@ export const MapPage = () => {
 
     return (
         <>
+            <Card.Img variant="top" src={South}/>
             <Container className={'py-4'}>
                 <Form>
                     <Form.Check
