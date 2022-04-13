@@ -8,10 +8,7 @@ import {Pin} from "./Pin";
 import { useState,useMemo } from "react";
 import "./App.css"
 import {Link} from "react-router-dom";
-<<<<<<< HEAD
-=======
 
->>>>>>> b1bef4c9a587c952e4aa24c9cc2450fc74a15a9b
 export const MapPage = () => {
     const [displayText, setDisplayText] = useState(true);
     const [isPopupDisplayed, setIsPopupDisplayed] = useState(false);

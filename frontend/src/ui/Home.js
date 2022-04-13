@@ -1,5 +1,5 @@
 import React from "react";
-import {ReactComponent as Redpalm} from '../../../../carlos-personal-site/public_html/images/bloodyHandPrint.svg';
+import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
 import Mel from '../images/MelanieMarieJames.jpg';
 import {Container, Card, Row, Col,} from "react-bootstrap";
 import Graph from '../images/graph.png';
