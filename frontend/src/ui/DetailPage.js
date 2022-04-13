@@ -7,28 +7,28 @@ import {fetchWomanByWomanId} from "../store/women";
 import {PostLogic} from "./Posts";
 import {PostOutput} from "./Output";
 import {fetchPostsByWomanId} from "../store/posts";
-import mFpd from "../images/melanieFpd4.png";
-import mFpd1 from "../images/melanieFpd1.png";
-import mFpd2 from "../images/melanieFpd2.png";
-import mFpd3 from "../images/melanieFpd3.png";
+import mFpd from "./images/melanieFpd4.png";
+import mFpd1 from "./images/melanieFpd1.png";
+import mFpd2 from "./images/melanieFpd2.png";
+import mFpd3 from "./images/melanieFpd3.png";
 
-import mFpd5 from "../images/melanieFpd5.png";
-import mFpd6 from "../images/melanieFpd6.png";
-import mFpd7 from "../images/melanieFpd7.png";
-import mFpd8 from "../images/melanieFpd8.png";
-import mFpd9 from "../images/melanieFpd9.png";
-import mFpd10 from "../images/melanieFpd9.png";
-import mFpd11 from "../images/melanieFpd9.png";
+import mFpd5 from "./images/melanieFpd5.png";
+import mFpd6 from "./images/melanieFpd6.png";
+import mFpd7 from "./images/melanieFpd7.png";
+import mFpd8 from "./images/melanieFpd8.png";
+import mFpd9 from "./images/melanieFpd9.png";
+import mFpd10 from "./images/melanieFpd9.png";
+import mFpd11 from "./images/melanieFpd9.png";
 
-import sFpd from "../images/stephanieJBrown.png";
-import sFpd1 from "../images/stephanieJBrown1.png";
-import sFpd2 from "../images/stephanieJBrown2.png";
-import sFpd3 from "../images/stephanieJBrown3.png";
-import sFpd4 from "../images/stephanieJBrown4.png";
-import sFpd5 from "../images/stephanieJBrown5.png";
-import sFpd6 from "../images/stephanieJBrown6.png";
-import sFpd7 from "../images/stephanieJBrown7.png";
-import sFpd8 from "../images/stephanieJBrown8.png";
+import sFpd from "./images/stephanieJBrown.png";
+import sFpd1 from "./images/stephanieJBrown1.png";
+import sFpd2 from "./images/stephanieJBrown2.png";
+import sFpd3 from "./images/stephanieJBrown3.png";
+import sFpd4 from "./images/stephanieJBrown4.png";
+import sFpd5 from "./images/stephanieJBrown5.png";
+import sFpd6 from "./images/stephanieJBrown6.png";
+import sFpd7 from "./images/stephanieJBrown7.png";
+import sFpd8 from "./images/stephanieJBrown8.png";
 
 
 import melaniePdf from "../pdf/melaniePoliceReport.pdf";

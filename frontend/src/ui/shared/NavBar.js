@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Col, Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import {ReactComponent as Redpalm} from "../../images/bloodyHandPrint.svg";
+import {ReactComponent as Redpalm} from "../images/bloodyHandPrint.svg";
 import {Route} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAuth} from "../../store/auth";

@@ -1,6 +1,6 @@
 import React from "react"
-import {ReactComponent as Logo} from '../images/reactbootstrap.svg';
-import {ReactComponent as Logo1} from '../images/reactLogo.svg';
+import {ReactComponent as Logo} from './images/reactbootstrap.svg';
+import {ReactComponent as Logo1} from './images/reactLogo.svg';
 import style from "../ui/FourOhFour.module.css";
 
 export const FourOhFour = () => {

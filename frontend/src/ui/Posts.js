@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import {FormDebugger} from "./shared/components/FormDebugger";
 import {fetchPostsByWomanId} from "../store/posts";
 import {useDispatch, useSelector} from "react-redux";
-import mFpd from '../images/melanieFpd1.png';
+import mFpd from './images/melanieFpd1.png';
 
 
 export const PostLogic = (props) => {

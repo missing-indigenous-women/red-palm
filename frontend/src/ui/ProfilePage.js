@@ -3,10 +3,10 @@ import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAppUserByAppUserId} from "../store/users";
 import {fetchAuth} from "../store/auth";
-import {ReactComponent as Eagle} from "../images/eagle.svg";
+import {ReactComponent as Eagle} from "./images/eagle.svg";
 import Button2 from "./shared/components/Button2";
-import {ReactComponent as Bear} from "../images/bear5.svg";
-import {ReactComponent as Wolf} from "../images/wolf.svg";
+import {ReactComponent as Bear} from "./images/bear5.svg";
+import {ReactComponent as Wolf} from "./images/wolf.svg";
 import style from "./Home.module.css";
 import {Link} from "react-router-dom";
 

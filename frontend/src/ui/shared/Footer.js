@@ -1,6 +1,6 @@
 import React from 'react'
 import {Col, Nav, Row} from "react-bootstrap";
-import {ReactComponent as Logo} from '../../images/reactLogo.svg';
+import {ReactComponent as Logo} from '../images/reactLogo.svg';
 
 export function Footer() {
     return (

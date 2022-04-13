@@ -1,12 +1,12 @@
 import React from "react";
-import {ReactComponent as Redpalm} from '../images/bloodyHandPrint.svg';
-import Mel from '../images/MelanieMarieJames.jpg';
+import {ReactComponent as Redpalm} from './images/bloodyHandPrint.svg';
+import Mel from './images/MelanieMarieJames.jpg';
 import {Container, Card, Row, Col,} from "react-bootstrap";
-import Graph from '../images/graph.png';
-import Gabby from '../images/gabbyPetito.png';
+import Graph from './images/graph.png';
+import Gabby from './images/gabbyPetito.png';
 import style from "./Home.module.css"
 import Button1 from "./shared/components/Button1";
-import {ReactComponent as Logo1} from '../images/reactLogo.svg';
+import {ReactComponent as Logo1} from './images/reactLogo.svg';
 
 
 
