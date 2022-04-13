@@ -40,7 +40,7 @@ export const Home = () => {
                 <Container>
                     <Row>
                         <Col className="d-flex justify-content-center mt-5 mb-5">
-                            <Card className="mt-5 mt-5" style={{width: '36rem'}}>
+                            <Card className="mt-5" style={{width: '36rem'}}>
                                 <Card.Img variant="top" src={Graph}/>
                                 <Card.Body>
                                     <Card.Title> Missing? Murdered? lost? Alive? Traffic?</Card.Title>

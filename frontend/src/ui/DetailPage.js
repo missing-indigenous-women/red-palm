@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import {Container, Card, Button, Image, Row, Col, InputGroup, FormControl} from "react-bootstrap";
-// import style from "./InfosPage.module.css";
 import {Link} from "react-router-dom";
 import style from "./Home.module.css"
 import {useDispatch, useSelector} from "react-redux";
@@ -30,6 +29,25 @@ import sFpd5 from "../images/stephanieJBrown5.png";
 import sFpd6 from "../images/stephanieJBrown6.png";
 import sFpd7 from "../images/stephanieJBrown7.png";
 import sFpd8 from "../images/stephanieJBrown8.png";
+
+
+import melaniePdf from "../pdf/melaniePoliceReport.pdf";
+
+
+
+
+
+import {MissingWoman} from "./MissingWoman";
+
+
+import { Document, Page } from 'react-pdf';
+
+
+
+
+
+
+
 
 export const DetailPage = ({match}) => {
     console.log(match)
