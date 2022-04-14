@@ -9,7 +9,7 @@ import { useState,useMemo } from "react";
 import "./App.css"
 import {Link} from "react-router-dom";
 import South from './images/southWest.jpeg';
-
+import Tribe from './images/tribeMap.png';
 
 export const MapPage = () => {
     const [displayText, setDisplayText] = useState(true);
@@ -152,6 +152,7 @@ export const MapPage = () => {
             {/*<Container className={'pb-5'}>*/}
             {/*    {women.map((woman,index) => <MissingWoman woman={woman} key={index}/>)}*/}
             {/*</Container>*/}
+            <Card.Img variant="top" src={Tribe}/>
         </>
     )
 }
