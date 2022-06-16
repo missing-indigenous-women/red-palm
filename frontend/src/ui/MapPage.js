@@ -11,6 +11,7 @@ import {Link} from "react-router-dom";
 import South from './images/southWest.jpeg';
 import Tribe from './images/tribeMap.png';
 
+
 export const MapPage = () => {
     const [displayText, setDisplayText] = useState(true);
     const [isPopupDisplayed, setIsPopupDisplayed] = useState(false);
@@ -48,7 +49,6 @@ export const MapPage = () => {
     //     {lat: 35.23, lng: -106.4444}
     // ]);
 
-    // center={[-106.65, 35.33]}
 
     // const pins = useMemo(
     //     () =>

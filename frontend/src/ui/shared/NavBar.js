@@ -57,6 +57,9 @@ export function NavBar() {
                                 )}
                         <Nav.Link onClick={() => {
                             history.push(`/`)}}>Home</Nav.Link>
+
+                                <Nav.Link onClick={() => {
+                                    history.push(`/MissingWoman`)}}>MissingWoman</Nav.Link>
                         <Nav.Link onClick={() => {
                             history.push(`/sign-in`)}}>Sign-in</Nav.Link>
                             <Nav.Link onClick={() => {
@@ -75,6 +78,7 @@ export function NavBar() {
 
                 </Navbar.Collapse>
             </Container>
+
         </Navbar>
     )
 }
