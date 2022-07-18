@@ -14,7 +14,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import {InfoForm} from "./shared/InfoForm";
 import {ImageDropZone} from "./shared/components/ImageDropZone";
 import {ProfilePage} from "./ProfilePage";
-
+import Map from './images/tribeMap.png';
 
 
 export const App = (store) => (
@@ -33,6 +33,7 @@ export const App = (store) => (
                     <Route exact path='/profile-page/:appUserId' component={ProfilePage}  appUserId=":appUserId" />
                     <Route component={FourOhFour}/>
                 </Switch>
+
                 <Footer/>
             </BrowserRouter>
         </Provider>

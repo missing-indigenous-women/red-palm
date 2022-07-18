@@ -55,15 +55,15 @@ export function NavBar() {
                                               className="btn btn-outline-dark"> Submit New Info </Link>
                                     </NavDropdown>
                                 )}
-                        <Nav.Link onClick={() => {
-                            history.push(`/`)}}>Home</Nav.Link>
+                                <Nav.Link onClick={() => {
+                                    history.push(`/`)}}>Home</Nav.Link>
 
                                 <Nav.Link onClick={() => {
                                     history.push(`/MissingWoman`)}}>MissingWoman</Nav.Link>
-                        <Nav.Link onClick={() => {
-                            history.push(`/sign-in`)}}>Sign-in</Nav.Link>
-                            <Nav.Link onClick={() => {
-                            history.push(`/map`)}}> Map</Nav.Link>
+                                <Nav.Link onClick={() => {
+                                    history.push(`/sign-in`)}}>Sign-in</Nav.Link>
+                                <Nav.Link onClick={() => {
+                                    history.push(`/map`)}}> Map</Nav.Link>
 
 
 
@@ -71,7 +71,7 @@ export function NavBar() {
                             </>
 
 
-                           )}/>
+                        )}/>
 
 
                     </Nav>
@@ -82,8 +82,6 @@ export function NavBar() {
         </Navbar>
     )
 }
-
-
 
 
 
