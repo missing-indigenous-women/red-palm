@@ -6,6 +6,12 @@ export function Footer() {
     return (
         <footer className="container-fluid bg-dark p-3 text-center">
             <Row>
+                <h2 className='text-white'>
+                    2022
+                </h2>
+            </Row>
+            <Row>
+
                 <Col>
                     <a href={'https://www.cp3develops.com/'}>Carlos</a><br/>
 
@@ -13,10 +19,7 @@ export function Footer() {
                 <Col>
                     <a href={'https://www.cindynikolai.us/'}>Cindy </a>
                 </Col>
-                <Col>
-                    <p className="m-0 text-light">created by</p>
-                    <p className="m-0 text-light">2022</p>
-                </Col>
+
                 <Col>
                     <a href={'https://mariaebarboareyes.com/'}>Maria</a>
                 </Col>

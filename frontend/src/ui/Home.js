@@ -12,6 +12,7 @@ import {ReactComponent as Logo1} from './images/reactLogo.svg';
 import Map from './images/tribeMap.png';
 import Graphs from "./shared/components/Graphs";
 import Missing from "./shared/components/Missing";
+import CarouselPage from "./shared/components/Carousel";
 
 
 
@@ -26,11 +27,12 @@ export const Home = () => {
 
             <div className={style.Background}>
               <Graphs/>
-                <Container fluid>
+                <Container fluid >
                     <Row className="d-flex justify-content-center">
 
-                        <Col className={"text-center col-8"} style={{background: "black"}}><Redpalm></Redpalm><h1
-                            className={"text-white"} style={{background: "black"}}>Welcome To Redpalm</h1><br/>
+                        <Col className={"text-center col-8"} style={{background: "linear-gradient(black 60%, red 70%) " }}>
+                            <Redpalm/>
+                           <h1 className={"text-white"} >Welcome To Redpalm</h1><br/>
                             <p className={"text-center text-white"}>
                                 A community where family, friends, and curious web sleuths can come together to share
                                 their stories.
@@ -68,6 +70,8 @@ export const Home = () => {
                     <img src={Map} alt='Map' style={{borderRadius: '30px'}} />
                 </Container>
 
+                <CarouselPage/>
+
 
 
 
@@ -79,6 +83,7 @@ export const Home = () => {
                     </Row>
                 </Container>
             </div>
+
 
         </>
     )

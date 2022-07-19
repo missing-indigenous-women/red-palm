@@ -17,6 +17,7 @@ import {ProfilePage} from "./ProfilePage";
 import Map from './images/tribeMap.png';
 
 
+
 export const App = (store) => (
     <>
         <Provider store={store}>

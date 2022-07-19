@@ -70,3 +70,7 @@ font-weight: bold;
     border: solid black;
     overflow: scroll;
 }
+
+Row {
+    border-radius: 30px;
+}
