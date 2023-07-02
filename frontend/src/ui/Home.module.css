@@ -1,12 +1,15 @@
 .Background {
-        background-image: url(images/native2.jpg);
+        background-image: url(images/bloodyHandPrint.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
         background-position-y: center;
         background-position-x: center;
 
-        background-size: cover;
+        background-color: black;
+        padding-top: 40rem;
+        margin-top: 0;
+
 
     }
 
@@ -27,24 +30,10 @@
 }
 
 .Welcome {
-    background-color: black;
+    background-color: blue;
+    border-radius: 36px;
 }
 
-.Card1 {
-
-    top: 20em;
-    left:10em;
-
-}
-
-.Card2 {
-    top: 25em;
-}
-
-.Card3 {
-    top: 20em;
-    right: 10em;
-}
 
 
 .Info{
@@ -73,4 +62,9 @@ font-weight: bold;
 
 Row {
     border-radius: 30px;
+}
+
+h1 {
+    margin-bottom: 30rem;
+
 }

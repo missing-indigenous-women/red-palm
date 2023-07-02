@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import { Carousel } from 'react-bootstrap';
-import Mel from './../../images/melanieFpd6.png';
+import Mel from './../../images/MelanieMarieJames.jpg';
+import Ash from './../../images/ashleyColins.jpg';
+
+
+
+
+
+
+
+
+
+
+
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -15,6 +29,7 @@ export default class CarouselPage extends Component {
                         className="d-block w-100"
                         src={Mel}
                         alt="First slide"
+                        style={{width: '35%'}}
                     />
                     <Carousel.Caption>
                         <h3>First slide label</h3>
@@ -24,7 +39,7 @@ export default class CarouselPage extends Component {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://via.placeholder.com/1440x500"
+                        src={Ash}
                         alt="Second slide"
                     />
 

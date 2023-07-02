@@ -33,9 +33,9 @@ export function NavBar() {
 
     return (
 
-        <Navbar expand="lg" className="ps-3 sticky-top">
-            <Container fluid>
-                <Navbar.Brand href="/"><Col className='mt-3'><Redpalm  style={{height:70, width:70, background: "black"}}/></Col></Navbar.Brand>
+        <Navbar expand="lg" bg="transparent">
+            <Container fluid className='bg-transparent'>
+                <Navbar.Brand href="/"><Col className='mt-3'><Redpalm  style={{height:70, width:70, }}/></Col></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
 
@@ -44,7 +44,7 @@ export function NavBar() {
                         <Route render={({history}) => (
                             <>
                                 {auth !== null && (
-                                    <NavDropdown className="nav-link navbar-username" title={auth?.appUserDisplayName ?? ""} >
+                                    <NavDropdown className="nav-link navbar-username " title={auth?.appUserDisplayName ?? ""} >
                                         <div className="dropdown-item">
                                             <Link to={`/profile-page/${auth?.appUserId}`} className="btn btn-outline-dark">
                                                 profile
@@ -59,7 +59,7 @@ export function NavBar() {
                                     history.push(`/`)}}>Home</Nav.Link>
 
                                 <Nav.Link onClick={() => {
-                                    history.push(`/MissingWoman`)}}>MissingWoman</Nav.Link>
+                                    history.push(`/MissingWoman`)}}>lost</Nav.Link>
                                 <Nav.Link onClick={() => {
                                     history.push(`/sign-in`)}}>Sign-in</Nav.Link>
                                 <Nav.Link onClick={() => {

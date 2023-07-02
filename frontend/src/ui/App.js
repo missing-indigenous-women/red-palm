@@ -4,7 +4,7 @@ import {Home} from './Home'
 import {MapPage} from './MapPage'
 import {FourOhFour} from './FourOhFour'
 import React from 'react'
-import {NavBar} from "./shared/NavBar";
+import NavBar from "./shared/NavBar2";
 import {Footer} from "./shared/Footer";
 import {Provider} from "react-redux";
 import {DetailPage} from "./DetailPage";
@@ -15,6 +15,7 @@ import {InfoForm} from "./shared/InfoForm";
 import {ImageDropZone} from "./shared/components/ImageDropZone";
 import {ProfilePage} from "./ProfilePage";
 import Map from './images/tribeMap.png';
+
 
 
 
@@ -34,7 +35,6 @@ export const App = (store) => (
                     <Route exact path='/profile-page/:appUserId' component={ProfilePage}  appUserId=":appUserId" />
                     <Route component={FourOhFour}/>
                 </Switch>
-
                 <Footer/>
             </BrowserRouter>
         </Provider>
